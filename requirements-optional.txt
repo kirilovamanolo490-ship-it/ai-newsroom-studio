@@ -1,0 +1,2 @@
+# Only required for the legacy Edge TTS voice provider.
+edge-tts==7.2.8

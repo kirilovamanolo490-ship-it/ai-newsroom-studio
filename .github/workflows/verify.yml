@@ -1,0 +1,27 @@
+name: Verify public source and examples
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tools -p 'test_*.py'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: prototypes/daily-brief-video/package-lock.json
+      - run: npm ci --no-audit --no-fund
+        working-directory: prototypes/daily-brief-video
+      - run: npm run lint && npm run build
+        working-directory: prototypes/daily-brief-video
+      - run: python scripts/verify_examples.py

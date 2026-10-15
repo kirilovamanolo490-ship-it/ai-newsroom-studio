@@ -1,0 +1,882 @@
+{
+  "schema_version": 1,
+  "compiled_on": "2026-10-10",
+  "timezone": "Asia/Shanghai",
+  "purpose": "补齐资讯来源与用户指定缺口；入口登记不等于每日定时采集已启用",
+  "groups": [
+    {
+      "id": "openai",
+      "category": "产品与模型",
+      "name": "OpenAI / Codex / ChatGPT",
+      "covers": "新功能、灰度、套餐权益、模型退役；捕捉 Composer predictions",
+      "method": "官方账号＋帮助中心差分＋RSS",
+      "note": "旧 Codex changelog 已重定向到 ChatGPT Learn；官网新闻 RSS 不能替代客户端更新日志。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "OpenAI Developers",
+          "url": "https://x.com/OpenAIDevs",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "ChatGPT",
+          "url": "https://x.com/ChatGPT",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "ChatGPT 更新日志",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Composer predictions 说明",
+          "url": "https://help.openai.com/en/articles/20001601-composer-predictions-in-codex",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "ChatGPT & Codex changelog",
+          "url": "https://learn.chatgpt.com/docs/changelog",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "OpenAI 新闻 RSS",
+          "url": "https://openai.com/news/rss.xml",
+          "status": "上一轮已解析 RSS"
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "category": "产品与模型",
+      "name": "Anthropic / Claude / Claude Code",
+      "covers": "Projects 候补、Design 迁移、模型、API、权益和研究报告",
+      "method": "开发者账号＋产品公告＋帮助中心＋研究栏目",
+      "note": "Claude 产品主号与 ClaudeDevs 都要查。报告正文要提取具体事件，不能只保留抽象标题。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Claude Developers",
+          "url": "https://x.com/ClaudeDevs",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Claude 产品账号",
+          "url": "https://x.com/claudeai",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "产品公告",
+          "url": "https://claude.com/resources/product-announcements",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Claude 更新日志",
+          "url": "https://support.claude.com/en/articles/12138966-release-notes",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Projects 文档",
+          "url": "https://code.claude.com/docs/en/claude-projects",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Design 迁移公告",
+          "url": "https://support.claude.com/en/articles/17440474-migrate-from-standalone-claude-design-to-claude",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Anthropic Research",
+          "url": "https://www.anthropic.com/research",
+          "status": "已核实栏目下本期报告；栏目全量待接入"
+        },
+        {
+          "name": "Claude Code GitHub 版本",
+          "url": "https://github.com/anthropics/claude-code/releases",
+          "status": "上一轮已查版本 API"
+        }
+      ]
+    },
+    {
+      "id": "trae",
+      "category": "国内产品",
+      "name": "TRAE 中国版",
+      "covers": "Work/Code 合并、迁移截止、Agent/IDE、额度与客户端变化",
+      "method": "官方论坛公告＋文档差分＋官网关联公众号",
+      "note": "不要用海外 TRAE 账号替代中国版公告；社区用户回帖与官方发布须按作者区分。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "官方中文社区",
+          "url": "https://forum.trae.cn/",
+          "status": "官方社区公告已读"
+        },
+        {
+          "name": "本次合并公告",
+          "url": "https://forum.trae.cn/t/topic/183224",
+          "status": "已读公告；访问偶发超时"
+        },
+        {
+          "name": "迁移说明",
+          "url": "https://docs.trae.cn/work_traework-to-traecode-data-migration?lang=zh",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "中国站",
+          "url": "https://www.trae.cn/",
+          "status": "站点入口可识别；正文需浏览器"
+        }
+      ]
+    },
+    {
+      "id": "stepfun",
+      "category": "国内产品",
+      "name": "阶跃星辰 / Step Plan",
+      "covers": "购买名额、供应、额度周期、API 价格、续费与补偿",
+      "method": "套餐页差分＋开发者通知＋社区线索回溯",
+      "note": "增供与权益调整目前保留为有出处的待核线索。飞书群内的官方通知属于明确缺口，未声称接入群聊。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Step Plan 套餐与 FAQ",
+          "url": "https://platform.stepfun.com/step-plan",
+          "status": "套餐 FAQ 可读；新调整公告未在此确认"
+        },
+        {
+          "name": "开放平台",
+          "url": "https://platform.stepfun.com/",
+          "status": "入口待登录/浏览器检查"
+        },
+        {
+          "name": "官方 X",
+          "url": "https://x.com/StepFun_ai",
+          "status": "上一轮已采到模型推广帖"
+        },
+        {
+          "name": "10/9 权益调整转载",
+          "url": "https://linux.do/t/topic/3000890",
+          "status": "已读社区转载；缺原始官方公告"
+        }
+      ]
+    },
+    {
+      "id": "doubao",
+      "category": "国内产品",
+      "name": "豆包 / 豆包工作",
+      "covers": "生活服务、画布、创作模型、桌面/App 功能及灰度范围",
+      "method": "官方入口与客户端更新＋公众号原文＋国内媒体补漏",
+      "note": "豆包应用功能与 Seed 模型研究是不同渠道；生活缴费为报道中的灰度功能，不能用模型博客证明已全面上线。官方公众号具体文章入口尚待补齐。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "豆包官网",
+          "url": "https://www.doubao.com/",
+          "status": "入口候选；需浏览器/登录检查具体功能"
+        },
+        {
+          "name": "字节 Seed 研究博客",
+          "url": "https://seed.bytedance.com/en/blog",
+          "status": "上一轮已检查网站"
+        },
+        {
+          "name": "IT之家 RSS",
+          "url": "https://www.ithome.com/rss/",
+          "status": "已解析 RSS：本次返回 60 条"
+        },
+        {
+          "name": "AIBase 中文资讯",
+          "url": "https://www.aibase.com/zh/news",
+          "status": "本轮已读取相关正文或列表"
+        }
+      ]
+    },
+    {
+      "id": "qwen",
+      "category": "国内产品",
+      "name": "阿里千问 / Qwen",
+      "covers": "模型、权重、Pro/Turbo API、许可变化",
+      "method": "官方 X＋仓库 News＋模型卡",
+      "note": "基础 2.1 在 9/20 发布；10/9 的新增是 Turbo 权重及 Pro/Turbo API。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Qwen 官方 X",
+          "url": "https://x.com/Alibaba_Qwen",
+          "status": "已有本期官方原帖"
+        },
+        {
+          "name": "Qwen 博客",
+          "url": "https://qwen.ai/blog",
+          "status": "旧库入口；博客正文需浏览器"
+        },
+        {
+          "name": "Qwen-Image-2.1 GitHub",
+          "url": "https://github.com/QwenLM/Qwen-Image-2.1",
+          "status": "本轮 GitHub 插件已读 README"
+        },
+        {
+          "name": "Turbo 模型卡",
+          "url": "https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo",
+          "status": "上一轮已读并截图"
+        },
+        {
+          "name": "ModelScope 权重",
+          "url": "https://modelscope.cn/models/Qwen/Qwen-Image-2.1-Turbo",
+          "status": "官方帖给出的链接；动态页待渲染"
+        }
+      ]
+    },
+    {
+      "id": "youtu",
+      "category": "国内产品",
+      "name": "腾讯优图",
+      "covers": "多模态解析、OCR、权重、推理代码与评测",
+      "method": "官方仓库子目录＋HF 模型卡更新",
+      "note": "混元主账号不能覆盖优图团队发布；同一仓库的新子模型也必须发现。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Youtu Parsing 仓库",
+          "url": "https://github.com/TencentCloudADP/youtu-parsing",
+          "status": "本轮 GitHub 插件已读 README"
+        },
+        {
+          "name": "Omni 代码目录",
+          "url": "https://github.com/TencentCloudADP/youtu-parsing/tree/main/youtu_parsing_omni",
+          "status": "由仓库 README 交叉链接"
+        },
+        {
+          "name": "Youtu-Parsing-Omni 模型卡",
+          "url": "https://huggingface.co/tencent/Youtu-Parsing-Omni",
+          "status": "本轮已读取相关正文或列表"
+        }
+      ]
+    },
+    {
+      "id": "grok",
+      "category": "产品与模型",
+      "name": "Grok / Grok Bot",
+      "covers": "Bot 邮箱、客户端功能、连接器、使用资格",
+      "method": "官方主帖＋Bot 更新日志＋帮助中心",
+      "note": "公告主帖与海量自动回复分别采集。Bot 自有邮箱与连接 Gmail 的功能分开记录。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Grok Bot",
+          "url": "https://x.com/bot",
+          "status": "官方产品与 X 帮助中心交叉链接"
+        },
+        {
+          "name": "Grok",
+          "url": "https://x.com/grok",
+          "status": "本轮已读邮箱发布主帖"
+        },
+        {
+          "name": "Grok Bot 产品页",
+          "url": "https://x.ai/bot",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Grok Bot changelog",
+          "url": "https://x.ai/changelog/bot",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "X 的 @bot 说明",
+          "url": "https://help.x.com/en/using-x/about-bot",
+          "status": "本轮已读取相关正文或列表"
+        }
+      ]
+    },
+    {
+      "id": "ms-model",
+      "category": "微软各产品",
+      "name": "Microsoft 模型 / Foundry / Research",
+      "covers": "Decision-1、模型卡、研究、预览与正式开放状态",
+      "method": "发布文章＋模型目录＋Research RSS",
+      "note": "厂商自测与独立评测分开。文章更新后跑分比较对象可能变化，要保存快照和修改时间。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Command Line",
+          "url": "https://commandline.microsoft.com/",
+          "status": "本轮已读栏目下 Decision-1 文章"
+        },
+        {
+          "name": "Decision-1 发布说明",
+          "url": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Foundry 模型卡",
+          "url": "https://ai.azure.com/catalog/models/Microsoft-Decision-1",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Foundry Blog",
+          "url": "https://techcommunity.microsoft.com/category/azure/blog/azure-ai-foundry-blog",
+          "status": "本轮已读相关发布；直抓可能超时"
+        },
+        {
+          "name": "Microsoft Research RSS",
+          "url": "https://www.microsoft.com/en-us/research/feed/",
+          "status": "本轮 RSS 样本已检查"
+        },
+        {
+          "name": "Satya Nadella",
+          "url": "https://x.com/satyanadella",
+          "status": "已有本期发布原帖"
+        }
+      ]
+    },
+    {
+      "id": "ms-products",
+      "category": "微软各产品",
+      "name": "Microsoft 企业 / 开发者 / Azure / Copilot",
+      "covers": "企业合作、云产品、开发者工具、Copilot 与安全",
+      "method": "按产品 RSS/日志分别采集",
+      "note": "Microsoft Research、Azure、Copilot、企业新闻分开检查。Source/feed 与停更较久的 news.microsoft.com/feed 不能混用。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Microsoft Source",
+          "url": "https://news.microsoft.com/source/",
+          "status": "本轮 RSS 样本已检查"
+        },
+        {
+          "name": "Source RSS",
+          "url": "https://news.microsoft.com/source/feed/",
+          "status": "本轮 RSS 样本已检查"
+        },
+        {
+          "name": "开发者 RSS",
+          "url": "https://devblogs.microsoft.com/feed/",
+          "status": "本轮 RSS 样本已检查"
+        },
+        {
+          "name": "Azure RSS",
+          "url": "https://azure.microsoft.com/en-us/blog/feed/",
+          "status": "本轮 RSS 样本已检查"
+        },
+        {
+          "name": "GitHub Copilot changelog",
+          "url": "https://github.blog/changelog/label/copilot/",
+          "status": "上一轮已读本期周报"
+        },
+        {
+          "name": "安全博客 RSS",
+          "url": "https://www.microsoft.com/en-us/security/blog/feed/",
+          "status": "本轮 RSS 样本已检查"
+        }
+      ]
+    },
+    {
+      "id": "china-more",
+      "category": "国内产品",
+      "name": "国内模型与开发工具补充",
+      "covers": "模型版本、编程工具、计费与停用公告",
+      "method": "保留原库中产品级文档，按品牌做更新差分",
+      "note": "还需逐家补套餐 FAQ/公告；不能从模型发布推断订阅权益。未把这些旧入口标成已完成本轮全量采集。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "DeepSeek 更新日志",
+          "url": "https://api-docs.deepseek.com/updates/",
+          "status": "上一轮已检查；本轮未逐条重读"
+        },
+        {
+          "name": "Kimi Code 更新",
+          "url": "https://www.kimi.com/code/docs/kimi-code/whats-new.html",
+          "status": "上一轮已检查；本轮未逐条重读"
+        },
+        {
+          "name": "智谱新版本",
+          "url": "https://docs.bigmodel.cn/cn/update/new-releases",
+          "status": "上一轮已检查；本轮未逐条重读"
+        },
+        {
+          "name": "MiniMax 模型更新",
+          "url": "https://platform.minimaxi.com/docs/release-notes/models",
+          "status": "上一轮已检查；本轮未逐条重读"
+        }
+      ]
+    },
+    {
+      "id": "global-more",
+      "category": "产品与模型",
+      "name": "Google / Cursor / Replit / 多媒体工具",
+      "covers": "模型、开发者工具、图片视频语音产品",
+      "method": "按原库产品日志和 RSS 保留，继续补产品账号",
+      "note": "其余原库账号和网站保留在全量清单的历史候选中，覆盖状态逐条记录。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "DeepMind RSS",
+          "url": "https://deepmind.google/blog/rss.xml",
+          "status": "上一轮已查 RSS"
+        },
+        {
+          "name": "Gemini API changelog",
+          "url": "https://ai.google.dev/gemini-api/docs/changelog",
+          "status": "上一轮已检查"
+        },
+        {
+          "name": "Cursor changelog",
+          "url": "https://cursor.com/changelog",
+          "status": "上一轮已检查"
+        },
+        {
+          "name": "Replit updates",
+          "url": "https://docs.replit.com/updates",
+          "status": "上一轮已检查"
+        },
+        {
+          "name": "Midjourney updates",
+          "url": "https://updates.midjourney.com/",
+          "status": "上一轮已检查"
+        },
+        {
+          "name": "Runway news",
+          "url": "https://runway.com/news",
+          "status": "上一轮已检查"
+        }
+      ]
+    },
+    {
+      "id": "ithome",
+      "category": "国内发现与社区",
+      "name": "IT之家",
+      "covers": "国内功能更新、权益、关站、微软细项、行业人物",
+      "method": "RSS 增量＋正文原始出处回溯",
+      "note": "RSS 当前页有限，不能隔一天只读取最新 60 条就视为抓全；需要高频增量或栏目/检索补回时间缺口。旧 /ai/ 返回历史内容，不作为最新入口。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "资讯首页",
+          "url": "https://www.ithome.com/",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "RSS",
+          "url": "https://www.ithome.com/rss/",
+          "status": "已解析 RSS：60 条"
+        }
+      ]
+    },
+    {
+      "id": "qbit",
+      "category": "国内发现与社区",
+      "name": "量子位",
+      "covers": "国内产品发布、研究、产业合作与人物",
+      "method": "RSS 增量＋正文",
+      "note": "已实际捕获旧选题中遗漏的 TRAE 合并线索。RSS 只返回有限条目。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "RSS",
+          "url": "https://www.qbitai.com/feed",
+          "status": "已解析 RSS：10 条"
+        },
+        {
+          "name": "本期 TRAE 合并报道",
+          "url": "https://www.qbitai.com/2026/10/502426.html",
+          "status": "已读 RSS 标题与发布时刻"
+        }
+      ]
+    },
+    {
+      "id": "aibase",
+      "category": "国内发现与社区",
+      "name": "AIBase",
+      "covers": "产品小更新、国内应用、全球 AI 日报补漏",
+      "method": "列表页/日报＋逐条追源",
+      "note": "AIBase 用于发现；新闻摘要和聚合日报不能当厂商原始公告。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "中文资讯",
+          "url": "https://www.aibase.com/zh/news",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "新闻站",
+          "url": "https://news.aibase.com/news",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "每日汇总",
+          "url": "https://news.aibase.com/daily",
+          "status": "本轮已读取相关正文或列表"
+        }
+      ]
+    },
+    {
+      "id": "jiqizhixin",
+      "category": "国内发现与社区",
+      "name": "机器之心",
+      "covers": "论文、开源模型、技术报道与产业通讯",
+      "method": "浏览器/合法登录后的文章页＋公众号",
+      "note": "保留来源，但采集需修复；不能把 HTTP 200 的中间页当成读取成功。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "机器之心",
+          "url": "https://www.jiqizhixin.com/",
+          "status": "已读首页及栏目入口"
+        },
+        {
+          "name": "文章库",
+          "url": "https://www.jiqizhixin.com/articles",
+          "status": "直抓出现数据服务/登录页面，未获得完整文章列表"
+        }
+      ]
+    },
+    {
+      "id": "aiera",
+      "category": "国内发现与社区",
+      "name": "新智元",
+      "covers": "模型热点、产品动态、研究与讨论",
+      "method": "网页栏目＋微信公众号原文",
+      "note": "抓到热点后回查原文；混合滚动栏目、旧图文与新线索，日期需要逐篇核对。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "新智元",
+          "url": "https://aiera.com.cn/",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "媒体介绍",
+          "url": "https://aiera.com.cn/aiera/",
+          "status": "已检索到媒体主体说明"
+        }
+      ]
+    },
+    {
+      "id": "ifanr",
+      "category": "国内发现与社区",
+      "name": "爱范儿 / APPSO",
+      "covers": "应用体验、创作工具、AI 硬件和人物趣闻",
+      "method": "爱范儿首页＋AIGC 栏目＋APPSO 公众号",
+      "note": "APPSO 最新内容应从官方关联公众号取得；旧 AppSolution 栏目不进入最新新闻自动采集。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "爱范儿",
+          "url": "https://www.ifanr.com/",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "AIGC 栏目",
+          "url": "https://www.ifanr.com/category/aigc",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "APPSO 旧网页/公众号入口",
+          "url": "https://www.ifanr.com/app",
+          "status": "旧列表停在 2023 年；只保留品牌/公众号入口"
+        }
+      ]
+    },
+    {
+      "id": "cn-business",
+      "category": "国内发现与社区",
+      "name": "36氪 / 虎嗅",
+      "covers": "融资、公司组织、商业化、合作与行业影响",
+      "method": "媒体列表＋原始采访/公告回溯",
+      "note": "关注作者、采访出处及转载来源，不把多家转载计作多条独立证据。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "36氪 AI 频道",
+          "url": "https://36kr.com/information/AI/",
+          "status": "当前请求为安全检测页，需浏览器"
+        },
+        {
+          "name": "虎嗅",
+          "url": "https://www.huxiu.com/",
+          "status": "本轮已读取相关正文或列表"
+        }
+      ]
+    },
+    {
+      "id": "linuxdo",
+      "category": "国内发现与社区",
+      "name": "LINUX DO / 开发者社区",
+      "covers": "订阅权益、限流、灰度、迁移、用户反馈与产品线索",
+      "method": "论坛检索/分类列表＋回溯官方帖或截图",
+      "note": "仅作为发现和体验线索。套餐通知须保留原始截图/官方链接；社区转述不直接升级为官方确认。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "LINUX DO",
+          "url": "https://linux.do/",
+          "status": "已读取相关讨论；首页全量未采集"
+        },
+        {
+          "name": "Step Plan 具体讨论",
+          "url": "https://linux.do/t/topic/3000890",
+          "status": "本轮已读取相关正文或列表"
+        }
+      ]
+    },
+    {
+      "id": "global-media",
+      "category": "海外发现与行业",
+      "name": "TechCrunch / The Verge",
+      "covers": "AI 公司、产品变更、争议、事故、人物与监管",
+      "method": "栏目列表＋RSS＋事件原始资料",
+      "note": "争议报道要追当事人回应和原始事件记录。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "TechCrunch AI",
+          "url": "https://techcrunch.com/category/artificial-intelligence/",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "TechCrunch AI RSS",
+          "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+          "status": "页面发现 RSS；待实际解析"
+        },
+        {
+          "name": "The Verge AI",
+          "url": "https://www.theverge.com/ai-artificial-intelligence",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "The Verge AI RSS",
+          "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+          "status": "页面发现 RSS；待实际解析"
+        }
+      ]
+    },
+    {
+      "id": "newsletters",
+      "category": "海外发现与行业",
+      "name": "The Rundown / TLDR AI / Ben's Bites",
+      "covers": "每日全球补漏、新工具、社区热议与实践",
+      "method": "每日列表/邮件公开版/RSS",
+      "note": "作为第二轮漏项扫描，不照抄摘要，也不声称已接入私人邮箱。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "TLDR AI",
+          "url": "https://tldr.tech/ai",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Ben’s Bites",
+          "url": "https://www.bensbites.com/",
+          "status": "已读订阅入口；未取得完整正文"
+        },
+        {
+          "name": "Ben’s Bites RSS",
+          "url": "https://www.bensbites.com/feed",
+          "status": "页面发现 RSS；待实际解析"
+        }
+      ]
+    },
+    {
+      "id": "business-media",
+      "category": "海外发现与行业",
+      "name": "Reuters / Nikkei Asia / FT",
+      "covers": "芯片、投融资、产业合作、监管与企业经营",
+      "method": "检索＋有权访问的报道正文＋公司公告",
+      "note": "标题含『据日经』等归因必须保留。读取限制明确记录，不能假称已读全文。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Reuters AI",
+          "url": "https://www.reuters.com/technology/artificial-intelligence/",
+          "status": "直抓 401，需浏览器或合法订阅"
+        },
+        {
+          "name": "Nikkei 半导体",
+          "url": "https://asia.nikkei.com/Business/Tech/Semiconductors/",
+          "status": "相关报道有访问限制"
+        },
+        {
+          "name": "Financial Times AI",
+          "url": "https://www.ft.com/artificial-intelligence",
+          "status": "直抓 403，需浏览器或合法订阅"
+        }
+      ]
+    },
+    {
+      "id": "semiconductor",
+      "category": "海外发现与行业",
+      "name": "Synopsys / 半导体行业",
+      "covers": "EDA、AI 芯片设计、合作协议与产品落地",
+      "method": "官方新闻库/RSS＋工程行业媒体",
+      "note": "计划、签约、试点和上市分别记录；目前中国合作为媒体所报探索计划。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Synopsys Newsroom",
+          "url": "https://www.synopsys.com/newsroom.html",
+          "status": "本轮已检查新闻库"
+        },
+        {
+          "name": "Synopsys 全部新闻 RSS",
+          "url": "https://news.synopsys.com/home?pagetemplate=rss",
+          "status": "本轮 RSS 样本已检查"
+        },
+        {
+          "name": "电子工程专辑",
+          "url": "https://www.eet-china.com/",
+          "status": "本轮已读相关行业报道"
+        },
+        {
+          "name": "中国 AI 合作报道",
+          "url": "https://www.eet-china.com/news/202610094794.html",
+          "status": "本轮已读取相关正文或列表"
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "category": "人物与趣闻",
+      "name": "产品负责人、研究者与当事人",
+      "covers": "功能首发、回复补充、互动争论、有趣实验",
+      "method": "X 主帖＋引用/回复链＋对方回应",
+      "note": "个人观点、玩笑、爆料与公司决定分开。吵架须保留双方原文及先后顺序；不从单张转发截图推断全貌。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Tibo / thsottiaux",
+          "url": "https://x.com/thsottiaux",
+          "status": "已有本期原帖"
+        },
+        {
+          "name": "Nate Parrott",
+          "url": "https://x.com/nateparrott",
+          "status": "已读 Design 迁移相关帖"
+        },
+        {
+          "name": "Elon Musk",
+          "url": "https://x.com/elonmusk",
+          "status": "本轮已读 Grok Bot 引用帖"
+        },
+        {
+          "name": "Andrej Karpathy",
+          "url": "https://x.com/karpathy",
+          "status": "已有本期原帖"
+        },
+        {
+          "name": "宝玉 dotey",
+          "url": "https://x.com/dotey",
+          "status": "本轮检索到产品讨论"
+        },
+        {
+          "name": "vista8",
+          "url": "https://x.com/vista8",
+          "status": "本轮检索到 TRAE 讨论"
+        }
+      ]
+    },
+    {
+      "id": "fun-eval",
+      "category": "人物与趣闻",
+      "name": "Artificial Analysis / Arena / Hacker News",
+      "covers": "对比实验、能力变化、开发者作品与讨论",
+      "method": "榜单/实验原帖＋方法说明＋社区原链接",
+      "note": "趣闻不等于低证据要求；榜单名次注明日期、赛道和评测方法。实际伤害事件归安全/社会影响。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "Artificial Analysis",
+          "url": "https://artificialanalysis.ai/",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Artificial Analysis X",
+          "url": "https://x.com/ArtificialAnlys",
+          "status": "已有实验原帖与视频"
+        },
+        {
+          "name": "Arena 榜单",
+          "url": "https://arena.ai/leaderboard",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/",
+          "status": "本轮已读取相关正文或列表"
+        }
+      ]
+    },
+    {
+      "id": "open-source",
+      "category": "开源与论文",
+      "name": "GitHub / Hugging Face / ModelScope / arXiv",
+      "covers": "新仓库、权重、模型版本、技术报告与许可证",
+      "method": "官方组织列表/API＋README News/commit＋模型卡",
+      "note": "Trending 用于发现；判断发布须读官方组织、提交时间和许可证，不能把改 README 当新模型发布。arXiv cs.LG/cs.CV/cs.CL 等可按专题继续增补。",
+      "status": "本轮已读取相关正文或列表",
+      "priority": "重点",
+      "links": [
+        {
+          "name": "GitHub Trending",
+          "url": "https://github.com/trending",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Hugging Face 新模型",
+          "url": "https://huggingface.co/models?sort=created",
+          "status": "本轮已读取相关正文或列表"
+        },
+        {
+          "name": "Hugging Face 官方博客 RSS",
+          "url": "https://huggingface.co/blog/feed.xml",
+          "status": "上一轮已解析 RSS"
+        },
+        {
+          "name": "ModelScope 模型库",
+          "url": "https://modelscope.cn/models",
+          "status": "仅取到动态壳，需浏览器/平台接口"
+        },
+        {
+          "name": "arXiv AI 最近提交",
+          "url": "https://arxiv.org/list/cs.AI/recent",
+          "status": "本轮已读取相关正文或列表"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "enabled": false,
+  "not_before": null,
+  "platforms": {
+    "bilibili": {"account": "my_bilibili", "confirmed": false, "enabled": false, "tid": null},
+    "douyin": {"account": "my_douyin", "confirmed": false, "enabled": false},
+    "xiaohongshu": {"account": "my_xiaohongshu", "confirmed": false, "enabled": false},
+    "youtube": {"account": "my_youtube", "confirmed": false, "enabled": false, "visibility": "public"}
+  }
+}

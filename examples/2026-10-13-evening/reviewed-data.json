@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-13",
+  "edition": "evening",
+  "title": "2026-10-13 AI晚报",
+  "story_count": 8,
+  "stories": [
+    {
+      "id": "character-sale",
+      "title": "Character.AI 启动法院监督出售",
+      "summary": "公司已宣布启动 Chapter 11 程序，并寻求法院监督下的资产出售。平台当前仍可使用；若未找到支持继续运营的交易，后续将逐步停运。",
+      "source": "The Character.AI Team",
+      "source_url": "https://blog.character.ai/an-update-on-character-ai/",
+      "section": "公司与数据"
+    },
+    {
+      "id": "natura-1",
+      "title": "Natura-1：从人类经验学习操作",
+      "summary": "Nature Will 称其发布了首个通用物理世界基础模型 Natura-1：50B 参数 MoE、以百万小时第一视角人类经验预训练，并经有限机器人数据后训练。公司称模型可零样本理解操作指令并执行多步灵巧操作；能力及训练数据规模均为厂商自述，未独立复测。",
+      "source": "Nature Will Team / Nature Will (@naturewill)",
+      "source_url": "https://x.com/naturewill/status/2109858475333570565",
+      "section": "模型与设备"
+    },
+    {
+      "id": "minicpm-mac",
+      "title": "MiniCPM-V 4.7：Mac本地运行",
+      "summary": "OpenBMB 宣布，Nativ v0.4.x 已支持在 Apple Silicon Mac 上本地运行 MiniCPM-V 4.7 的 1B 与 35B-A3B 版本，并支持图片和视频理解。这次公布的是 Mac 接入进展；模型本身已于10月12日发布。",
+      "source": "OpenBMB",
+      "source_url": "https://x.com/OpenBMB/status/2109898597236129868",
+      "section": "模型与设备"
+    },
+    {
+      "id": "dots-update",
+      "title": "dots 手机任务更新与语音入口说明",
+      "summary": "dots可在手机创建，结合聊天、Codex与自动化上下文接续任务，并查看、编辑定时任务。Vaibhav补充，目前只能有一个dot；Atty Eleti另回复称Codex Cloud/Remote聊天里应已有语音按钮。",
+      "source": "reach_vb",
+      "source_url": "https://x.com/reach_vb/status/2109872508853756077",
+      "section": "工具与用量"
+    },
+    {
+      "id": "usage-progress",
+      "title": "额度重置完成，更多用量仍待公布",
+      "summary": "Tibo在13:06确认第8天全球额度重置完成。14:21另行预告增加用量的计划，但未给出具体额度、套餐范围和实施时间。",
+      "source": "thsottiaux",
+      "source_url": "https://x.com/thsottiaux/status/2109873287853707513",
+      "section": "工具与用量"
+    },
+    {
+      "id": "work-data",
+      "title": "企业邮件与 Slack 数据交易",
+      "summary": "Business Insider 的新报道将目光投向企业内部数据交易：邮件、Slack 记录等工作材料，被用于训练能完成办公任务的 AI。报道采访了数据中间商和企业主，也呈现了员工知情与隐私方面的争议。",
+      "source": "Charles Rollet / Tom Carter / Stephen Council",
+      "source_url": "https://www.businessinsider.com/ai-training-employee-data-emails-slack-dms-2026-10",
+      "section": "公司与数据"
+    },
+    {
+      "id": "tcl-x5",
+      "title": "TCL X5 用自然语言优化网络",
+      "summary": "TCL 的 X5 展示了面向家庭与小型企业的 AI 网络设备：用户可以描述目标，由设备协调网络检查与相关设置。自然语言控制和本地多智能体调度均为厂商公布的能力。",
+      "source": "TCL",
+      "source_url": "https://www.prnewswire.com/news-releases/tcl-showcases-5g-ai-cpe-x5-at-network-x-2026-bringing-comprehensive-ai-powered-optimization-to-home-broadband-302902425.html",
+      "section": "模型与设备"
+    },
+    {
+      "id": "grok-memory-transfer",
+      "title": "Memory Transfer：个人记忆迁移工具",
+      "summary": "Brian Roemmele于11:46发布个人制作的Memory Transfer Bot，展示把其他助手的记忆带入Grok Bot；马斯克随后在12:43转介。这里合并原作与传播进展，不将个人工具升级为官方迁移服务。",
+      "source": "Brian Roemmele · Musk转介",
+      "source_url": "https://x.com/BrianRoemmele/status/2109853221808435364",
+      "section": "个人工具"
+    }
+  ],
+  "narration_excerpt": "Character.AI宣布启动第十一章破产程序，寻求法院监督下的出售。",
+  "provenance": [
+    {
+      "story_title": "Character.AI 启动法院监督出售",
+      "source_url": "https://blog.character.ai/an-update-on-character-ai/"
+    },
+    {
+      "story_title": "Natura-1：从人类经验学习操作",
+      "source_url": "https://x.com/naturewill/status/2109858475333570565"
+    },
+    {
+      "story_title": "MiniCPM-V 4.7：Mac本地运行",
+      "source_url": "https://x.com/OpenBMB/status/2109898597236129868"
+    },
+    {
+      "story_title": "dots 手机任务更新与语音入口说明",
+      "source_url": "https://x.com/reach_vb/status/2109872508853756077"
+    },
+    {
+      "story_title": "额度重置完成，更多用量仍待公布",
+      "source_url": "https://x.com/thsottiaux/status/2109873287853707513"
+    },
+    {
+      "story_title": "企业邮件与 Slack 数据交易",
+      "source_url": "https://www.businessinsider.com/ai-training-employee-data-emails-slack-dms-2026-10"
+    },
+    {
+      "story_title": "TCL X5 用自然语言优化网络",
+      "source_url": "https://www.prnewswire.com/news-releases/tcl-showcases-5g-ai-cpe-x5-at-network-x-2026-bringing-comprehensive-ai-powered-optimization-to-home-broadband-302902425.html"
+    },
+    {
+      "story_title": "Memory Transfer：个人记忆迁移工具",
+      "source_url": "https://x.com/BrianRoemmele/status/2109853221808435364"
+    }
+  ]
+}

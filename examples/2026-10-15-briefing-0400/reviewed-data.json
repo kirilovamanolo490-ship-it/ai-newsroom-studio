@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-15",
+  "edition": "briefing-0400",
+  "title": "2026-10-15 AI此刻简报",
+  "story_count": 3,
+  "stories": [
+    {
+      "id": "claude-desktop",
+      "title": "Claude Code桌面端更新，多会话并行和侧聊更方便",
+      "summary": "Claude Code桌面端更新多会话工作流：更快启动会话、保存工作环境，并把并行任务拆成嵌套会话，完成后将结果回传主会话。",
+      "source": "ClaudeDevs · Anthropic官方开发者账号",
+      "source_url": "https://x.com/ClaudeDevs/status/2110445844675838148",
+      "section": "开发工具"
+    },
+    {
+      "id": "google-island",
+      "title": "Google展示Argon岛屿沙盒，笔刷模拟地形与水",
+      "summary": "Google展示用Gemini 4 Argon在AI Studio构建的3D岛屿沙盒，通过笔刷实时改变地形、沙和水，并给出可尝试的应用入口。",
+      "source": "Google · 官方账号",
+      "source_url": "https://x.com/Google/status/2110446630948180353",
+      "section": "应用示例"
+    },
+    {
+      "id": "epoch-spire",
+      "title": "Epoch发布SpireClimb评测，AI仍落后顶尖人类玩家",
+      "summary": "Epoch AI公布SpireClimb评测：前沿模型在《杀戮尖塔》一代基础难度的胜率达到90%以上；最高难度下GPT-6.1 Sol为20%，GPT-6 Astra为17%。",
+      "source": "Epoch AI · 研究机构",
+      "source_url": "https://x.com/EpochAIResearch/status/2110460410646413359",
+      "section": "智能体评测"
+    }
+  ],
+  "narration_excerpt": "Claude Code桌面端更新了多会话工作流。并行任务可以拆成嵌套会话，完成后把结果回传主会话。",
+  "provenance": [
+    {
+      "story_title": "Claude Code桌面端更新，多会话并行和侧聊更方便",
+      "source_url": "https://x.com/ClaudeDevs/status/2110445844675838148"
+    },
+    {
+      "story_title": "Google展示Argon岛屿沙盒，笔刷模拟地形与水",
+      "source_url": "https://x.com/Google/status/2110446630948180353"
+    },
+    {
+      "story_title": "Epoch发布SpireClimb评测，AI仍落后顶尖人类玩家",
+      "source_url": "https://x.com/EpochAIResearch/status/2110460410646413359"
+    }
+  ]
+}

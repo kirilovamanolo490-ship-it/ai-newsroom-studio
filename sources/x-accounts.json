@@ -1,0 +1,684 @@
+{
+  "schema_version": 1,
+  "migrated_on": "2026-10-08",
+  "timezone": "Asia/Shanghai",
+  "verification_note": "从现有来源配置迁移。旧日期、身份说明与网址未经本轮逐项联网复核，不代表当前可访问、官方身份确认或采集已启用。",
+  "accounts": [
+    {
+      "id": "x.alibaba_qwen",
+      "handle": "Alibaba_Qwen",
+      "url": "https://x.com/Alibaba_Qwen",
+      "group": "x.foundation_models.cn",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.cn",
+        "platform": "X",
+        "region": "CN",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时检查官方主页、官方文档或官方 GitHub 是否反向链接该账号； 无交叉证明则降为待核验账号。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.deepseek_ai",
+      "handle": "deepseek_ai",
+      "url": "https://x.com/deepseek_ai",
+      "group": "x.foundation_models.cn",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.cn",
+        "platform": "X",
+        "region": "CN",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时检查官方主页、官方文档或官方 GitHub 是否反向链接该账号； 无交叉证明则降为待核验账号。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.zai_org",
+      "handle": "Zai_org",
+      "url": "https://x.com/Zai_org",
+      "group": "x.foundation_models.cn",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.cn",
+        "platform": "X",
+        "region": "CN",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时检查官方主页、官方文档或官方 GitHub 是否反向链接该账号； 无交叉证明则降为待核验账号。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.kimi_moonshot",
+      "handle": "Kimi_Moonshot",
+      "url": "https://x.com/Kimi_Moonshot",
+      "group": "x.foundation_models.cn",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.cn",
+        "platform": "X",
+        "region": "CN",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时检查官方主页、官方文档或官方 GitHub 是否反向链接该账号； 无交叉证明则降为待核验账号。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.minimax_ai",
+      "handle": "MiniMax_AI",
+      "url": "https://x.com/MiniMax_AI",
+      "group": "x.foundation_models.cn",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.cn",
+        "platform": "X",
+        "region": "CN",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时检查官方主页、官方文档或官方 GitHub 是否反向链接该账号； 无交叉证明则降为待核验账号。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.tencenthunyuan",
+      "handle": "TencentHunyuan",
+      "url": "https://x.com/TencentHunyuan",
+      "group": "x.foundation_models.cn",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.cn",
+        "platform": "X",
+        "region": "CN",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时检查官方主页、官方文档或官方 GitHub 是否反向链接该账号； 无交叉证明则降为待核验账号。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.baidu_inc",
+      "handle": "Baidu_Inc",
+      "url": "https://x.com/Baidu_Inc",
+      "group": "x.foundation_models.cn",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.cn",
+        "platform": "X",
+        "region": "CN",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时检查官方主页、官方文档或官方 GitHub 是否反向链接该账号； 无交叉证明则降为待核验账号。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.kling_ai",
+      "handle": "Kling_ai",
+      "url": "https://x.com/Kling_ai",
+      "group": "x.foundation_models.cn",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.cn",
+        "platform": "X",
+        "region": "CN",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时检查官方主页、官方文档或官方 GitHub 是否反向链接该账号； 无交叉证明则降为待核验账号。\n",
+        "status": "verify_on_first_fetch"
+      },
+      "legacy_enabled_override": true
+    },
+    {
+      "id": "x.openai",
+      "handle": "OpenAI",
+      "url": "https://x.com/OpenAI",
+      "group": "x.foundation_models.global",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.global",
+        "platform": "X",
+        "region": "US_GLOBAL",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时要求官网或官方文档交叉证明；账号帖只用于发现， 最终模型能力、价格和发布时间必须回到 A1/A2。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.anthropicai",
+      "handle": "AnthropicAI",
+      "url": "https://x.com/AnthropicAI",
+      "group": "x.foundation_models.global",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.global",
+        "platform": "X",
+        "region": "US_GLOBAL",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时要求官网或官方文档交叉证明；账号帖只用于发现， 最终模型能力、价格和发布时间必须回到 A1/A2。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.aiatmeta",
+      "handle": "AIatMeta",
+      "url": "https://x.com/AIatMeta",
+      "group": "x.foundation_models.global",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.global",
+        "platform": "X",
+        "region": "US_GLOBAL",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时要求官网或官方文档交叉证明；账号帖只用于发现， 最终模型能力、价格和发布时间必须回到 A1/A2。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.spacexai",
+      "handle": "SpaceXAI",
+      "url": "https://x.com/SpaceXAI",
+      "group": "x.foundation_models.global",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.global",
+        "platform": "X",
+        "region": "US_GLOBAL",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时要求官网或官方文档交叉证明；账号帖只用于发现， 最终模型能力、价格和发布时间必须回到 A1/A2。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.huggingface",
+      "handle": "huggingface",
+      "url": "https://x.com/huggingface",
+      "group": "x.foundation_models.global",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.global",
+        "platform": "X",
+        "region": "US_GLOBAL",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时要求官网或官方文档交叉证明；账号帖只用于发现， 最终模型能力、价格和发布时间必须回到 A1/A2。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.openrouter",
+      "handle": "OpenRouter",
+      "url": "https://x.com/OpenRouter",
+      "group": "x.foundation_models.global",
+      "authority": "B1",
+      "evidence_role": "launch_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.foundation_models.global",
+        "platform": "X",
+        "region": "US_GLOBAL",
+        "category": "foundation_models",
+        "authority": "B1",
+        "evidence_role": "launch_preview_fast_signal",
+        "officiality_check": "首次入库时要求官网或官方文档交叉证明；账号帖只用于发现， 最终模型能力、价格和发布时间必须回到 A1/A2。\n",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.claudeai",
+      "handle": "ClaudeAI",
+      "url": "https://x.com/ClaudeAI",
+      "group": "x.products_and_agents",
+      "authority": "B1",
+      "evidence_role": "product_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.products_and_agents",
+        "platform": "X",
+        "region": "US_GLOBAL",
+        "category": "ai_products_agents_multimodal",
+        "authority": "B1",
+        "evidence_role": "product_preview_fast_signal",
+        "officiality_check": "verify_by_official_product_page",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.cursor_ai",
+      "handle": "cursor_ai",
+      "url": "https://x.com/cursor_ai",
+      "group": "x.products_and_agents",
+      "authority": "B1",
+      "evidence_role": "product_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.products_and_agents",
+        "platform": "X",
+        "region": "US_GLOBAL",
+        "category": "ai_products_agents_multimodal",
+        "authority": "B1",
+        "evidence_role": "product_preview_fast_signal",
+        "officiality_check": "verify_by_official_product_page",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.midjourney",
+      "handle": "midjourney",
+      "url": "https://x.com/midjourney",
+      "group": "x.products_and_agents",
+      "authority": "B1",
+      "evidence_role": "product_preview_fast_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.products_and_agents",
+        "platform": "X",
+        "region": "US_GLOBAL",
+        "category": "ai_products_agents_multimodal",
+        "authority": "B1",
+        "evidence_role": "product_preview_fast_signal",
+        "officiality_check": "verify_by_official_product_page",
+        "status": "verify_on_first_fetch"
+      }
+    },
+    {
+      "id": "x.karpathy",
+      "handle": "karpathy",
+      "url": "https://x.com/karpathy",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.jeffdean",
+      "handle": "JeffDean",
+      "url": "https://x.com/JeffDean",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.demishassabis",
+      "handle": "demishassabis",
+      "url": "https://x.com/demishassabis",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.sama",
+      "handle": "sama",
+      "url": "https://x.com/sama",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.gdb",
+      "handle": "gdb",
+      "url": "https://x.com/gdb",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.id_aa_carmack",
+      "handle": "ID_AA_Carmack",
+      "url": "https://x.com/ID_AA_Carmack",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.soumithchintala",
+      "handle": "soumithchintala",
+      "url": "https://x.com/soumithchintala",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x._jasonwei",
+      "handle": "_jasonwei",
+      "url": "https://x.com/_jasonwei",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.drjimfan",
+      "handle": "DrJimFan",
+      "url": "https://x.com/DrJimFan",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.abacaj",
+      "handle": "abacaj",
+      "url": "https://x.com/abacaj",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.rasbt",
+      "handle": "rasbt",
+      "url": "https://x.com/rasbt",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.rowancheung",
+      "handle": "RowanCheung",
+      "url": "https://x.com/RowanCheung",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.therundownai",
+      "handle": "TheRundownAI",
+      "url": "https://x.com/TheRundownAI",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.artificialanlys",
+      "handle": "ArtificialAnlys",
+      "url": "https://x.com/ArtificialAnlys",
+      "group": "x.tools_and_researchers",
+      "authority": "B2",
+      "evidence_role": "ecosystem_signal",
+      "current_verification": "pending",
+      "legacy_group_metadata": {
+        "id": "x.tools_and_researchers",
+        "platform": "X",
+        "region": "GLOBAL",
+        "category": "researchers_practitioners",
+        "authority": "B2",
+        "evidence_role": "ecosystem_signal",
+        "credibility_check": "不按“官方账号”审核，而按个人身份、领域相关性、原始证据、历史准确度、 粉丝与互动指标、独立交叉印证逐账号评估。\n",
+        "status": "review_each_account"
+      }
+    },
+    {
+      "id": "x.thsottiaux",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux",
+      "group": "x.individuals",
+      "authority": "B2",
+      "evidence_role": "attributed_product_statement",
+      "current_verification": "pending",
+      "legacy_identity_record": {
+        "id": "person.openai.thibault_sottiaux",
+        "owner": "Thibault Sottiaux",
+        "name": "Tibo",
+        "kind": "verified_individual_account",
+        "authority": "B2",
+        "region": "GLOBAL",
+        "platform": "X",
+        "handle": "thsottiaux",
+        "source_url": "https://x.com/thsottiaux",
+        "canonical_url": "https://openai.com/",
+        "retrieval": "x_api_or_profile",
+        "evidence_role": "attributed_product_statement",
+        "role": "OpenAI Product & Platform 负责人；此前在 Google DeepMind 从事 AI/ML 工作流基础设施。\n",
+        "identity_proof": [
+          {
+            "url": "https://vivatech.com/media/press-releases/breaking-news-peter-steinberger-creator-of-openclaw-and-thibault-sottiaux-openai-two-ai-experts-for-an-exceptional-session-at-vivatech",
+            "proof": "VivaTech 官方新闻稿将 Thibault “Tibo” Sottiaux 介绍为负责 OpenAI Product & Platform 的人员，并说明其此前在 Google DeepMind 的经历。\n"
+          }
+        ],
+        "audience_metrics": {
+          "follower_count": null,
+          "conflicting_observations": true,
+          "observations": [
+            {
+              "value": 161700,
+              "observed_at": "2026-08-31",
+              "source": "indexed_x_profile_snapshot",
+              "confidence": "low",
+              "note": "直接 X 主页本次返回 403；其他非官方快照的粉丝数不一致， 需通过 TwitterAPI.io 或后续可用的 X 页面重新测量。\n"
+            }
+          ],
+          "use_rule": "粉丝数只影响影响力排序，不改变事实可信度。"
+        },
+        "credibility_assessment": {
+          "identity_and_role_proof": "high",
+          "domain_relevance": "high",
+          "original_evidence": "high",
+          "historical_accuracy": "pending_30_day_audit",
+          "audience_reach": "medium_pending_api_refresh",
+          "cross_source_confirmation": "high",
+          "provisional_class": "high_trust_secondary"
+        },
+        "claim_scope": {
+          "allowed": [
+            "Tibo 本人关于 Codex、ChatGPT 和其直接参与产品的明确陈述",
+            "公开回应的故障、反馈、产品使用和开发者体验"
+          ],
+          "requires_a1_a2_confirmation": [
+            "OpenAI 公司级财务、融资和组织决策",
+            "未在其直接工作范围内的模型性能、客户数据和正式政策"
+          ],
+          "labels": [
+            "attributed_statement",
+            "official_role_confirmed"
+          ]
+        },
+        "status": "approved_conditional",
+        "last_checked": "2026-08-31"
+      },
+      "legacy_custom_record": {
+        "id": "x.thsottiaux",
+        "name": "tibo",
+        "owner": "thsottiaux",
+        "platform": "x",
+        "source_url": "https://x.com/thsottiaux",
+        "canonical_url": "https://x.com/thsottiaux",
+        "retrieval": "twitterapi_websocket",
+        "authority": "B1",
+        "evidence_role": "",
+        "status": "custom",
+        "enabled": true,
+        "metadata": {
+          "handle": "thsottiaux",
+          "watchlist_id": "x.custom"
+        }
+      }
+    }
+  ]
+}

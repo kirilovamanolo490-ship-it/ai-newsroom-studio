@@ -1,0 +1,1587 @@
+{
+  "date": "2026-10-13",
+  "edition": "briefing",
+  "output_namespace": "briefing-1600",
+  "window_start": "2026-10-13T14:00:00+08:00",
+  "window_end": "2026-10-13T16:00:00+08:00",
+  "baseurl": "/2026-10-13/briefing-1600",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "transitionFrames": 12,
+  "durationInFrames": 2107,
+  "evidence_cutoff": "2026-10-13T16:00:00+08:00",
+  "scenes": [
+    {
+      "id": "opening",
+      "title": "10月13日 今日AI资讯",
+      "short_label": "导读",
+      "category": "导读",
+      "keypoints": [],
+      "lines": [
+        "十月十三日，今日AI资讯。",
+        "这次关注Mac本地模型、用量计划，以及dots的数量限制。"
+      ],
+      "source_label": "今日导读",
+      "source_url": null,
+      "caveat": "",
+      "source_captures": [],
+      "brand_id": null,
+      "visual_preference": null,
+      "caption_alignment": {
+        "method": "Original lines aligned to actual service word timestamps by matching text, not by estimated character duration",
+        "matching_ratio": 1.0
+      },
+      "captions": [
+        {
+          "text": "十月十三日，今日AI资讯。",
+          "startMs": 675,
+          "endMs": 2875,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "这次关注Mac本地模型、用量计划，以及dots的数量限制。",
+          "startMs": 3440,
+          "endMs": 8115,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ],
+      "audio": "episodes/2026-10-13/briefing-1600/voice-v2-zh_female_vv_uranus_bigtts/opening.wav",
+      "durationInFrames": 266,
+      "startFrame": 0,
+      "original_image": null,
+      "source_time": "",
+      "source_type": ""
+    },
+    {
+      "id": "minicpm-mac",
+      "title": "MiniCPM-V 4.7：Mac本地运行",
+      "short_label": "Mac本地模型",
+      "category": "本地模型",
+      "keypoints": [
+        "Apple Silicon",
+        "1B / 35B-A3B",
+        "本地推理"
+      ],
+      "lines": [
+        {
+          "text": "OpenBMB宣布，Nativ已支持MiniCPM-V 4.7在Apple Silicon Mac上本地运行。",
+          "spoken": "OpenBMB宣布，Nativ已支持Mini C P M V四点七，在Apple Silicon Mac上本地运行。"
+        },
+        {
+          "text": "包括1B和35B-A3B两个版本，支持图片与视频理解。",
+          "spoken": "包括一B，以及三十五B A三B两个版本，支持图片与视频理解。"
+        },
+        {
+          "text": "官方在M5 Max、128GiB内存下，测试了64K上下文的纯文本推理。",
+          "spoken": "官方在M五Max、一百二十八GiB内存下，测试了六十四K上下文的纯文本推理。"
+        },
+        {
+          "text": "35B-A3B每秒解码67个token，1B为176个。数据来自发布方测试。",
+          "spoken": "三十五B A三B每秒解码六十七个token，一B为一百七十六个。数据来自发布方测试。"
+        }
+      ],
+      "source_label": "OpenBMB / Nativ",
+      "source_url": "https://x.com/OpenBMB/status/2109898597236129868",
+      "caveat": "",
+      "visual": {
+        "layout": "case",
+        "cover_title": "MiniCPM-V 4.7\nMac 本地运行",
+        "recap_title": "Mac本地模型",
+        "phase_images": [
+          "episodes/2026-10-13/briefing-1600/assets/f6d309420996-openbmb-minicpm-v47-nativ-1.jpg",
+          "episodes/2026-10-13/briefing-1600/assets/f6d309420996-openbmb-minicpm-v47-nativ-1.jpg",
+          "episodes/2026-10-13/briefing-1600/assets/d23f519dc258-openbmb-minicpm-v47-nativ-2.jpg",
+          "episodes/2026-10-13/briefing-1600/assets/29cf767193f8-openbmb-minicpm-v47-nativ-3.jpg"
+        ],
+        "steps": [
+          {
+            "title": "M5 Max",
+            "detail": "128 GiB · mixed 4-bit"
+          },
+          {
+            "title": "64K 上下文",
+            "detail": "纯文本 · 官方测试"
+          },
+          {
+            "title": "67 / 176 tok/s",
+            "detail": "35B-A3B / 1B 解码"
+          }
+        ]
+      },
+      "source_captures": [
+        {
+          "label": "MiniCPM-V 4.7 接入 Nativ，可在 Mac 本地运行",
+          "path": "episodes/2026-10-13/briefing-1600/assets/afb0cca1b463-minicpm-mac.png",
+          "source_url": "https://x.com/OpenBMB/status/2109898597236129868",
+          "captured_at": "2026-10-13T08:05:52.924Z",
+          "capture_surface": "Actual official X embedded page rendered in Chromium",
+          "sha256": "afb0cca1b4633b942b804d548c5cf581fadd1d8d53f923fea21331c06108d0ab",
+          "qa": "visual_verified_full_card",
+          "capture_integrity": "作者头像、卡片左右边缘、时间及底部完整；正文有Show more，X三图拼接内图片被平台裁切，不能当完整原图。全文由原始post另核，原图单独保存。",
+          "visual_reviewed_at": "2026-10-13T08:09:32.752933+00:00"
+        }
+      ],
+      "brand_id": "openbmb",
+      "visual_preference": "original_image",
+      "caption_alignment": {
+        "method": "Original lines aligned to actual service word timestamps by matching text, not by estimated character duration",
+        "matching_ratio": 1.0
+      },
+      "captions": [
+        {
+          "text": "OpenBMB宣布，Nativ已支持MiniCPM-V 4.7在Apple Silicon Mac上本地运行。",
+          "startMs": 400,
+          "endMs": 8595,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "包括1B和35B-A3B两个版本，支持图片与视频理解。",
+          "startMs": 9010,
+          "endMs": 15295,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "官方在M5 Max、128GiB内存下，测试了64K上下文的纯文本推理。",
+          "startMs": 15890,
+          "endMs": 22955,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "35B-A3B每秒解码67个token，1B为176个。数据来自发布方测试。",
+          "startMs": 23455,
+          "endMs": 30965,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ],
+      "audio": "episodes/2026-10-13/briefing-1600/voice-v2-zh_female_vv_uranus_bigtts/minicpm-mac.wav",
+      "durationInFrames": 952,
+      "startFrame": 254,
+      "original_image": "episodes/2026-10-13/briefing-1600/assets/f6d309420996-openbmb-minicpm-v47-nativ-1.jpg",
+      "source_time": "10.13 14:46",
+      "source_type": "项目官方发布说明"
+    },
+    {
+      "id": "tibo-usage-plan",
+      "title": "Tibo预告增加用量计划",
+      "short_label": "用量计划",
+      "category": "用量动态",
+      "keypoints": [
+        "计划预告",
+        "希望增加用量",
+        "实施时间待公布"
+      ],
+      "lines": [
+        "Tibo表示，他正在计划让大家获得显著更多用量，希望尽快完成。",
+        "目前没有公布具体额度、套餐范围或实施时间。"
+      ],
+      "source_label": "Tibo / @thsottiaux",
+      "source_url": "https://x.com/thsottiaux/status/2109892247580000595",
+      "caveat": "",
+      "visual": {
+        "layout": "source-focus",
+        "cover_title": "Tibo 预告\n增加用量计划",
+        "recap_title": "用量计划",
+        "steps": [
+          {
+            "title": "更多用量",
+            "detail": "Tibo个人账号预告"
+          },
+          {
+            "title": "希望尽快完成",
+            "detail": "仍在计划阶段"
+          },
+          {
+            "title": "细节待公布",
+            "detail": "额度 · 套餐 · 实施时间"
+          }
+        ]
+      },
+      "source_captures": [
+        {
+          "label": "Tibo 预告增加用量的计划，尚未给出实施时间",
+          "path": "episodes/2026-10-13/briefing-1600/assets/19f2b333b1c0-tibo-usage-plan.png",
+          "source_url": "https://x.com/thsottiaux/status/2109892247580000595",
+          "captured_at": "2026-10-13T08:05:59.126Z",
+          "capture_surface": "Actual official X embedded page rendered in Chromium",
+          "sha256": "19f2b333b1c028b65da57796e51d687dfe971c4e09aca7db5c6970ea23061609",
+          "qa": "visual_verified_full_card",
+          "capture_integrity": "头像、作者、全部短正文、原发布时间与卡片底部完整。",
+          "visual_reviewed_at": "2026-10-13T08:09:32.753150+00:00"
+        }
+      ],
+      "brand_id": "openai",
+      "visual_preference": null,
+      "caption_alignment": {
+        "method": "Original lines aligned to actual service word timestamps by matching text, not by estimated character duration",
+        "matching_ratio": 1.0
+      },
+      "captions": [
+        {
+          "text": "Tibo表示，他正在计划让大家获得显著更多用量，希望尽快完成。",
+          "startMs": 935,
+          "endMs": 6265,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "目前没有公布具体额度、套餐范围或实施时间。",
+          "startMs": 6705,
+          "endMs": 10445,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ],
+      "audio": "episodes/2026-10-13/briefing-1600/voice-v2-zh_female_vv_uranus_bigtts/tibo-usage-plan.wav",
+      "durationInFrames": 338,
+      "startFrame": 1194,
+      "original_image": null,
+      "source_time": "10.13 14:21",
+      "source_type": "员工个人账号说明"
+    },
+    {
+      "id": "dots-limit",
+      "title": "dots目前只能拥有一个",
+      "short_label": "一个dot",
+      "category": "产品边界",
+      "keypoints": [
+        "产品名dots",
+        "当前仅一个",
+        "员工回复说明"
+      ],
+      "lines": [
+        "OpenAI员工Vaibhav回应用户提问：产品名称叫dots，但目前只能拥有一个dot。",
+        "这为上一批手机和任务更新，补充了当前的数量限制。"
+      ],
+      "source_label": "Vaibhav / @reach_vb",
+      "source_url": "https://x.com/reach_vb/status/2109916140562731078",
+      "caveat": "",
+      "visual": {
+        "layout": "feature-board",
+        "cover_title": "ChatGPT dots\n当前仅一个",
+        "recap_title": "一个dot",
+        "steps": [
+          {
+            "title": "1 个 dot",
+            "detail": "员工回复：for now"
+          },
+          {
+            "title": "dots",
+            "detail": "产品名称使用复数"
+          },
+          {
+            "title": "当前限制",
+            "detail": "未来安排尚未公布"
+          }
+        ]
+      },
+      "source_captures": [
+        {
+          "label": "dots 名称虽是复数，目前只能拥有一个 dot",
+          "path": "episodes/2026-10-13/briefing-1600/assets/9ca2fa79d029-dots-limit.png",
+          "source_url": "https://x.com/reach_vb/status/2109916140562731078",
+          "captured_at": "2026-10-13T08:06:04.299Z",
+          "capture_surface": "Actual official X embedded page rendered in Chromium",
+          "sha256": "9ca2fa79d02998d816944f0ba94a613dbfa9078f7d404bab6a6ce3d88592a3e8",
+          "qa": "visual_verified_full_card",
+          "capture_integrity": "提问与员工回答上下文可见；作者、时间与卡片完整；官网链接预览摘要截短，非正文缺失。",
+          "visual_reviewed_at": "2026-10-13T08:09:32.753156+00:00"
+        }
+      ],
+      "brand_id": "chatgpt",
+      "visual_preference": null,
+      "caption_alignment": {
+        "method": "Original lines aligned to actual service word timestamps by matching text, not by estimated character duration",
+        "matching_ratio": 1.0
+      },
+      "captions": [
+        {
+          "text": "OpenAI员工Vaibhav回应用户提问：产品名称叫dots，但目前只能拥有一个dot。",
+          "startMs": 1205,
+          "endMs": 7255,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "这为上一批手机和任务更新，补充了当前的数量限制。",
+          "startMs": 7870,
+          "endMs": 11625,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ],
+      "audio": "episodes/2026-10-13/briefing-1600/voice-v2-zh_female_vv_uranus_bigtts/dots-limit.wav",
+      "durationInFrames": 381,
+      "startFrame": 1520,
+      "original_image": null,
+      "source_time": "10.13 15:56",
+      "source_type": "员工个人账号说明"
+    },
+    {
+      "id": "closing",
+      "title": "今日回顾",
+      "short_label": "回顾",
+      "category": "回顾",
+      "keypoints": [],
+      "lines": [
+        "以上就是这次AI资讯。原帖、高清图表和完整出处，都放在对应网页中。"
+      ],
+      "source_label": "今日回顾",
+      "source_url": null,
+      "caveat": "",
+      "source_captures": [],
+      "brand_id": null,
+      "visual_preference": null,
+      "caption_alignment": {
+        "method": "Original lines aligned to actual service word timestamps by matching text, not by estimated character duration",
+        "matching_ratio": 1.0
+      },
+      "captions": [
+        {
+          "text": "以上就是这次AI资讯。原帖、高清图表和完整出处，都放在对应网页中。",
+          "startMs": 625,
+          "endMs": 6315,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ],
+      "audio": "episodes/2026-10-13/briefing-1600/voice-v2-zh_female_vv_uranus_bigtts/closing.wav",
+      "durationInFrames": 218,
+      "startFrame": 1889,
+      "original_image": null,
+      "source_time": "",
+      "source_type": ""
+    }
+  ],
+  "charts": {
+    "prices": {
+      "rows": []
+    },
+    "fast": {
+      "rows": []
+    },
+    "benchmarks": {}
+  },
+  "images": [
+    {
+      "path": "/2026-10-13/briefing-1600/media/openbmb-minicpm-v47-nativ-1.jpg",
+      "original_url": "https://pbs.twimg.com/media/HUfdJYdbEAAeFDV.jpg?format=jpg&name=orig",
+      "source_url": "https://x.com/OpenBMB/status/2109898597236129868",
+      "author": "OpenBMB",
+      "sha256": "f6d309420996591ddc96c267564d8829ee441ba1294446aff7c1004b1904fbd5",
+      "type": "publisher_original_graphic",
+      "bytes": 225008
+    },
+    {
+      "path": "/2026-10-13/briefing-1600/media/openbmb-minicpm-v47-nativ-2.jpg",
+      "original_url": "https://pbs.twimg.com/media/HUfdJgPakAA9r9-.jpg?format=jpg&name=orig",
+      "source_url": "https://x.com/OpenBMB/status/2109898597236129868",
+      "author": "OpenBMB",
+      "sha256": "d23f519dc258f953bb6bc81b1ed6188f601e91c455f98d3a0803457e969eefc8",
+      "type": "publisher_original_graphic",
+      "bytes": 291718
+    },
+    {
+      "path": "/2026-10-13/briefing-1600/media/openbmb-minicpm-v47-nativ-3.jpg",
+      "original_url": "https://pbs.twimg.com/media/HUfdJjgbkAA-ySq.jpg?format=jpg&name=orig",
+      "source_url": "https://x.com/OpenBMB/status/2109898597236129868",
+      "author": "OpenBMB",
+      "sha256": "29cf767193f81661db344e44e320c94ad78c659883a75ad7fd4e2f9ff807af8e",
+      "type": "publisher_original_graphic",
+      "bytes": 297694
+    }
+  ],
+  "brand_assets": [
+    {
+      "id": "openai-developers",
+      "name": "OpenAI Developers header lockup",
+      "path": "episodes/2026-10-13/briefing-1600/assets/d5cc890ab11d-openai-developers-lockup.svg",
+      "file": "research/evidence/brand-assets/assets/openai-developers-lockup.svg",
+      "source_page_url": "https://developers.openai.com/",
+      "source_url": "https://developers.openai.com/",
+      "resource_url": "https://developers.openai.com/OpenAI_Developers.svg",
+      "downloaded_at_utc": "2026-10-11T11:21:51+00:00",
+      "sha256": "d5cc890ab11d5402efc37131624ae0cef1013643155c0ae9bf9aee67de21cd4f",
+      "asset_type": "official-site-header-lockup",
+      "resolution": "211×22 SVG",
+      "colors": [
+        "#000000"
+      ],
+      "suitable_background": "light backgrounds; transparent background with dark text and mark",
+      "source_note": "Official OpenAI Developers site header lockup; source file name OpenAI_Developers.svg.",
+      "usage_notes": "This is the OpenAI Developers site header lockup, not a generic OpenAI-only wordmark. Use where the subject is OpenAI developer tools; do not imply endorsement.",
+      "width": 211.0,
+      "height": 22.0,
+      "original_asset_name": "OpenAI Developers header lockup",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT official iOS app icon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/a12dbf126445-chatgpt-ios-app-icon.png",
+      "file": "research/evidence/brand-assets/assets/chatgpt-ios-app-icon.png",
+      "source_page_url": "https://help.openai.com/en/articles/7905742-what-does-the-official-chatgpt-ios-app-icon-look-like",
+      "source_url": "https://help.openai.com/en/articles/7905742-what-does-the-official-chatgpt-ios-app-icon-look-like",
+      "resource_url": "https://images.ctfassets.net/j22is2dtoxu1/intercom-img-d177d076c9a5453052925143/49d5d812b0a6fcc20a14faa8c629d9fb/icon-ios-1024_401x.png?fm=png&w=1024",
+      "downloaded_at_utc": "2026-10-11T11:21:51+00:00",
+      "sha256": "a12dbf126445af12695ee334a565f99d2a1d4a5d1db9f52bb1e7a6b04059fc9b",
+      "asset_type": "official-product-app-icon",
+      "resolution": "1024×1024 PNG",
+      "colors": [
+        "#000000",
+        "#FFFFFF"
+      ],
+      "suitable_background": "white background; black OpenAI knot",
+      "source_note": "“Recognize the official ChatGPT iOS app by its black OpenAI logo on a white background.” Official app icon image linked from OpenAI Help Center.",
+      "usage_notes": "OpenAI Help Center describes this as the official ChatGPT iOS app icon. It is an app icon with its white tile; do not treat as standalone OpenAI or Codex branding.",
+      "width": 1024,
+      "height": 1024,
+      "original_asset_name": "ChatGPT official iOS app icon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic official homepage inline brand symbol",
+      "path": "episodes/2026-10-13/briefing-1600/assets/0dbeccda9ea3-anthropic-official-mark.svg",
+      "file": "research/evidence/brand-assets/assets/anthropic-official-mark.svg",
+      "source_page_url": "https://www.anthropic.com/",
+      "source_url": "https://www.anthropic.com/",
+      "resource_url": "https://www.anthropic.com/ (inline SVG in mobile navigation logo link)",
+      "downloaded_at_utc": "2026-10-11T11:24:12+00:00",
+      "sha256": "0dbeccda9ea336418eb2285822dedbd092936766a541c96f37210505f8aff3b9",
+      "asset_type": "official-inline-site-mark",
+      "resolution": "32.4×22.26 SVG",
+      "colors": [
+        "currentColor"
+      ],
+      "suitable_background": "black/dark or white/light; original uses currentColor",
+      "source_note": "Official Anthropic homepage mobile navigation inline SVG appears inside its home-page logo link. Exact path data preserved.",
+      "usage_notes": "Official Anthropic symbol mark. No broad reuse license found. Preserve geometry and use only as editorial company identification; do not claim this is Claude’s independent product logo.",
+      "width": 32.4,
+      "height": 22.26,
+      "original_asset_name": "Anthropic official homepage inline brand symbol",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "anthropic-favicon",
+      "name": "Anthropic official homepage favicon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/47718065aeeb-anthropic-favicon.png",
+      "file": "research/evidence/brand-assets/assets/anthropic-favicon.png",
+      "source_page_url": "https://www.anthropic.com/",
+      "source_url": "https://www.anthropic.com/",
+      "resource_url": "https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/681d52619fec35886a7f1a70_favicon.png",
+      "downloaded_at_utc": "2026-10-11T11:21:51+00:00",
+      "sha256": "47718065aeeb968b381b070c66c90d9c3ae95b09a0ee24e78b9e12ae5c4f11c7",
+      "asset_type": "official-favicon",
+      "resolution": "32×32 PNG",
+      "colors": [
+        "#171717",
+        "#FAFAF7"
+      ],
+      "suitable_background": "light/white background; original",
+      "source_note": "Anthropic official homepage HTML links this file as favicon.",
+      "usage_notes": "Favicon only, not a full-size corporate wordmark. Do not enlarge for covers.",
+      "width": 32,
+      "height": 32,
+      "original_asset_name": "Anthropic official homepage favicon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "doubao",
+      "name": "Doubao official website favicon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/f4b439ba0a03-doubao-favicon-128.png",
+      "file": "research/evidence/brand-assets/assets/doubao-favicon-128.png",
+      "source_page_url": "https://www.doubao.com/about",
+      "source_url": "https://www.doubao.com/about",
+      "resource_url": "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/128x128.png",
+      "downloaded_at_utc": "2026-10-11T11:21:51+00:00",
+      "sha256": "f4b439ba0a039959575b3884cf7cccf9d08b2a3581f7f34c215fc4bcecd81abf",
+      "asset_type": "official-favicon",
+      "resolution": "128×128 PNG",
+      "colors": [
+        "#CAE4FF",
+        "#47332E",
+        "#FFDDD3"
+      ],
+      "suitable_background": "original app icon tile",
+      "source_note": "Doubao official site page HTML links this file as 128x128 favicon.",
+      "usage_notes": "Official Doubao website favicon, not a press-kit logo; use only at small UI size and retain attribution.",
+      "width": 128,
+      "height": 128,
+      "original_asset_name": "Doubao official website favicon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "tencent-corporate",
+      "name": "Tencent corporate blue English logo",
+      "path": "episodes/2026-10-13/briefing-1600/assets/5f2c7ae33573-tencent-blue-english.png",
+      "file": "research/evidence/brand-assets/assets/tencent-blue-english.png",
+      "source_page_url": "https://www.tencent.com/newsroom/media-resources/",
+      "source_url": "https://www.tencent.com/newsroom/media-resources/",
+      "resource_url": "https://www.tencent.com/wp-content/uploads/2022/12/03_Tencent_English-logo.png",
+      "downloaded_at_utc": "2026-10-11T11:21:51+00:00",
+      "sha256": "5f2c7ae33573b9d313298578c503c1772dea6571860dbfd483641b13164de173",
+      "asset_type": "official-media-library-logo",
+      "resolution": "2162×889",
+      "colors": [
+        "#0052D9"
+      ],
+      "suitable_background": "light background; blue logo",
+      "source_note": "Tencent newsroom lists Tencent Logo Blue English and high-res PNG. Page states: “The images and videos in the media library are for editorial use only.” This identifies Tencent corporate brand, not Tencent Youtu.",
+      "usage_notes": "Tencent newsroom marks its media library images “for editorial use only”. This is Tencent corporate branding, not Tencent Youtu; do not label it Youtu.",
+      "width": 2162,
+      "height": 889,
+      "original_asset_name": "Tencent corporate blue English logo",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare press-kit logo (CF-Logo 1.png)",
+      "path": "episodes/2026-10-13/briefing-1600/assets/400b70b8bb7d-cloudflare-press-kit-logo.png",
+      "file": "research/evidence/brand-assets/assets/cloudflare-press-kit-logo.png",
+      "source_page_url": "https://www.cloudflare.com/press/press-kit/",
+      "source_url": "https://www.cloudflare.com/press/press-kit/",
+      "resource_url": "https://cf-assets.www.cloudflare.com/dzlvafdwdttg/2Twekn3xyYyd94qDYAl0ed/9ab649caa40958f195166e0d9f5d9a04/Logos.zip?download=true",
+      "downloaded_at_utc": "2026-10-11T11:21:51+00:00",
+      "sha256": "400b70b8bb7db80da137ef8e8fcb835a692410a3083598964da08ed1756df145",
+      "asset_type": "official-press-kit-logo-extracted-unchanged",
+      "resolution": "512×173",
+      "colors": [
+        "#F78100",
+        "#000000",
+        "#FCAD32"
+      ],
+      "suitable_background": "white/light; transparent PNG as delivered",
+      "source_note": "Official Cloudflare Press Kit offers Company logos, with “Logo on transparent and white background”. Trademark page says use of logos requires written permission except web badges.",
+      "usage_notes": "Cloudflare trademark guidance says logo use requires written permission except specified web badges. Editorial reference only; do not imply affiliation/endorsement.",
+      "last_validated_at": "2026-10-11T15:28:43+00:00",
+      "width": 512,
+      "height": 173,
+      "original_asset_name": "Cloudflare press-kit logo (CF-Logo 1.png)",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "nous",
+      "name": "Nous Research official site favicon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/88d85717651a-nous-favicon.png",
+      "file": "research/evidence/brand-assets/assets/nous-favicon.png",
+      "source_page_url": "https://nousresearch.com/",
+      "source_url": "https://nousresearch.com/",
+      "resource_url": "https://web-assets.nousresearch.com/portal/416e8242e7fdb5358b80fceb5f72fb4da20fd0e1/logo-favicon.png",
+      "downloaded_at_utc": "2026-10-11T11:21:51+00:00",
+      "sha256": "88d85717651a6c44dfdd25fd485c5e4a25a3ef09411dedef4429c8840cc9e500",
+      "asset_type": "official-favicon",
+      "resolution": "48×48",
+      "colors": [
+        "#000000",
+        "#FFFFFF",
+        "#9E9E9E"
+      ],
+      "suitable_background": "as supplied",
+      "source_note": "Nous Research official homepage HTML links this image as logo-favicon.png; catalogued only as favicon/site icon, not a standalone logo.",
+      "usage_notes": "Official site favicon only. Separate Nous girl seal imagery is not substituted as logo. Do not enlarge for covers.",
+      "width": 48,
+      "height": 48,
+      "original_asset_name": "Nous Research official site favicon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "stepfun",
+      "name": "StepFun official site SVG favicon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/155d5901d297-stepfun-favicon.svg",
+      "file": "research/evidence/brand-assets/assets/stepfun-favicon.svg",
+      "source_page_url": "https://www.stepfun.com/",
+      "source_url": "https://www.stepfun.com/",
+      "resource_url": "https://www.stepfun.com/step_favicon.svg",
+      "downloaded_at_utc": "2026-10-11T11:21:51+00:00",
+      "sha256": "155d5901d2974785f178e186f3a461e80d4406b1907c6ae4d27936f6e301cfa1",
+      "asset_type": "official-favicon",
+      "resolution": "vector",
+      "colors": [
+        "#FFFFFF",
+        "#000000"
+      ],
+      "suitable_background": "dark background; white circular favicon with black mark",
+      "source_note": "StepFun official homepage HTML links this as rel=icon type=image/svg+xml.",
+      "usage_notes": "Official site favicon only, not asserted to be the corporate wordmark. Keep small and do not enlarge for covers.",
+      "width": 20.0,
+      "height": 20.0,
+      "original_asset_name": "StepFun official site SVG favicon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs official black logo SVG",
+      "path": "episodes/2026-10-13/briefing-1600/assets/7a41b7f26b62-elevenlabs-logo-black.svg",
+      "file": "research/evidence/brand-assets/assets/elevenlabs-logo-black.svg",
+      "source_page_url": "https://elevenlabs.io/press",
+      "source_url": "https://elevenlabs.io/press",
+      "resource_url": "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/0b9cd3e1-9fad-4a5b-b3a0-c96b0a1f1d2b/elevenlabs-logo-black.svg",
+      "downloaded_at_utc": "2026-10-11T11:21:51+00:00",
+      "sha256": "7a41b7f26b6286f607d34c80a658ef06e5cb6c094a1b087b563c8508e15f2178",
+      "asset_type": "official-press-logo",
+      "resolution": "vector",
+      "colors": [
+        "#000000"
+      ],
+      "suitable_background": "transparent; black mark on light background",
+      "source_note": "Official press page labels the downloadable file “ElevenLabs Logo black (SVG)”.",
+      "usage_notes": "Published on ElevenLabs official Press page. No explicit reuse license found on the page; preserve exact artwork and use as editorial identification only.",
+      "width": 694.0,
+      "height": 90.0,
+      "original_asset_name": "ElevenLabs official black logo SVG",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent Youtu Research GitHub organization avatar",
+      "path": "episodes/2026-10-13/briefing-1600/assets/ba0c5c6b0109-tencent-youtu-github-avatar.png",
+      "file": "research/evidence/brand-assets/assets/tencent-youtu-github-avatar.png",
+      "source_page_url": "https://github.com/TencentYoutuResearch",
+      "source_url": "https://github.com/TencentYoutuResearch",
+      "resource_url": "https://avatars.githubusercontent.com/u/45961649?s=280&v=4",
+      "downloaded_at_utc": "2026-10-11T11:21:51+00:00",
+      "sha256": "ba0c5c6b010946425ea04d929b926a69495436954702ab9a8aa971c2b9de23f6",
+      "asset_type": "official-github-org-avatar",
+      "resolution": "280×280 PNG",
+      "colors": [
+        "#FF33A9",
+        "#00A3FF",
+        "#40DDB0",
+        "#000000"
+      ],
+      "suitable_background": "original avatar artwork",
+      "source_note": "Official Tencent Youtu Research GitHub organization profile image. This is the organization avatar, not an official brand mark.",
+      "usage_notes": "Official GitHub organization avatar only, not an approved logo. Use only as a small profile/avatar; do not use as Youtu logo or enlarge for cover.",
+      "width": 280,
+      "height": 280,
+      "original_asset_name": "Tencent Youtu Research GitHub organization avatar",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "claude",
+      "name": "Claude official website favicon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/400438130950-claude-favicon.png",
+      "file": "research/evidence/brand-assets/assets/claude-favicon.png",
+      "source_page_url": "https://claude.com/",
+      "source_url": "https://claude.com/",
+      "resource_url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png?w=32&h=32",
+      "downloaded_at_utc": "2026-10-11T11:28:02+00:00",
+      "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+      "asset_type": "official-favicon",
+      "resolution": "32×32 PNG",
+      "colors": [
+        "#D97757"
+      ],
+      "suitable_background": "original supplied icon tile",
+      "source_note": "Claude official homepage HTML links the Claude CDN image as its site favicon (w=32,h=32); same official CDN asset retrieved at 256×256 for this archive.",
+      "usage_notes": "Favicon only, not a Claude wordmark or standalone full-size product logo. Use at small UI size only; do not imply endorsement.",
+      "width": 32,
+      "height": 32,
+      "original_asset_name": "Claude official website favicon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "codex",
+      "name": "Codex desktop app icon (installed official app resources)",
+      "path": "episodes/2026-10-13/briefing-1600/assets/de7d43f33861-codex-icon-light.png",
+      "file": "research/evidence/brand-assets/assets/codex-icon-light.png",
+      "source_page_url": "https://help.openai.com/en/articles/20001276-moving-to-the-new-chatgpt-desktop-app",
+      "source_url": "/Applications/ChatGPT.app/Contents/Info.plist and app resources",
+      "resource_url": "local official app bundle resources: /Applications/ChatGPT.app/Contents/Resources/icon-codex-light.png",
+      "installed_bundle_path": "/Applications/ChatGPT.app",
+      "bundle_identifier": "com.openai.codex",
+      "downloaded_at_utc": "2026-10-11T11:36:35+00:00",
+      "sha256": "de7d43f3386105ab20952958c2c25beb0d903e2aeb6e1aef57c49a648c0d1c07",
+      "asset_type": "installed-official-app-icon",
+      "resolution": "1024×1024 PNG",
+      "colors": [
+        "#C1C4FA",
+        "#7771F7",
+        "#322AF5",
+        "#FFFFFF"
+      ],
+      "suitable_background": "light app tile; use the dark-color variant when a white tile clashes with the cover",
+      "source_note": "Installed app bundle identifier is com.openai.codex; the resource is explicitly named icon-codex-light.png. OpenAI Help Center says the desktop app includes Codex and users can choose the Codex app icon in settings.",
+      "usage_notes": "Official installed Codex app icon, not a brand press-kit logo. Preserve as supplied; use the light or dark-color variant to suit the background. Do not imply endorsement.",
+      "variants": [
+        {
+          "variant_id": "dark-color",
+          "name": "Codex dark-color app icon",
+          "path": "/brand-assets/assets/codex-icon-dark-color.png",
+          "file": "research/evidence/brand-assets/assets/codex-icon-dark-color.png",
+          "resource_url": "/Applications/ChatGPT.app/Contents/Resources/icon-codex-dark-color.png",
+          "sha256": "69fb4384e161be8a20dcb94a9ac34aea4fbfaeb67514110a71e7b0732eccb0fc",
+          "resolution": "1024×1024 PNG",
+          "colors": [
+            "#141414",
+            "#C1C4FA",
+            "#7771F7",
+            "#322AF5",
+            "#FFFFFF"
+          ],
+          "suitable_background": "dark-color icon with dark rounded app tile; visible on light or contrasting cover",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "source_guideline_excerpt": "“choose the Codex app icon in settings.”",
+      "bundle_display_name": "ChatGPT",
+      "bundle_icon_file_from_Info_plist": "electron.icns",
+      "codex_icon_resources": "icon-codex-light.png and icon-codex-dark-color.png",
+      "width": 1024,
+      "height": 1024,
+      "original_asset_name": "Codex desktop app icon (installed official app resources)",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI official 2025 black monoblossom SVG",
+      "path": "episodes/2026-10-13/briefing-1600/assets/7be72f1fea83-openai-black-monoblossom.svg",
+      "file": "research/evidence/brand-assets/assets/openai-black-monoblossom.svg",
+      "source_page_url": "https://openai.com/brand/",
+      "source_url": "https://openai.com/brand/",
+      "resource_url": "https://cdn.openai.com/brand/OpenAI-Logos-2025.zip",
+      "archive_member": "OpenAI-logos(new)/SVGs/OpenAI-black-monoblossom.svg",
+      "downloaded_at_utc": "2026-10-11T11:36:35+00:00",
+      "sha256": "7be72f1fea831d3ba81a545cee79b7e0ae69449d5d7837c9571ccbfb4aa1e00b",
+      "asset_type": "official-brand-guidelines-logo-svg",
+      "resolution": "SVG vector",
+      "colors": [
+        "#000000"
+      ],
+      "suitable_background": "white/light background",
+      "source_note": "The official OpenAI brand guide links its downloadable logo assets; this SVG is an unchanged member of the linked OpenAI-Logos-2025.zip first-party CDN archive.",
+      "usage_notes": "OpenAI’s brand guide says use the Blossom as provided, keep prescribed spacing, use it only for directly related OpenAI services, and do not imply endorsement. It also says the Blossom should not be used as the primary branding; pair it with the proper OpenAI wordmark where space allows.",
+      "variants": [
+        {
+          "variant_id": "white-monoblossom",
+          "name": "OpenAI white monoblossom SVG",
+          "path": "/brand-assets/assets/openai-white-monoblossom.svg",
+          "file": "research/evidence/brand-assets/assets/openai-white-monoblossom.svg",
+          "resource_url": "https://cdn.openai.com/brand/OpenAI-Logos-2025.zip",
+          "archive_member": "OpenAI-logos(new)/SVGs/OpenAI-white-monoblossom.svg",
+          "sha256": "b94ea61d860fae6f82f43571f36f17111fcf5d348e8e9cc22ae4b441c7560011",
+          "resolution": "SVG vector",
+          "colors": [
+            "#FFFFFF"
+          ],
+          "suitable_background": "dark background",
+          "width": 721.0,
+          "height": 721.0
+        },
+        {
+          "variant_id": "black-wordmark",
+          "name": "OpenAI black wordmark SVG",
+          "path": "/brand-assets/assets/openai-black-wordmark.svg",
+          "file": "research/evidence/brand-assets/assets/openai-black-wordmark.svg",
+          "resource_url": "https://cdn.openai.com/brand/OpenAI-Logos-2025.zip",
+          "archive_member": "OpenAI-logos(new)/SVGs/OpenAI-black-wordmark.svg",
+          "sha256": "f5a8c4c38b81972f2ede620b06ac5c51fa7cd16a35a3b8361deffaa3202a351e",
+          "resolution": "SVG vector",
+          "colors": [
+            "#000000"
+          ],
+          "suitable_background": "white/light background; primary OpenAI identity when space allows",
+          "width": 1604.0,
+          "height": 718.0
+        },
+        {
+          "variant_id": "white-wordmark",
+          "name": "OpenAI white wordmark SVG",
+          "path": "/brand-assets/assets/openai-white-wordmark.svg",
+          "file": "research/evidence/brand-assets/assets/openai-white-wordmark.svg",
+          "resource_url": "https://cdn.openai.com/brand/OpenAI-Logos-2025.zip",
+          "archive_member": "OpenAI-logos(new)/SVGs/OpenAI-white-wordmark.svg",
+          "sha256": "169b683855ef7a431e5a996d01406da76bb206eb777546d29e53613a8d08fb3a",
+          "resolution": "SVG vector",
+          "colors": [
+            "#FFFFFF"
+          ],
+          "suitable_background": "dark background; primary OpenAI identity when space allows",
+          "width": 1604.0,
+          "height": 719.0
+        }
+      ],
+      "source_guideline_excerpt": "“DON’T use the Blossom as the primary branding.”",
+      "width": 721.0,
+      "height": 721.0,
+      "original_asset_name": "OpenAI official 2025 black monoblossom SVG",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "qoder",
+      "name": "Qoder official documentation wordmark (light theme)",
+      "path": "episodes/2026-10-13/briefing-1600/assets/9e3912ff23fa-qoder-logo-light.png",
+      "file": "research/evidence/brand-assets/assets/qoder-logo-light.png",
+      "source_page_url": "https://docs.qoder.com/product-series/what-is-qoder",
+      "source_url": "https://docs.qoder.com/product-series/what-is-qoder",
+      "resource_url": "https://docs.qoder.com/logo/qoder-logo-light.png",
+      "downloaded_at_utc": "2026-10-11T11:36:35+00:00",
+      "sha256": "9e3912ff23fa97cb0f47e5789c0003d3a5c495ed654b3da1c4ec26296fa422a4",
+      "asset_type": "official-documentation-site-logo",
+      "resolution": "1232×400 PNG",
+      "colors": [
+        "#0F0D0C"
+      ],
+      "suitable_background": "light background; black wordmark",
+      "source_note": "Qoder official documentation page uses the /logo/qoder-logo-light.png and qoder-logo-dark.png images in its site header. Both are first-party files.",
+      "usage_notes": "Official documentation-site wordmark; preserve original proportions and contrast selection. The original Qoder homepage white logo remains available under qoder-homepage-logo.png. No broad reuse license found.",
+      "variants": [
+        {
+          "variant_id": "dark-theme",
+          "name": "Qoder official documentation wordmark (dark theme)",
+          "path": "/brand-assets/assets/qoder-logo-dark.png",
+          "file": "research/evidence/brand-assets/assets/qoder-logo-dark.png",
+          "resource_url": "https://docs.qoder.com/logo/qoder-logo-dark.png",
+          "sha256": "492b2a14e96b4ebdc8af19117a900f082bc7b7083ebd4aa52530feb645248449",
+          "resolution": "1232×400 PNG",
+          "colors": [
+            "#FFFFFF"
+          ],
+          "suitable_background": "dark background; white wordmark",
+          "width": 1232,
+          "height": 400
+        },
+        {
+          "variant_id": "homepage-white",
+          "name": "Qoder homepage logo (white)",
+          "path": "/brand-assets/assets/qoder-homepage-logo.png",
+          "file": "research/evidence/brand-assets/assets/qoder-homepage-logo.png",
+          "resource_url": "https://img.alicdn.com/imgextra/i1/O1CN010vyJYe95doH2V5OS_!!6000000001987-2-tps-1232-344.png",
+          "sha256": "6f7a1a35ccb823118495a37f3939a9029c6268eb34233610379fcf85167be896",
+          "resolution": "1232×344 PNG",
+          "colors": [
+            "#FFFFFF"
+          ],
+          "suitable_background": "dark background; white wordmark",
+          "width": 1232,
+          "height": 344
+        }
+      ],
+      "source_guideline_excerpt": "Qoder documentation header includes qoder-logo-light.png and qoder-logo-dark.png.",
+      "width": 1232,
+      "height": 400,
+      "original_asset_name": "Qoder official documentation wordmark (light theme)",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek official DeepSeek-LLM repository logo",
+      "path": "episodes/2026-10-13/briefing-1600/assets/ac13bdc80582-deepseek.svg",
+      "file": "research/evidence/brand-assets/assets/deepseek.svg",
+      "source_page_url": "https://github.com/deepseek-ai/DeepSeek-LLM/blob/main/images/logo.svg",
+      "source_url": "https://github.com/deepseek-ai/DeepSeek-LLM/blob/main/images/logo.svg",
+      "resource_url": "https://raw.githubusercontent.com/deepseek-ai/DeepSeek-LLM/main/images/logo.svg",
+      "first_cached_at": "2026-10-11T15:11:19+00:00",
+      "last_validated_at": "2026-10-11T15:12:43+00:00",
+      "downloaded_at_utc": "2026-10-11T15:11:19+00:00",
+      "sha256": "ac13bdc805820c46bf0faf053aa5d31f72b051794abfe1dd72a682f09de2966b",
+      "kind": "official-logo",
+      "asset_type": "official-logo",
+      "width": 195.0,
+      "height": 41.359375,
+      "resolution": "195×41.3594 SVG",
+      "source_note": "Resource URL explicitly supplied by the caller; page provenance retained.",
+      "usage_notes": "Unchanged first-party resource. Follow the source brand terms; no general trademark license is implied.",
+      "original_asset_name": "DeepSeek official DeepSeek-LLM repository logo",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code documentation header lockup (shared Claude starburst)",
+      "path": "episodes/2026-10-13/briefing-1600/assets/07171085b9b0-claude-code.svg",
+      "file": "research/evidence/brand-assets/assets/claude-code.svg",
+      "source_page_url": "https://code.claude.com/docs/en/overview",
+      "source_url": "https://code.claude.com/docs/en/overview",
+      "resource_url": "https://mintcdn.com/claude-code/c5r9_6tjPMzFdDDT/logo/light.svg?fit=max&auto=format&n=c5r9_6tjPMzFdDDT&q=85&s=78fd01ff4f4340295a4f66e2ea54903c",
+      "first_cached_at": "2026-10-11T15:25:22+00:00",
+      "last_validated_at": "2026-10-11T15:47:09+00:00",
+      "downloaded_at_utc": "2026-10-11T15:25:22+00:00",
+      "sha256": "07171085b9b06105caa40e2e2889a1acfa46dd64b4e2cee46e69ca7cd67992e0",
+      "kind": "official-product-docs-logo",
+      "asset_type": "official-product-docs-logo",
+      "width": 254.0,
+      "height": 28.0,
+      "resolution": "254×28 SVG",
+      "source_note": "Resource URL explicitly supplied by the caller; page provenance retained.",
+      "usage_notes": "Unchanged first-party resource. Follow the source brand terms; no general trademark license is implied.",
+      "original_asset_name": "Claude Code documentation header lockup (shared Claude starburst)",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "lingguang",
+      "name": "LingGuang official homepage Open Graph preview artwork",
+      "path": "episodes/2026-10-13/briefing-1600/assets/435d0bd8485b-lingguang.png",
+      "file": "research/evidence/brand-assets/assets/lingguang.png",
+      "source_page_url": "https://www.lingguang.com/",
+      "source_url": "https://www.lingguang.com/",
+      "resource_url": "https://mdn.alipayobjects.com/huamei_mrdrkc/afts/img/eOzcTIg_xy0AAAAAQiAAAAgADnRDAQFr/original",
+      "first_cached_at": "2026-10-11T15:25:35+00:00",
+      "last_validated_at": "2026-10-11T15:26:36+00:00",
+      "downloaded_at_utc": "2026-10-11T15:25:35+00:00",
+      "sha256": "435d0bd8485bf70d71b9682d4dc4f6ca7bd6c92521fb85938168254f83fdfff3",
+      "kind": "official-page-preview-image",
+      "asset_type": "official-page-preview-image",
+      "width": 512,
+      "height": 512,
+      "resolution": "512×512 PNG",
+      "source_note": "Resource URL explicitly supplied by the caller; page provenance retained.",
+      "usage_notes": "Unchanged first-party resource. Follow the source brand terms; no general trademark license is implied.",
+      "original_asset_name": "LingGuang official homepage Open Graph preview artwork",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "nous-portal",
+      "name": "Nous Portal",
+      "path": "episodes/2026-10-13/briefing-1600/assets/fda62cfd26fe-nous-portal-header-art.png",
+      "file": "research/evidence/brand-assets/assets/nous-portal-header-art.png",
+      "source_url": "https://portal.nousresearch.com/",
+      "source_page_url": "https://portal.nousresearch.com/",
+      "resource_url": "https://web-assets.nousresearch.com/portal/416e8242e7fdb5358b80fceb5f72fb4da20fd0e1/nous-hand.png",
+      "sha256": "fda62cfd26fea919e57a4764414754485c7abc96e17268daafafd805eb427f65",
+      "width": 360,
+      "height": 180,
+      "kind": "official-site-identity-image",
+      "asset_type": "official-site-identity-image",
+      "resolution": "360×180",
+      "first_cached_at": "2026-10-11T15:36:26.796386+00:00",
+      "last_validated_at": "2026-10-11T15:36:26.796386+00:00",
+      "downloaded_at_utc": "2026-10-11T15:36:26.796386+00:00",
+      "source_note": "Original identity image used beside Nous Portal name in the official sidebar; not the Nous Research favicon or an independently licensed press logo.",
+      "usage_notes": "Unchanged official visual, used for company/product identification; original source and asset type retained.",
+      "original_asset_name": "Nous Portal",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/4daaa928c573-amazon-official-brand-hero.jpg",
+      "file": "research/evidence/brand-assets/assets/amazon-official-brand-hero.jpg",
+      "source_url": "https://press.aboutamazon.com/images-and-videos",
+      "source_page_url": "https://press.aboutamazon.com/images-and-videos",
+      "resource_url": "https://assets.aboutamazon.com/47/6d/7fe296e642859c7ba2a629eda3ba/amazon-logo-hero-images-2024.jpg",
+      "sha256": "4daaa928c573a0b3a12cee98ffdd1306858ccfc4bc8a41975610ded53cd2b374",
+      "width": 2000,
+      "height": 1125,
+      "kind": "official-press-brand-image",
+      "asset_type": "official-press-brand-image",
+      "resolution": "2000×1125",
+      "first_cached_at": "2026-10-11T15:36:26.796386+00:00",
+      "last_validated_at": "2026-10-11T15:36:26.796386+00:00",
+      "downloaded_at_utc": "2026-10-11T15:36:26.796386+00:00",
+      "source_note": "Original Amazon corporate brand image publicly linked from its US Press Center; editorial identification of the company discussed in the Cage story, not the source of his statement.",
+      "usage_notes": "Unchanged official visual, used for company/product identification; original source and asset type retained.",
+      "original_asset_name": "Amazon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "gemini",
+      "name": "Google Gemini official iOS app icon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/c3fe4ee122b2-gemini-ios-app-icon.jpg",
+      "file": "research/evidence/brand-assets/assets/gemini-ios-app-icon.jpg",
+      "source_page_url": "https://apps.apple.com/us/app/google-gemini/id6477489729",
+      "source_url": "https://apps.apple.com/us/app/google-gemini/id6477489729",
+      "resource_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4e/3f/2f/4e3f2f2f-e6bd-91fc-c73f-8bdb62bd9dde/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-0-0-85-220.png/512x512bb.jpg",
+      "downloaded_at_utc": "2026-10-12T05:04:51+00:00",
+      "first_cached_at": "2026-10-12T05:04:51+00:00",
+      "last_validated_at": "2026-10-12T05:04:51+00:00",
+      "sha256": "c3fe4ee122b2e41dc2ae158683cf34bb06b75716780645b43dd2ef092cfac620",
+      "kind": "official-product-app-icon",
+      "asset_type": "official-app-store-icon",
+      "width": 512,
+      "height": 512,
+      "resolution": "512×512 JPG",
+      "colors": [
+        "#FFFFFF",
+        "#4285F4",
+        "#EA4335",
+        "#34A853",
+        "#FBBC04"
+      ],
+      "suitable_background": "see usage notes; preserve the supplied artwork and proportions",
+      "source_note": "Apple App Store record identifies Google Gemini, Developer Google, Seller Google LLC, bundle ID com.google.gemini; artworkUrl512 is the original 512×512 app icon.",
+      "usage_notes": "Gemini app icon only. Use for news specifically about the Gemini application; it is not a general Google corporate wordmark.",
+      "original_asset_name": "Google Gemini official iOS app icon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "grok",
+      "name": "Grok official iOS app icon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/f01192f2a5e5-grok-ios-app-icon.jpg",
+      "file": "research/evidence/brand-assets/assets/grok-ios-app-icon.jpg",
+      "source_page_url": "https://apps.apple.com/us/app/grok-ai/id6670324846",
+      "source_url": "https://apps.apple.com/us/app/grok-ai/id6670324846",
+      "resource_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/82/e4/dc/82e4dc37-21e2-eb50-435f-6238213d694e/AppIcon-0-0-1x_U007epad-0-0-0-85-220.png/512x512bb.jpg",
+      "downloaded_at_utc": "2026-10-12T05:04:51+00:00",
+      "first_cached_at": "2026-10-12T05:04:51+00:00",
+      "last_validated_at": "2026-10-12T05:04:51+00:00",
+      "sha256": "f01192f2a5e57e298d401d399fc274728c2a81884b1b243d7714ddff80702020",
+      "kind": "official-product-app-icon",
+      "asset_type": "official-app-store-icon",
+      "width": 512,
+      "height": 512,
+      "resolution": "512×512 JPG",
+      "colors": [
+        "#000000",
+        "#FFFFFF"
+      ],
+      "suitable_background": "see usage notes; preserve the supplied artwork and proportions",
+      "source_note": "Apple App Store record identifies the Grok AI app by xAI, Seller X Corp., bundle ID ai.x.GrokApp; artworkUrl512 is the original 512×512 app icon.",
+      "usage_notes": "Grok iOS app icon, not a dedicated Grok Bot mark. Use only when identifying the Grok application; it does not imply affiliation.",
+      "original_asset_name": "Grok official iOS app icon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "vidu",
+      "name": "Vidu official PWA app icon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/69b07943098f-vidu-pwa-app-icon-512.png",
+      "file": "research/evidence/brand-assets/assets/vidu-pwa-app-icon-512.png",
+      "source_page_url": "https://www.vidu.cn/",
+      "source_url": "https://www.vidu.cn/",
+      "resource_url": "https://www.vidu.cn/pwas/maskable-icon-512x512.png",
+      "downloaded_at_utc": "2026-10-12T05:04:51+00:00",
+      "first_cached_at": "2026-10-12T05:04:51+00:00",
+      "last_validated_at": "2026-10-12T05:04:51+00:00",
+      "sha256": "69b07943098f069a3d56efe5a22d711f02c509b2ba2e5ad9d6eeb7f75215dc22",
+      "kind": "official-pwa-app-icon",
+      "asset_type": "official-web-app-icon",
+      "width": 512,
+      "height": 512,
+      "resolution": "512×512 PNG",
+      "colors": [
+        "#02041A",
+        "#02C3F5",
+        "#1678F9"
+      ],
+      "suitable_background": "see usage notes; preserve the supplied artwork and proportions",
+      "source_note": "Vidu official homepage at www.vidu.cn declares this 512×512 file as its Open Graph image; the PWA path and maskable-icon filename identify it as an app icon.",
+      "usage_notes": "Official Vidu PWA/app icon, not a press-kit wordmark. Preserve the square tile and do not crop or stretch.",
+      "original_asset_name": "Vidu official PWA app icon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "command-code",
+      "name": "Command Code official wordmark (dark foreground)",
+      "path": "episodes/2026-10-13/briefing-1600/assets/c1ab05c672b1-commandcode-brand-wordmark-dark.svg",
+      "file": "research/evidence/brand-assets/assets/commandcode-brand-wordmark-dark.svg",
+      "source_page_url": "https://commandcode.ai/brand",
+      "source_url": "https://commandcode.ai/brand",
+      "resource_url": "https://commandcode.ai/logov2/logo-bg-transparent-fg-dark.svg",
+      "downloaded_at_utc": "2026-10-12T05:09:35+00:00",
+      "first_cached_at": "2026-10-12T05:09:35+00:00",
+      "last_validated_at": "2026-10-12T05:09:35+00:00",
+      "sha256": "c1ab05c672b11089a94fdfac4c36e76f9f87ea93305ee3abca23e1506dc259b6",
+      "kind": "official-brand-wordmark",
+      "asset_type": "official-brand-assets-page-wordmark",
+      "width": 872.0,
+      "height": 190.0,
+      "resolution": "872×190 SVG",
+      "colors": [
+        "#000000",
+        "#C1C1C1"
+      ],
+      "suitable_background": "light backgrounds; dark foreground with transparent background",
+      "source_note": "Command Code official Brand Assets page names this exact file logo-bg-transparent-fg-dark.svg and identifies the wordmark as the primary logo with background-specific variants. Original SVG downloaded unchanged.",
+      "usage_notes": "Dark foreground SVG on a transparent background, suitable for light backgrounds. Use as supplied; do not recolor. The original light-foreground wordmark remains as a dark-background variant.",
+      "variants": [
+        {
+          "variant_id": "wordmark-white",
+          "name": "Command Code official wordmark (light foreground)",
+          "path": "/brand-assets/assets/commandcode-brand-wordmark-white.svg",
+          "file": "research/evidence/brand-assets/assets/commandcode-brand-wordmark-white.svg",
+          "resource_url": "https://commandcode.ai/logov2/logo-bg-transparent-fg-light.svg",
+          "sha256": "ff1ff5ab357d559559554fb4d6ad5e0e8b97b4ff845aa09d2b172590e99ac799",
+          "width": 871.0,
+          "height": 190.0,
+          "resolution": "871×190 SVG",
+          "colors": [
+            "#FFFFFF"
+          ],
+          "suitable_background": "dark backgrounds; white foreground with transparent background",
+          "first_cached_at": "2026-10-12T05:04:51+00:00",
+          "last_validated_at": "2026-10-12T05:04:51+00:00"
+        }
+      ],
+      "original_asset_name": "Command Code official wordmark (dark foreground)",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "github",
+      "name": "GitHub official black Invertocat mark",
+      "path": "episodes/2026-10-13/briefing-1600/assets/693d7abe6f89-github-mark-black.svg",
+      "file": "research/evidence/brand-assets/assets/github-mark-black.svg",
+      "source_page_url": "https://brand.github.com/foundations/logo",
+      "source_url": "https://brand.github.com/foundations/logo",
+      "resource_url": "https://brand.github.com/GitHub_Logos.zip",
+      "downloaded_at_utc": "2026-10-12T05:04:51+00:00",
+      "first_cached_at": "2026-10-12T05:04:51+00:00",
+      "last_validated_at": "2026-10-12T05:04:51+00:00",
+      "sha256": "693d7abe6f899646cc2e96856723b45e95f71885a54910b2749f6decdf7e1ee1",
+      "kind": "official-brand-mark",
+      "asset_type": "official-brand-kit-mark",
+      "width": 98.0,
+      "height": 96.0,
+      "resolution": "98×96 SVG",
+      "colors": [
+        "#000000"
+      ],
+      "suitable_background": "see usage notes; preserve the supplied artwork and proportions",
+      "source_note": "GitHub official Brand Toolkit logo page provides a Download the logo files link to GitHub_Logos.zip. This is the unchanged GitHub Logos/SVG/GitHub_Invertocat_Black.svg member.",
+      "usage_notes": "Official GitHub Invertocat brand mark. GitHub guidance identifies blog posts and news as suitable contexts but also forbids implying affiliation or endorsement. Use only with clear GitHub editorial context.",
+      "archive_member": "GitHub Logos/SVG/GitHub_Invertocat_Black.svg",
+      "variants": [
+        {
+          "variant_id": "invertocat-white",
+          "name": "GitHub official white Invertocat mark",
+          "path": "/brand-assets/assets/github-mark-white.svg",
+          "file": "research/evidence/brand-assets/assets/github-mark-white.svg",
+          "resource_url": "https://brand.github.com/GitHub_Logos.zip",
+          "sha256": "ccd84c89b1056345608fc3489357f8acc7397e49a3cdc2d418b6c8016911d47b",
+          "width": 98.0,
+          "height": 96.0,
+          "resolution": "98×96 SVG",
+          "colors": [
+            "#FFFFFF"
+          ],
+          "suitable_background": "dark backgrounds",
+          "archive_member": "GitHub Logos/SVG/GitHub_Invertocat_White.svg"
+        },
+        {
+          "variant_id": "lockup-black",
+          "name": "GitHub official black Invertocat + wordmark lockup",
+          "path": "/brand-assets/assets/github-lockup-black.svg",
+          "file": "research/evidence/brand-assets/assets/github-lockup-black.svg",
+          "resource_url": "https://brand.github.com/GitHub_Logos.zip",
+          "sha256": "802172fd58f2956be454f45e07c351d5c3d6830554632796b8f16fcecc7d273b",
+          "width": 416.0,
+          "height": 95.0,
+          "resolution": "416×95 SVG",
+          "colors": [
+            "#000000"
+          ],
+          "suitable_background": "light backgrounds; preferred when full company identity is useful",
+          "archive_member": "GitHub Logos/SVG/GitHub_Lockup_Black.svg"
+        },
+        {
+          "variant_id": "lockup-white",
+          "name": "GitHub official white Invertocat + wordmark lockup",
+          "path": "/brand-assets/assets/github-lockup-white.svg",
+          "file": "research/evidence/brand-assets/assets/github-lockup-white.svg",
+          "resource_url": "https://brand.github.com/GitHub_Logos.zip",
+          "sha256": "d26a77282b5f0fc5e36d52aa64d0a8dfeb042dab5b65802805ce83373d72f5f5",
+          "width": 416.0,
+          "height": 95.0,
+          "resolution": "416×95 SVG",
+          "colors": [
+            "#FFFFFF"
+          ],
+          "suitable_background": "dark backgrounds; preferred when full company identity is useful",
+          "archive_member": "GitHub Logos/SVG/GitHub_Lockup_White.svg"
+        }
+      ],
+      "original_asset_name": "GitHub official black Invertocat mark",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "grok-bot",
+      "name": "Grok Bot",
+      "path": "episodes/2026-10-13/briefing-1600/assets/cf32709d2e54-grok-bot-ios-app-icon.jpg",
+      "file": "research/evidence/brand-assets/assets/grok-bot-ios-app-icon.jpg",
+      "source_url": "https://apps.apple.com/us/app/grok-bot/id6794501026?uo=4",
+      "source_page_url": "https://apps.apple.com/app/id6794501026",
+      "resource_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d6/01/4e/d6014ece-d71b-88a0-116d-dd0e946930ed/app-0-0-1x_U007epad-0-1-P3-85-220.png/512x512bb.jpg",
+      "kind": "official-product-app-icon",
+      "asset_type": "official-product-app-icon",
+      "width": 512,
+      "height": 512,
+      "resolution": "512×512 JPG",
+      "sha256": "cf32709d2e54c72d18c330b227c7a54fb389ef4e6f32e1021b27c055f148be19",
+      "first_cached_at": "2026-10-12T05:52:38.249131+00:00",
+      "source_note": "Elon Musk原帖直链此App Store ID；官方Apple lookup显示产品名/销售者/bundle ID。",
+      "usage_notes": "App Store产品图标，区别于Grok AI通用App图标；不是品牌资料包独立mark。",
+      "original_asset_name": "Grok Bot",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "underdog",
+      "name": "Underdog official website app icon",
+      "path": "episodes/2026-10-13/briefing-1600/assets/d0cbd9989c85-underdog.png",
+      "file": "research/evidence/brand-assets/assets/underdog.png",
+      "source_page_url": "https://underdog.ai/",
+      "source_url": "https://underdog.ai/",
+      "resource_url": "https://underdog.ai/icon.png?icon.24bs44pn4wl6c.png",
+      "first_cached_at": "2026-10-12T12:47:18+00:00",
+      "last_validated_at": "2026-10-12T12:47:18+00:00",
+      "downloaded_at_utc": "2026-10-12T12:47:18+00:00",
+      "sha256": "d0cbd9989c85f9246bf56e0287ee9917de7c7da4a5c96043aa3e3bad393f788e",
+      "kind": "official-product-app-icon",
+      "asset_type": "official-product-app-icon",
+      "width": 512,
+      "height": 512,
+      "resolution": "512×512 PNG",
+      "source_note": "The official Underdog website links this 512×512 PNG as its site icon (`icon.png`). The site domain is also linked in the @UnderdogAI profile bio in the source-watch snapshot for post 2109435411793944869.",
+      "usage_notes": "Official product/site app icon depicting Underdog's dog character. It is not a standalone wordmark and is not the X profile avatar. Use for editorial identification; no general trademark license or endorsement is implied.",
+      "original_asset_name": "Underdog official website app icon",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "qwen",
+      "name": "QwenLM official GitHub organization avatar",
+      "path": "episodes/2026-10-13/briefing-1600/assets/7897d5316bd7-qwen.png",
+      "file": "research/evidence/brand-assets/assets/qwen.png",
+      "source_page_url": "https://github.com/QwenLM",
+      "source_url": "https://github.com/QwenLM",
+      "resource_url": "https://avatars.githubusercontent.com/u/141221163?s=280&v=4",
+      "first_cached_at": "2026-10-12T12:51:48+00:00",
+      "last_validated_at": "2026-10-12T12:51:48+00:00",
+      "downloaded_at_utc": "2026-10-12T12:51:48+00:00",
+      "sha256": "7897d5316bd7e9da3f86f5e66378e4f6316bb40b3284ea3caa686a409494dd35",
+      "kind": "organization-avatar",
+      "asset_type": "organization-avatar",
+      "width": 280,
+      "height": 280,
+      "resolution": "280×280 PNG",
+      "source_note": "Avatar served on the QwenLM GitHub organization page; downloaded from that page's linked GitHub avatar resource.",
+      "usage_notes": "QwenLM organization avatar for small editorial account identification. This is an organization avatar, not a redrawn mark or standalone Qwen logo; no general trademark license or endorsement is implied.",
+      "original_asset_name": "QwenLM official GitHub organization avatar",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "elonmusk",
+      "name": "Elon Musk official X account profile avatar",
+      "path": "episodes/2026-10-13/briefing-1600/assets/0e311b533b00-elonmusk.jpg",
+      "file": "research/evidence/brand-assets/assets/elonmusk.jpg",
+      "source_page_url": "https://x.com/elonmusk/status/2109462164557688984",
+      "source_url": "https://x.com/elonmusk/status/2109462164557688984",
+      "resource_url": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_400x400.jpg",
+      "first_cached_at": "2026-10-12T12:55:26+00:00",
+      "last_validated_at": "2026-10-12T12:55:26+00:00",
+      "downloaded_at_utc": "2026-10-12T12:55:26+00:00",
+      "sha256": "0e311b533b00612c5349ebc2a9c077147737e77b8222de1bb26349022a132d36",
+      "kind": "official-source-account-avatar",
+      "asset_type": "official-source-account-avatar",
+      "width": 400,
+      "height": 400,
+      "resolution": "400×400 JPEG",
+      "source_note": "The raw author record for the original X post identifies profilePicture https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg; downloaded the same X profile image in its 400×400 variant.",
+      "usage_notes": "Personal account avatar for identifying the author of the cited X post. It is not a Grok, SpaceX, or other product/company logo; no endorsement is implied.",
+      "original_asset_name": "Elon Musk official X account profile avatar",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft official GitHub organization avatar",
+      "path": "episodes/2026-10-13/briefing-1600/assets/45b898f579d3-microsoft.png",
+      "file": "research/evidence/brand-assets/assets/microsoft.png",
+      "source_page_url": "https://github.com/microsoft",
+      "source_url": "https://github.com/microsoft",
+      "resource_url": "https://avatars.githubusercontent.com/u/6154722?v=4",
+      "first_cached_at": "2026-10-13T02:22:43+00:00",
+      "last_validated_at": "2026-10-13T02:22:43+00:00",
+      "downloaded_at_utc": "2026-10-13T02:22:43+00:00",
+      "sha256": "45b898f579d3e610f40533bf9183524bbe82c93460b37842d7fe851b55219328",
+      "kind": "official-organization-avatar",
+      "asset_type": "official-organization-avatar",
+      "width": 460,
+      "height": 460,
+      "resolution": "460×460 PNG",
+      "source_note": "Resource URL explicitly supplied by the caller; page provenance retained.",
+      "usage_notes": "Unchanged first-party resource. Follow the source brand terms; no general trademark license is implied.",
+      "original_asset_name": "Microsoft official GitHub organization avatar",
+      "cache_status": "cache_hit"
+    },
+    {
+      "id": "artificial-analysis",
+      "name": "Artificial Analysis official X account avatar",
+      "path": "episodes/2026-10-13/briefing-1600/assets/a8dc6a73cf1a-artificial-analysis-x-avatar-400.jpg",
+      "file": "research/evidence/brand-assets/assets/artificial-analysis-x-avatar-400.jpg",
+      "source_page_url": "https://x.com/ArtificialAnlys",
+      "source_url": "https://x.com/ArtificialAnlys",
+      "resource_url": "https://pbs.twimg.com/profile_images/2042402069320290304/A8C1lP07_400x400.jpg",
+      "downloaded_at_utc": "2026-10-13T02:36:22.157Z",
+      "first_cached_at": "2026-10-13T02:31:08.115Z",
+      "last_validated_at": "2026-10-13T02:36:22.157Z",
+      "sha256": "a8dc6a73cf1ab3b447b8182227fb72f9b986303f51b4c89c7b83caf2c88105d8",
+      "kind": "official-x-account-avatar",
+      "asset_type": "official-x-account-avatar",
+      "width": 400,
+      "height": 400,
+      "resolution": "400×400 JPG",
+      "suitable_background": "original X avatar crop",
+      "source_note": "Official X embed identifies Artificial Analysis @ArtificialAnlys; this exact 400x400 resource is served by the observed X profile_images host, not enlarged from the 48x48 embed thumbnail.",
+      "usage_notes": "Official X account avatar for moderate UI display; it is not a full-size wordmark. Use the 48x48 variant only at small thumbnail sizes. This does not imply endorsement.",
+      "original_asset_name": "Artificial Analysis official X account avatar",
+      "cache_status": "cache_hit",
+      "variants": [
+        {
+          "variant_id": "embed-48",
+          "name": "Artificial Analysis X embed avatar thumbnail",
+          "path": "/brand-assets/assets/artificial-analysis-x-avatar.jpg",
+          "file": "research/evidence/brand-assets/assets/artificial-analysis-x-avatar.jpg",
+          "resource_url": "https://pbs.twimg.com/profile_images/2042402069320290304/A8C1lP07_normal.jpg",
+          "sha256": "51db31a2ffc8cf9397bcc6fe71f8af7338664b4c3dced759d79bc3bcc2d9ec3a",
+          "width": 48,
+          "height": 48,
+          "resolution": "48×48 JPG",
+          "kind": "official-x-account-avatar",
+          "asset_type": "official-x-account-avatar",
+          "first_cached_at": "2026-10-13T02:31:08.115Z",
+          "last_validated_at": "2026-10-13T02:36:22.157Z",
+          "suitable_background": "original X avatar crop",
+          "source_note": "Exact thumbnail loaded in the official X embed.",
+          "usage_notes": "Use only as a small avatar thumbnail; not a high-resolution brand mark."
+        }
+      ]
+    },
+    {
+      "id": "openbmb",
+      "name": "OpenBMB 官方组织头像",
+      "path": "episodes/2026-10-13/briefing-1600/assets/b8973a4a30c7-openbmb.png",
+      "file": "research/evidence/brand-assets/assets/openbmb.png",
+      "source_page_url": "https://github.com/OpenBMB",
+      "source_url": "https://github.com/OpenBMB",
+      "resource_url": "https://avatars.githubusercontent.com/u/89920203?v=4",
+      "first_cached_at": "2026-10-13T08:45:42+00:00",
+      "last_validated_at": "2026-10-13T08:45:42+00:00",
+      "downloaded_at_utc": "2026-10-13T08:45:42+00:00",
+      "sha256": "b8973a4a30c7cbd33e906aba67b698d494c057e8203bd4ac73b072a94c581740",
+      "kind": "official-organization-avatar",
+      "asset_type": "official-organization-avatar",
+      "width": 190,
+      "height": 190,
+      "resolution": "190×190 PNG",
+      "source_note": "Resource URL explicitly supplied by the caller; page provenance retained.",
+      "usage_notes": "Unchanged first-party resource. Follow the source brand terms; no general trademark license is implied.",
+      "original_asset_name": "OpenBMB 官方组织头像",
+      "cache_status": "cache_hit"
+    }
+  ],
+  "presentation": {
+    "version": 7,
+    "issue_title": "今日AI资讯",
+    "show_schedule_time": false,
+    "voice_label": "Seed TTS 2.0 · Vivi 自然女声",
+    "groups": [
+      {
+        "id": "models",
+        "label": "本地模型",
+        "story_ids": [
+          "minicpm-mac"
+        ]
+      },
+      {
+        "id": "usage",
+        "label": "用量动态",
+        "story_ids": [
+          "tibo-usage-plan"
+        ]
+      },
+      {
+        "id": "limits",
+        "label": "产品边界",
+        "story_ids": [
+          "dots-limit"
+        ]
+      }
+    ],
+    "cover_story_ids": [
+      "minicpm-mac",
+      "tibo-usage-plan",
+      "dots-limit"
+    ],
+    "cover_brand_ids": [
+      "openbmb",
+      "openai",
+      "chatgpt"
+    ],
+    "overview": "MiniCPM-V 4.7接入Mac、Tibo预告用量计划，以及dots当前数量限制。",
+    "video_design": "左侧大日期与今日AI资讯；三栏大图标和重点；官方原图、图表与真实原帖按字幕阶段切换。"
+  },
+  "source_report_fingerprint": "4e6d77db922391fbfe848d52bceaac78948e5820b2325b32b2e3b54b20e8370a",
+  "voice": {
+    "provider": "volcengine",
+    "model": "Seed TTS 2.0",
+    "resource_id": "seed-tts-2.0",
+    "name": "zh_female_vv_uranus_bigtts",
+    "sample_rate": 24000,
+    "method": "Whole-scene synthesis with context_texts direction, original prosody preserved",
+    "timing": "Measured WAV with captions aligned to actual service word timestamps",
+    "settings": {
+      "provider": "volcengine",
+      "model": "Seed TTS 2.0",
+      "resource_id": "seed-tts-2.0",
+      "speaker": "zh_female_vv_uranus_bigtts",
+      "sample_rate": 24000,
+      "format": "mp3",
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "context_texts": [
+        "请用自然、明快、亲切的中文女性科技解说口吻。像一位聪明的同事在讲清楚一件新鲜事：开头轻快吸引注意，解释部分稳而清楚，转折前稍作蓄势，关键结论有明确重音，结尾从容收住。根据语义自然改变节奏和语调，不要逐字播报，不要夸张播音腔；英文品牌名按常见英语读法清楚说出。"
+      ],
+      "enable_subtitle": true
+    },
+    "receipt_manifest": "research/evidence/2026-10-13/briefing-1600/voice-v2/run.json"
+  },
+  "created_at": "2026-10-13T08:49:05.423659+00:00",
+  "asset_dimensions": {
+    "episodes/2026-10-13/briefing-1600/assets/9ca2fa79d029-dots-limit.png": {
+      "width": 1096,
+      "height": 1474
+    },
+    "episodes/2026-10-13/briefing-1600/assets/4daaa928c573-amazon-official-brand-hero.jpg": {
+      "width": 2000,
+      "height": 1125
+    },
+    "episodes/2026-10-13/briefing-1600/assets/fda62cfd26fe-nous-portal-header-art.png": {
+      "width": 360,
+      "height": 180
+    },
+    "episodes/2026-10-13/briefing-1600/assets/07171085b9b0-claude-code.svg": {
+      "width": 254.0,
+      "height": 28.0
+    },
+    "episodes/2026-10-13/briefing-1600/assets/c1ab05c672b1-commandcode-brand-wordmark-dark.svg": {
+      "width": 872.0,
+      "height": 190.0
+    },
+    "episodes/2026-10-13/briefing-1600/assets/155d5901d297-stepfun-favicon.svg": {
+      "width": 20.0,
+      "height": 20.0
+    },
+    "episodes/2026-10-13/briefing-1600/assets/400b70b8bb7d-cloudflare-press-kit-logo.png": {
+      "width": 512,
+      "height": 173
+    },
+    "episodes/2026-10-13/briefing-1600/assets/a8dc6a73cf1a-artificial-analysis-x-avatar-400.jpg": {
+      "width": 400,
+      "height": 400
+    },
+    "episodes/2026-10-13/briefing-1600/assets/7897d5316bd7-qwen.png": {
+      "width": 280,
+      "height": 280
+    },
+    "episodes/2026-10-13/briefing-1600/assets/9e3912ff23fa-qoder-logo-light.png": {
+      "width": 1232,
+      "height": 400
+    },
+    "episodes/2026-10-13/briefing-1600/assets/c3fe4ee122b2-gemini-ios-app-icon.jpg": {
+      "width": 512,
+      "height": 512
+    },
+    "episodes/2026-10-13/briefing-1600/assets/d23f519dc258-openbmb-minicpm-v47-nativ-2.jpg": {
+      "width": 3840,
+      "height": 2160
+    },
+    "episodes/2026-10-13/briefing-1600/assets/435d0bd8485b-lingguang.png": {
+      "width": 512,
+      "height": 512
+    },
+    "episodes/2026-10-13/briefing-1600/assets/b8973a4a30c7-openbmb.png": {
+      "width": 190,
+      "height": 190
+    },
+    "episodes/2026-10-13/briefing-1600/assets/d5cc890ab11d-openai-developers-lockup.svg": {
+      "width": 211.0,
+      "height": 22.0
+    },
+    "episodes/2026-10-13/briefing-1600/assets/19f2b333b1c0-tibo-usage-plan.png": {
+      "width": 1096,
+      "height": 542
+    },
+    "episodes/2026-10-13/briefing-1600/assets/a12dbf126445-chatgpt-ios-app-icon.png": {
+      "width": 1024,
+      "height": 1024
+    },
+    "episodes/2026-10-13/briefing-1600/assets/693d7abe6f89-github-mark-black.svg": {
+      "width": 98.0,
+      "height": 96.0
+    },
+    "episodes/2026-10-13/briefing-1600/assets/69b07943098f-vidu-pwa-app-icon-512.png": {
+      "width": 512,
+      "height": 512
+    },
+    "episodes/2026-10-13/briefing-1600/assets/de7d43f33861-codex-icon-light.png": {
+      "width": 1024,
+      "height": 1024
+    },
+    "episodes/2026-10-13/briefing-1600/assets/400438130950-claude-favicon.png": {
+      "width": 32,
+      "height": 32
+    },
+    "episodes/2026-10-13/briefing-1600/assets/ac13bdc80582-deepseek.svg": {
+      "width": 195.0,
+      "height": 41.359375
+    },
+    "episodes/2026-10-13/briefing-1600/assets/f6d309420996-openbmb-minicpm-v47-nativ-1.jpg": {
+      "width": 3840,
+      "height": 2160
+    },
+    "episodes/2026-10-13/briefing-1600/assets/88d85717651a-nous-favicon.png": {
+      "width": 48,
+      "height": 48
+    },
+    "episodes/2026-10-13/briefing-1600/assets/cf32709d2e54-grok-bot-ios-app-icon.jpg": {
+      "width": 512,
+      "height": 512
+    },
+    "episodes/2026-10-13/briefing-1600/assets/d0cbd9989c85-underdog.png": {
+      "width": 512,
+      "height": 512
+    },
+    "episodes/2026-10-13/briefing-1600/assets/29cf767193f8-openbmb-minicpm-v47-nativ-3.jpg": {
+      "width": 3840,
+      "height": 2160
+    },
+    "episodes/2026-10-13/briefing-1600/assets/47718065aeeb-anthropic-favicon.png": {
+      "width": 32,
+      "height": 32
+    },
+    "episodes/2026-10-13/briefing-1600/assets/f4b439ba0a03-doubao-favicon-128.png": {
+      "width": 128,
+      "height": 128
+    },
+    "episodes/2026-10-13/briefing-1600/assets/7be72f1fea83-openai-black-monoblossom.svg": {
+      "width": 721.0,
+      "height": 721.0
+    },
+    "episodes/2026-10-13/briefing-1600/assets/0dbeccda9ea3-anthropic-official-mark.svg": {
+      "width": 32.4,
+      "height": 22.26
+    },
+    "episodes/2026-10-13/briefing-1600/assets/45b898f579d3-microsoft.png": {
+      "width": 460,
+      "height": 460
+    },
+    "episodes/2026-10-13/briefing-1600/assets/0e311b533b00-elonmusk.jpg": {
+      "width": 400,
+      "height": 400
+    },
+    "episodes/2026-10-13/briefing-1600/assets/f01192f2a5e5-grok-ios-app-icon.jpg": {
+      "width": 512,
+      "height": 512
+    },
+    "episodes/2026-10-13/briefing-1600/assets/ba0c5c6b0109-tencent-youtu-github-avatar.png": {
+      "width": 280,
+      "height": 280
+    },
+    "episodes/2026-10-13/briefing-1600/assets/5f2c7ae33573-tencent-blue-english.png": {
+      "width": 2162,
+      "height": 889
+    },
+    "episodes/2026-10-13/briefing-1600/assets/7a41b7f26b62-elevenlabs-logo-black.svg": {
+      "width": 694.0,
+      "height": 90.0
+    },
+    "episodes/2026-10-13/briefing-1600/assets/afb0cca1b463-minicpm-mac.png": {
+      "width": 1096,
+      "height": 1436
+    }
+  }
+}

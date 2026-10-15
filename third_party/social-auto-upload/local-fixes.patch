@@ -1,0 +1,581 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index abfa301..1578abc 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -12,6 +12,7 @@ dependencies = [
+   "loguru==0.7.3",
+   "opencv-python>=4.13.0.92",
+   "patchright==1.58.2",
++  "playwright==1.58.0",
+   "qrcode==8.2",
+   "requests==2.32.3",
+   "segno>=1.6.6",
+diff --git a/sau_cli.py b/sau_cli.py
+index 0a12602..648fab1 100644
+--- a/sau_cli.py
++++ b/sau_cli.py
+@@ -2,6 +2,8 @@ from __future__ import annotations
+ 
+ import argparse
+ import asyncio
++import json
++import re
+ import sys
+ from dataclasses import dataclass
+ from datetime import datetime
+@@ -403,6 +405,8 @@ async def upload_youtube_video(request: YouTubeVideoUploadRequest) -> Path:
+         headless=request.headless,
+     )
+     await app.main()
++    print(json.dumps({"platform": "youtube", "status": "submitted_unverified",
++                      "url": getattr(app, "video_url", None)}))
+     return account_file
+ 
+ 
+@@ -588,6 +592,11 @@ async def upload_bilibili_video(request: BilibiliVideoUploadRequest) -> Path:
+     result = run_biliup_command(arguments)
+     if result.returncode != 0:
+         raise RuntimeError((result.stderr or result.stdout or "").strip() or "Bilibili upload failed")
++    # Keep a submission identifier without exposing the raw runtime output or
++    # treating accepted submission as public visibility (review can be pending).
++    match = re.search(r"\bBV[A-Za-z0-9]{10}\b", (result.stdout or "") + "\n" + (result.stderr or ""))
++    print(json.dumps({"platform": "bilibili", "status": "submitted_unverified",
++                      "url": f"https://www.bilibili.com/video/{match.group(0)}" if match else None}))
+     return account_file
+ 
+ 
+diff --git a/uploader/xiaohongshu_uploader/main.py b/uploader/xiaohongshu_uploader/main.py
+index 7ca7163..2e0da40 100644
+--- a/uploader/xiaohongshu_uploader/main.py
++++ b/uploader/xiaohongshu_uploader/main.py
+@@ -190,7 +190,9 @@ async def cookie_auth(account_file):
+             await page.goto(
+                 _build_xhs_creator_url(
+                     "/publish/publish?from=homepage&target=video"
+-                )
++                ),
++                wait_until="domcontentloaded",
++                timeout=30000,
+             )
+             await page.wait_for_timeout(3000)
+ 
+@@ -210,7 +212,7 @@ async def cookie_auth(account_file):
+             xiaohongshu_logger.success(_msg("🥳", "cookie 有效"))
+             return True
+         except Exception as exc:
+-            xiaohongshu_logger.warning(_msg("😵", f"cookie 校验时出错，按失效处理: {exc}"))
++            xiaohongshu_logger.warning(_msg("😵", f"登录状态检查未完成（不能据此确认 cookie 失效）: {exc}"))
+             return False
+         finally:
+             await browser.close()
+@@ -475,6 +477,9 @@ class XiaoHongShuBaseUploader(BaseVideoUploader):
+         容错：任一步失败记 warning 跳过、继续发布，不中断。
+         """
+         source = getattr(self, "repost_source", "") or ""
++        if not source.strip():
++            xiaohongshu_logger.info(_msg("ℹ️", "未提供转载来源，跳过来源转载声明"))
++            return
+         try:
+             # 1. 点「添加内容类型声明」
+             trigger = page.get_by_text("添加内容类型声明", exact=False).first
+@@ -620,53 +625,42 @@ class XiaoHongShuVideo(XiaoHongShuBaseUploader):
+             except Exception:
+                 pass
+ 
++    async def _wait_for_video_upload(self, page: Page, timeout_seconds=180):
++        deadline = asyncio.get_running_loop().time() + timeout_seconds
++        last_observation = ""
++        while asyncio.get_running_loop().time() < deadline:
++            try:
++                upload_input = await page.wait_for_selector('input.upload-input', timeout=3000)
++                preview = await upload_input.query_selector(
++                    'xpath=following-sibling::div[contains(@class, "preview-new")]')
++                if preview:
++                    last_observation = (await preview.inner_text()).strip()
++                    if any(word in last_observation for word in ['上传成功', '分辨率', '重新上传', '编辑封面', '已上传', '已选择', '100%']):
++                        xiaohongshu_logger.success(_msg("🥳", "视频上传状态已就绪"))
++                        return
++            except Exception as exc:
++                last_observation = type(exc).__name__
++            # The editor can coexist with an empty preview wrapper. Check this
++            # independently instead of only when the preview element is absent.
++            title_input = page.locator('input[placeholder*="填写标题"]')
++            if await title_input.count() and await title_input.is_visible():
++                xiaohongshu_logger.success(_msg("🥳", "视频已进入标题编辑页"))
++                return
++            xiaohongshu_logger.debug(_msg("🧍", "等待上传编辑页就绪"))
++            await asyncio.sleep(2)
++        raise RuntimeError("xhs_upload_readiness_timeout_before_metadata: " + last_observation[:200])
++
+     async def upload_video_content(self, page: Page) -> None:
+         xiaohongshu_logger.info(_msg("🏃", f"小人开始搬运视频: {self.title}.mp4"))
+         xiaohongshu_logger.info(_msg("🧭", "小人正在赶往视频发布页"))
+         publish_url = _build_xhs_creator_url(
+             "/publish/publish?from=homepage&target=video"
+         )
+-        await page.goto(publish_url)
+-        await page.wait_for_url(publish_url)
+-        await page.locator("div[class^='upload-content'] input[class='upload-input']").set_input_files(self.file_path)
++        await page.goto(publish_url, wait_until="domcontentloaded", timeout=30000)
++        await page.wait_for_url(publish_url, wait_until="domcontentloaded")
++        await page.locator("input.upload-input").first.set_input_files(self.file_path, timeout=60000)
+ 
+-        while True:
+-            try:
+-                upload_input = await page.wait_for_selector('input.upload-input', timeout=3000)
+-                preview_new = await upload_input.query_selector(
+-                    'xpath=following-sibling::div[contains(@class, "preview-new")]')
+-                if preview_new:
+-                    # 获取整个预览区域的文本，更鲁棒地判断上传状态
+-                    all_text = await preview_new.inner_text()
+-                    upload_success = any(keyword in all_text for keyword in ['上传成功', '分辨率', '重新上传', '编辑封面', '已上传', '已选择', '100%'])
+-                    
+-                    if not upload_success:
+-                        # 检查是否有特定的状态码或百分比
+-                        stage_elements = await preview_new.query_selector_all('div.stage')
+-                        for stage in stage_elements:
+-                            text_content = await page.evaluate('(element) => element.textContent', stage)
+-                            if '上传成功' in text_content or '分辨率' in text_content:
+-                                upload_success = True
+-                                break
+-                    
+-                    if upload_success:
+-                        xiaohongshu_logger.success(_msg("🥳", "视频已经传完啦"))
+-                        break
+-                    
+-                    if self.debug:
+-                        normalized_text = all_text.strip().replace("\n", " ")
+-                        xiaohongshu_logger.debug(_msg("🧍", f"预览区域内容: {normalized_text}"))
+-                    xiaohongshu_logger.debug(_msg("🧍", "还没看到上传成功标识，小人继续等一会"))
+-                else:
+-                    # 尝试检查标题输入框是否已经出现，如果是，说明已经进入编辑状态
+-                    title_container = page.locator('input[placeholder*="填写标题"]')
+-                    if await title_container.count() > 0 and await title_container.is_visible():
+-                        xiaohongshu_logger.success(_msg("🥳", "虽然没看到预览区，但标题框出来了，小人继续"))
+-                        break
+-                    xiaohongshu_logger.debug(_msg("🧍", "还没拿到预览区域，小人继续等一会"))
+-            except Exception as e:
+-                xiaohongshu_logger.debug(_msg("😵", f"上传状态还没稳定下来，小人继续观察: {e}"))
+-            await asyncio.sleep(2)
++        await self._wait_for_video_upload(page)
+ 
+         xiaohongshu_logger.info(_msg("✍️", "小人开始填标题、描述和话题"))
+         await self.fill_meta(page)
+diff --git a/uploader/youtube_uploader/main.py b/uploader/youtube_uploader/main.py
+index 4a1b0e1..c06e5cf 100644
+--- a/uploader/youtube_uploader/main.py
++++ b/uploader/youtube_uploader/main.py
+@@ -12,7 +12,9 @@ Login is interactive (Google account, no QR code): the browser opens, the user s
+ the storage_state is saved. Reuse it afterwards for fully unattended uploads.
+ """
+ import asyncio
++import re
+ from pathlib import Path
++from urllib.parse import parse_qs, urlparse
+ 
+ from patchright.async_api import Page, Playwright, async_playwright
+ 
+@@ -47,21 +49,31 @@ def _build_login_result(success, status, message, account_file, current_url=""):
+     }
+ 
+ 
+-async def cookie_auth(account_file) -> bool:
++async def cookie_auth(account_file, headless: bool = False) -> bool:
+     """登录态是否仍有效：带 cookie 打开 Studio，没被踢到 Google 登录页且进入了频道页即有效。"""
+     async with async_playwright() as playwright:
+-        browser = await playwright.chromium.launch(headless=True, channel="chrome")
++        browser = await playwright.chromium.launch(
++            headless=headless, channel="chrome",
++            proxy={"server": YT_PROXY} if YT_PROXY else None,
++        )
+         try:
+             context = await browser.new_context(storage_state=account_file)
+             context = await set_init_script(context)
+             page = await context.new_page()
+             await page.goto(STUDIO_URL, wait_until="domcontentloaded")
+-            await page.wait_for_timeout(3000)
++            # Studio can stay on its root URL while the signed-in channel loads.
++            # Waiting three seconds incorrectly rejected newly saved logins.
++            await page.wait_for_url(re.compile(r"^https://studio\.youtube\.com/channel/[^/?]+"), timeout=45000)
+             url = page.url
+             if "accounts.google.com" in url or "/signin" in url.lower():
+                 return False
++            youtube_logger.info(f"YouTube 频道已验证: {urlparse(url).netloc}{urlparse(url).path}")
+             return "/channel/" in url
+-        except Exception:
++        except Exception as exc:
++            location = urlparse(page.url) if 'page' in locals() else None
++            route = f"{location.netloc}{location.path}" if location else 'before_navigation'
++            reason = re.sub(r'https?://[^\s]+', lambda m: urlparse(m.group(0)).netloc + urlparse(m.group(0)).path, str(exc).splitlines()[0])
++            youtube_logger.warning(f"YouTube 登录检查未完成: {type(exc).__name__}; route={route}; reason={reason}")
+             return False
+         finally:
+             await browser.close()
+@@ -71,7 +83,10 @@ async def youtube_cookie_gen(account_file, headless: bool = False):
+     """交互式登录：开浏览器让用户登录 Google/YouTube，进入频道页后保存 storage_state。"""
+     async with async_playwright() as playwright:
+         # 登录必须显形，让用户输账号密码/二步验证
+-        browser = await playwright.chromium.launch(headless=False, channel="chrome")
++        browser = await playwright.chromium.launch(
++            headless=False, channel="chrome",
++            proxy={"server": YT_PROXY} if YT_PROXY else None,
++        )
+         context = await browser.new_context()
+         context = await set_init_script(context)
+         page = await context.new_page()
+@@ -157,7 +172,7 @@ async def _click_if_present(page: Page, selector: str, timeout: int = 4000) -> b
+ async def _wait_upload_complete(page: Page, max_polls: int = 360) -> bool:
+     """等网页上传从 X% 跑到 100% 再发布。浏览器上传靠窗口开着才传得完，
+     若上传到一半就点发布并关闭浏览器，上传会被掐断卡在中途（如 76%）。
+-    出现“处理/检查/上传完成”或不再“正在上传”即视为传完。max_polls*5s=30min 上限。"""
++    出现“处理/检查/上传完成”等明确阶段即视为传完。max_polls*5s=30min 上限。"""
+     last = ""
+     for _ in range(max_polls):
+         txt = ""
+@@ -178,10 +193,92 @@ async def _wait_upload_complete(page: Page, max_polls: int = 360) -> bool:
+                 youtube_logger.info(_msg("⏳", f"上传中: {txt[:40]}"))
+                 last = txt
+         await page.wait_for_timeout(5000)
+-    youtube_logger.warning(_msg("⚠️", "等上传超时(30min)，仍尝试发布"))
++    youtube_logger.warning(_msg("⚠️", "等上传超时(30min)，停止发布"))
+     return False
+ 
+ 
++def _valid_youtube_video_url(url: str) -> bool:
++    parsed = urlparse(url)
++    host = (parsed.hostname or "").lower()
++    if host not in {"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"}:
++        return False
++    if host == "youtu.be":
++        video_id = parsed.path.strip("/").split("/")[0]
++    else:
++        video_id = parse_qs(parsed.query).get("v", [""])[0]
++    return bool(re.fullmatch(r"[A-Za-z0-9_-]{11}", video_id))
++
++
++async def _wait_publish_confirmation(page: Page, timeout_ms: int = 30000) -> str | None:
++    """Require a confirmed success message and a valid video URL in Studio's share dialog."""
++    deadline = asyncio.get_running_loop().time() + timeout_ms / 1000
++    confirmation_text = ("Video published", "Your video is published", "视频已发布", "视频发布成功")
++    while asyncio.get_running_loop().time() < deadline:
++        try:
++            result_dialog = page.locator("ytcp-video-share-dialog").first
++            if await result_dialog.count():
++                dialog_text = await result_dialog.inner_text()
++                if any(phrase.lower() in dialog_text.lower() for phrase in confirmation_text):
++                    links = result_dialog.locator("a[href]")
++                    for index in range(await links.count()):
++                        href = (await links.nth(index).get_attribute("href") or "").strip()
++                        if _valid_youtube_video_url(href):
++                            return href
++        except Exception:
++            pass
++        await page.wait_for_timeout(500)
++    return None
++
++
++async def _require_upload_complete(page: Page, max_polls: int = 360) -> None:
++    if not await _wait_upload_complete(page, max_polls=max_polls):
++        raise RuntimeError("YouTube upload did not reach a confirmed complete state; publish was not submitted")
++
++
++async def _require_publish_confirmation(page: Page, timeout_ms: int = 30000) -> str:
++    confirmation = await _wait_publish_confirmation(page, timeout_ms=timeout_ms)
++    if confirmation is None:
++        raise RuntimeError("YouTube share dialog did not confirm publication with a valid video URL")
++    return confirmation
++
++
++async def _confirm_from_channel_list(page: Page, title: str, visibility: str = 'public') -> str:
++    """Read the exact new video's Studio row when the share dialog has changed."""
++    current = urlparse(page.url)
++    channel = re.match(r'^/channel/(UC[A-Za-z0-9_-]+)(?:/|$)', current.path)
++    if current.hostname != 'studio.youtube.com' or not channel or visibility != 'public':
++        raise RuntimeError('YouTube submission needs separate channel verification')
++    await page.goto(f'https://studio.youtube.com/channel/{channel.group(1)}/content',
++                    wait_until='domcontentloaded', timeout=60000)
++    row = page.get_by_role('row').filter(has=page.get_by_role('link', name=title, exact=True))
++    await row.first.wait_for(state='visible', timeout=45000)
++    if await row.count() != 1:
++        raise RuntimeError('YouTube title does not identify exactly one video; refusing to infer success')
++    text = await row.inner_text()
++    if not re.search(r'\bPublic\b|公开|公開', text) or not re.search(r'\bPublished\b|已发布|已發佈', text):
++        raise RuntimeError('YouTube video exists but public/published state is not confirmed')
++    href = await row.get_by_role('link', name=title, exact=True).first.get_attribute('href') or ''
++    parsed = urlparse(href)
++    if parsed.netloc and parsed.hostname != 'studio.youtube.com':
++        raise RuntimeError('Unexpected YouTube Studio video link')
++    video = re.fullmatch(r'/video/([A-Za-z0-9_-]{11})/edit/?', parsed.path)
++    if not video:
++        raise RuntimeError('YouTube Studio did not provide a concrete video ID')
++    return f'https://www.youtube.com/watch?v={video.group(1)}'
++
++
++async def _submit_publish_and_confirm(page: Page, title: str | None = None, visibility: str = 'public') -> str:
++    if not await _click_if_present(page, "#done-button", 15000):
++        raise RuntimeError("YouTube publish button was not available; publish was not submitted")
++    try:
++        return await _require_publish_confirmation(page)
++    except RuntimeError:
++        if not title:
++            raise
++        youtube_logger.info('正在频道内容列表核对刚提交的视频，不重复上传')
++        return await _confirm_from_channel_list(page, title, visibility)
++
++
+ class YouTubeVideo(BaseVideoUploader):
+     def __init__(self, title, file_path, tags, account_file, *,
+                  description="", thumbnail_path=None, playlist=None,
+@@ -196,137 +293,132 @@ class YouTubeVideo(BaseVideoUploader):
+         self.visibility = visibility if visibility in VISIBILITY else "public"
+         self.debug = debug
+         self.headless = headless
++        self.publish_status = "not_submitted"
++        self.video_url = None
+ 
+     async def upload(self, playwright: Playwright) -> None:
+         browser = await playwright.chromium.launch(
+             headless=self.headless, channel="chrome",
+             proxy={"server": YT_PROXY} if YT_PROXY else None,
+         )
+-        context = await browser.new_context(storage_state=self.account_file)
+-        context = await set_init_script(context)
+-        page = await context.new_page()
+-        page.set_default_timeout(60000)
+-
+-        youtube_logger.info(_msg("🎬", f"开始上传: {Path(self.file_path).name}"))
+-        await page.goto(UPLOAD_URL, wait_until="domcontentloaded")
+-        await page.wait_for_timeout(3000)
+-        if "accounts.google.com" in page.url or "signin" in page.url.lower():
+-            await browser.close()
+-            raise RuntimeError("YouTube 登录态失效，请重新执行 login")
+-
+-        # 1) 选择视频文件
+-        file_input = page.locator('input[type="file"]').first
+-        await file_input.wait_for(state="attached", timeout=60000)
+-        await file_input.set_input_files(self.file_path)
+-
+-        # 2) 等详情对话框
+-        await page.locator("#title-textarea").wait_for(state="visible", timeout=120000)
+-
+-        # 3) 标题
+-        youtube_logger.info(_msg("✍️", "填写标题"))
+-        await _fill_editable(page, "#title-textarea #textbox", self.title[:100])
++        try:
++            context = await browser.new_context(storage_state=self.account_file)
++            context = await set_init_script(context)
++            page = await context.new_page()
++            page.set_default_timeout(60000)
+ 
+-        # 4) 简介
+-        if self.description.strip():
+-            youtube_logger.info(_msg("✍️", "填写简介"))
+-            await _fill_editable(page, "#description-textarea #textbox", self.description)
++            youtube_logger.info(_msg("🎬", f"开始上传: {Path(self.file_path).name}"))
++            await page.goto(UPLOAD_URL, wait_until="domcontentloaded")
++            await page.wait_for_timeout(3000)
++            if "accounts.google.com" in page.url or "signin" in page.url.lower():
++                raise RuntimeError("YouTube 登录态失效，请重新执行 login")
++
++            # 1) 选择视频文件
++            file_input = page.locator('input[type="file"]').first
++            await file_input.wait_for(state="attached", timeout=60000)
++            await file_input.set_input_files(self.file_path)
++
++            # 2) 等详情对话框
++            await page.locator("#title-textarea").wait_for(state="visible", timeout=120000)
++
++            # 3) 标题
++            youtube_logger.info(_msg("✍️", "填写标题"))
++            await _fill_editable(page, "#title-textarea #textbox", self.title[:100])
++
++            # 4) 简介
++            if self.description.strip():
++                youtube_logger.info(_msg("✍️", "填写简介"))
++                await _fill_editable(page, "#description-textarea #textbox", self.description)
++
++            # 5) 封面（处理到一定进度才允许传，失败不致命）
++            if self.thumbnail_path and Path(self.thumbnail_path).exists():
++                try:
++                    thumb_input = page.locator(
++                        "#file-loader input[type='file'], ytcp-thumbnail-uploader input[type='file']"
++                    ).first
++                    await thumb_input.wait_for(state="attached", timeout=20000)
++                    await thumb_input.set_input_files(self.thumbnail_path)
++                    await page.wait_for_timeout(2000)
++                    youtube_logger.info(_msg("🖼️", "封面已上传"))
++                except Exception as exc:
++                    youtube_logger.warning(_msg("⚠️", f"封面上传跳过（不影响发布）: {exc}"))
++
++            # 6) 加入播放列表（连载/系列追更）。弹窗务必关闭，否则挡住后续步骤。
++            if self.playlist:
++                try:
++                    await _click_if_present(
++                        page, "#basics ytcp-text-dropdown-trigger, ytcp-video-metadata-playlists ytcp-dropdown-trigger", 8000)
++                    await page.wait_for_timeout(1200)
++                    existing = page.locator(
++                        f"tp-yt-paper-checkbox:has-text('{self.playlist}'), "
++                        f"ytcp-checkbox-group:has-text('{self.playlist}')").first
++                    if await existing.count():
++                        await existing.click()
++                    else:
++                        if await _click_if_present(page, "ytcp-button:has-text('New playlist'), ytcp-button:has-text('创建播放列表')", 4000):
++                            await page.wait_for_timeout(800)
++                            await _click_if_present(page, "tp-yt-paper-item:has-text('New playlist'), tp-yt-paper-item:has-text('新建播放列表')", 3000)
++                            title_box = page.locator("ytcp-playlist-metadata-editor #textbox, #create-playlist-form #textbox").first
++                            if await title_box.count():
++                                await title_box.click()
++                                await title_box.type(self.playlist, delay=6)
++                                await _click_if_present(page, "ytcp-button#create-button, tp-yt-paper-dialog ytcp-button:has-text('Create'), tp-yt-paper-dialog ytcp-button:has-text('创建')", 4000)
++                except Exception as exc:
++                    youtube_logger.warning(_msg("⚠️", f"播放列表处理跳过（不影响发布）: {exc}"))
++                finally:
++                    await _click_if_present(page, "ytcp-playlist-dialog #save-button, ytcp-button:has-text('Done'), ytcp-button:has-text('完成')", 3000)
++                    await page.keyboard.press("Escape")
++                    await page.wait_for_timeout(600)
++
++            # 7) 受众：非儿童向（必填）
++            if not await _click_if_present(page, "tp-yt-paper-radio-button[name='VIDEO_MADE_FOR_KIDS_NOT_MFK']", 10000):
++                await _click_if_present(page, "tp-yt-paper-radio-button:has-text('not made for kids'), tp-yt-paper-radio-button:has-text('不是面向儿童')", 6000)
++
++            # 8) 标签（“显示更多”里）
++            if self.tags:
++                try:
++                    await _click_if_present(page, "#toggle-button", 6000)
++                    await page.wait_for_timeout(800)
++                    tag_input = page.locator("#tags-container #text-input, ytcp-form-input-container#tags-container input").first
++                    await tag_input.click()
++                    await tag_input.type(",".join(self.tags)[:500] + ",", delay=4)
++                except Exception as exc:
++                    youtube_logger.warning(_msg("⚠️", f"标签填写跳过（不影响发布）: {exc}"))
++
++            # 9) 连点 Next 到“可见性”步骤
++            for _ in range(5):
++                vis = page.locator("tp-yt-paper-radio-button[name='PUBLIC']")
++                if await vis.count() and await vis.first.is_visible():
++                    break
++                if not await _click_if_present(page, "#next-button", 6000):
++                    await page.wait_for_timeout(1200)
++                await page.wait_for_timeout(1000)
++
++            # 10) 可见性
++            youtube_logger.info(_msg("🌐", f"设置可见性 = {self.visibility}"))
++            await _click_if_present(page, f"tp-yt-paper-radio-button[name='{VISIBILITY[self.visibility]}']", 10000)
++
++            # 10.5) 关键：等上传真正传完再发布。浏览器上传靠窗口开着传，
++            #       传到一半就点发布+关浏览器 = 上传被掐断卡在中途（如 76%）。
++            youtube_logger.info(_msg("📤", "等待上传完成（传完才发布）…"))
++            await _require_upload_complete(page)
++
++            # 11) 发布
++            await page.wait_for_timeout(1200)
++            video_url = await _submit_publish_and_confirm(page, title=self.title, visibility=self.visibility)
++            self.publish_status = "submitted_unverified"
++            self.video_url = video_url
++            await _click_if_present(page, "ytcp-button:has-text('Close'), ytcp-button:has-text('关闭'), #close-button", 8000)
++            youtube_logger.success(_msg("✅", f"YouTube 已确认发布提交（visibility={self.visibility}）{(' ' + video_url) if video_url else ''}"))
+ 
+-        # 5) 封面（处理到一定进度才允许传，失败不致命）
+-        if self.thumbnail_path and Path(self.thumbnail_path).exists():
+-            try:
+-                thumb_input = page.locator(
+-                    "#file-loader input[type='file'], ytcp-thumbnail-uploader input[type='file']"
+-                ).first
+-                await thumb_input.wait_for(state="attached", timeout=20000)
+-                await thumb_input.set_input_files(self.thumbnail_path)
+-                await page.wait_for_timeout(2000)
+-                youtube_logger.info(_msg("🖼️", "封面已上传"))
+-            except Exception as exc:
+-                youtube_logger.warning(_msg("⚠️", f"封面上传跳过（不影响发布）: {exc}"))
+-
+-        # 6) 加入播放列表（连载/系列追更）。弹窗务必关闭，否则挡住后续步骤。
+-        if self.playlist:
+-            try:
+-                await _click_if_present(
+-                    page, "#basics ytcp-text-dropdown-trigger, ytcp-video-metadata-playlists ytcp-dropdown-trigger", 8000)
+-                await page.wait_for_timeout(1200)
+-                existing = page.locator(
+-                    f"tp-yt-paper-checkbox:has-text('{self.playlist}'), "
+-                    f"ytcp-checkbox-group:has-text('{self.playlist}')").first
+-                if await existing.count():
+-                    await existing.click()
+-                else:
+-                    if await _click_if_present(page, "ytcp-button:has-text('New playlist'), ytcp-button:has-text('创建播放列表')", 4000):
+-                        await page.wait_for_timeout(800)
+-                        await _click_if_present(page, "tp-yt-paper-item:has-text('New playlist'), tp-yt-paper-item:has-text('新建播放列表')", 3000)
+-                        title_box = page.locator("ytcp-playlist-metadata-editor #textbox, #create-playlist-form #textbox").first
+-                        if await title_box.count():
+-                            await title_box.click()
+-                            await title_box.type(self.playlist, delay=6)
+-                            await _click_if_present(page, "ytcp-button#create-button, tp-yt-paper-dialog ytcp-button:has-text('Create'), tp-yt-paper-dialog ytcp-button:has-text('创建')", 4000)
+-            except Exception as exc:
+-                youtube_logger.warning(_msg("⚠️", f"播放列表处理跳过（不影响发布）: {exc}"))
+-            finally:
+-                await _click_if_present(page, "ytcp-playlist-dialog #save-button, ytcp-button:has-text('Done'), ytcp-button:has-text('完成')", 3000)
+-                await page.keyboard.press("Escape")
+-                await page.wait_for_timeout(600)
+-
+-        # 7) 受众：非儿童向（必填）
+-        if not await _click_if_present(page, "tp-yt-paper-radio-button[name='VIDEO_MADE_FOR_KIDS_NOT_MFK']", 10000):
+-            await _click_if_present(page, "tp-yt-paper-radio-button:has-text('not made for kids'), tp-yt-paper-radio-button:has-text('不是面向儿童')", 6000)
+-
+-        # 8) 标签（“显示更多”里）
+-        if self.tags:
+-            try:
+-                await _click_if_present(page, "#toggle-button", 6000)
+-                await page.wait_for_timeout(800)
+-                tag_input = page.locator("#tags-container #text-input, ytcp-form-input-container#tags-container input").first
+-                await tag_input.click()
+-                await tag_input.type(",".join(self.tags)[:500] + ",", delay=4)
+-            except Exception as exc:
+-                youtube_logger.warning(_msg("⚠️", f"标签填写跳过（不影响发布）: {exc}"))
+-
+-        # 9) 连点 Next 到“可见性”步骤
+-        for _ in range(5):
+-            vis = page.locator("tp-yt-paper-radio-button[name='PUBLIC']")
+-            if await vis.count() and await vis.first.is_visible():
+-                break
+-            if not await _click_if_present(page, "#next-button", 6000):
+-                await page.wait_for_timeout(1200)
+-            await page.wait_for_timeout(1000)
+-
+-        # 10) 可见性
+-        youtube_logger.info(_msg("🌐", f"设置可见性 = {self.visibility}"))
+-        await _click_if_present(page, f"tp-yt-paper-radio-button[name='{VISIBILITY[self.visibility]}']", 10000)
+-
+-        # 10.5) 关键：等上传真正传完再发布。浏览器上传靠窗口开着传，
+-        #       传到一半就点发布+关浏览器 = 上传被掐断卡在中途（如 76%）。
+-        youtube_logger.info(_msg("📤", "等待上传完成（传完才发布）…"))
+-        await _wait_upload_complete(page)
+-
+-        # 11) 发布
+-        await page.wait_for_timeout(1200)
+-        if not await _click_if_present(page, "#done-button", 15000):
+-            youtube_logger.warning(_msg("🤔", "未找到发布按钮，可能上传未到可发布进度；请在窗口里手动发布"))
+-        else:
+-            await page.wait_for_timeout(4000)
+-            video_url = ""
++            # 刷新 cookie
+             try:
+-                link = page.locator("a[href*='youtu.be'], a[href*='watch?v=']").first
+-                if await link.count():
+-                    video_url = await link.get_attribute("href") or ""
++                await context.storage_state(path=self.account_file)
+             except Exception:
+                 pass
+-            await _click_if_present(page, "ytcp-button:has-text('Close'), ytcp-button:has-text('关闭'), #close-button", 8000)
+-            youtube_logger.success(_msg("🥳", f"发布完成（{self.visibility}）{(' ' + video_url) if video_url else ''}"))
+-
+-        # 刷新 cookie
+-        try:
+-            await context.storage_state(path=self.account_file)
+-        except Exception:
+-            pass
+-        await page.wait_for_timeout(2000)
+-        await browser.close()
++            await page.wait_for_timeout(2000)
++        finally:
++            await browser.close()
+ 
+     async def main(self):
+         async with async_playwright() as playwright:

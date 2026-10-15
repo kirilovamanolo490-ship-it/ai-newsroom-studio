@@ -1,0 +1,6036 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Shanghai",
+  "state_directory": "research/source-watch",
+  "cadence": "每小时唤醒；重点官方来源每2小时、人物与其他账号每12小时；每项失败/未完翻页2小时重试。",
+  "first_party_priority": true,
+  "sources": [
+    {
+      "id": "openai-news",
+      "name": "OpenAI 新闻",
+      "kind": "rss",
+      "url": "https://openai.com/news/rss.xml",
+      "enabled": true,
+      "role": "official",
+      "interval_hours": 2,
+      "library_source_ids": [
+        "openai-com-1"
+      ]
+    },
+    {
+      "id": "grok-bot-feed",
+      "name": "Grok Bot 更新",
+      "kind": "rss",
+      "url": "https://x.ai/changelog/bot/rss.xml",
+      "enabled": true,
+      "role": "official",
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-ai-24",
+        "hb-grok-bot-changelog"
+      ]
+    },
+    {
+      "id": "ms-commandline",
+      "name": "Microsoft Command Line",
+      "kind": "rss",
+      "url": "https://commandline.microsoft.com/feed/",
+      "enabled": true,
+      "role": "official",
+      "interval_hours": 2,
+      "library_source_ids": [
+        "commandline.microsoft.com"
+      ]
+    },
+    {
+      "id": "ms-source",
+      "name": "Microsoft Source",
+      "kind": "rss",
+      "url": "https://news.microsoft.com/source/feed/",
+      "enabled": true,
+      "role": "official",
+      "interval_hours": 2
+    },
+    {
+      "id": "ms-devblogs",
+      "name": "Microsoft 开发者",
+      "kind": "rss",
+      "url": "https://devblogs.microsoft.com/feed/",
+      "enabled": true,
+      "role": "official",
+      "interval_hours": 2
+    },
+    {
+      "id": "ms-research",
+      "name": "Microsoft Research",
+      "kind": "rss",
+      "url": "https://www.microsoft.com/en-us/research/feed/",
+      "enabled": true,
+      "role": "official",
+      "interval_hours": 2
+    },
+    {
+      "id": "ms-azure",
+      "name": "Microsoft Azure",
+      "kind": "rss",
+      "url": "https://azure.microsoft.com/en-us/blog/feed/",
+      "enabled": true,
+      "role": "official",
+      "interval_hours": 2
+    },
+    {
+      "id": "synopsys-news",
+      "name": "Synopsys 官方新闻",
+      "kind": "rss",
+      "url": "https://news.synopsys.com/home?pagetemplate=rss",
+      "enabled": true,
+      "role": "official",
+      "interval_hours": 2,
+      "library_source_ids": [
+        "news.synopsys.com"
+      ]
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "kind": "rss",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "enabled": true,
+      "role": "official",
+      "interval_hours": 2
+    },
+    {
+      "id": "chatgpt-updates",
+      "name": "ChatGPT / Codex 更新日志",
+      "kind": "html",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "enabled": true,
+      "role": "official",
+      "expect": [
+        "Composer",
+        "ChatGPT"
+      ],
+      "link_pattern": "help.openai.com/.*/articles/",
+      "min_chars": 220,
+      "interval_hours": 2
+    },
+    {
+      "id": "claude-updates",
+      "name": "Claude 更新日志",
+      "kind": "html",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "enabled": true,
+      "role": "official",
+      "expect": [
+        "Release notes",
+        "Haiku"
+      ],
+      "link_pattern": "(anthropic.com/news/|claude.com/resources/articles/)",
+      "min_chars": 220,
+      "interval_hours": 2
+    },
+    {
+      "id": "claude-products",
+      "name": "Claude 产品公告",
+      "kind": "html",
+      "url": "https://claude.com/resources/product-announcements",
+      "enabled": true,
+      "role": "official",
+      "expect": [
+        "Claude",
+        "Product"
+      ],
+      "link_pattern": "claude.com/resources/articles/",
+      "min_chars": 220,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "claude-ai-81"
+      ]
+    },
+    {
+      "id": "claude-research",
+      "name": "Anthropic 研究",
+      "kind": "html",
+      "url": "https://www.anthropic.com/research",
+      "enabled": true,
+      "role": "official",
+      "expect": [
+        "Research",
+        "research"
+      ],
+      "link_pattern": "anthropic.com/research/[^/?#]+$",
+      "min_chars": 220,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "www-anthropic-com-5"
+      ]
+    },
+    {
+      "id": "claude-design",
+      "name": "Claude Design 迁移政策",
+      "kind": "html",
+      "url": "https://support.claude.com/en/articles/17440474-migrate-from-standalone-claude-design-to-claude",
+      "enabled": true,
+      "role": "official",
+      "expect": [
+        "December 14",
+        "standalone"
+      ],
+      "link_pattern": null,
+      "min_chars": 220,
+      "interval_hours": 2
+    },
+    {
+      "id": "trae-migration",
+      "name": "TRAE 合并迁移说明",
+      "kind": "html",
+      "url": "https://docs.trae.cn/work_traework-to-traecode-data-migration?lang=zh",
+      "enabled": true,
+      "role": "official",
+      "expect": [
+        "TRAE",
+        "TraeWork"
+      ],
+      "link_pattern": "docs.trae.cn/",
+      "min_chars": 220,
+      "interval_hours": 2
+    },
+    {
+      "id": "trae-official",
+      "name": "TRAE 官方社区最新主题",
+      "kind": "html",
+      "url": "https://forum.trae.cn/latest",
+      "enabled": true,
+      "role": "official_host_community_authorship_to_verify",
+      "expect": [
+        "TRAE",
+        "Trae"
+      ],
+      "link_pattern": "forum.trae.cn/t/",
+      "min_chars": 220,
+      "interval_hours": 2
+    },
+    {
+      "id": "step-plan",
+      "name": "Step Plan 套餐与 FAQ",
+      "kind": "html",
+      "url": "https://platform.stepfun.com/step-plan",
+      "enabled": true,
+      "role": "official",
+      "expect": [
+        "Step Plan",
+        "套餐"
+      ],
+      "link_pattern": null,
+      "min_chars": 220,
+      "interval_hours": 2
+    },
+    {
+      "id": "ms-decision",
+      "name": "Microsoft Decision-1 模型卡",
+      "kind": "html",
+      "url": "https://ai.azure.com/catalog/models/Microsoft-Decision-1",
+      "enabled": true,
+      "role": "official",
+      "expect": [
+        "Decision"
+      ],
+      "link_pattern": null,
+      "min_chars": 220,
+      "interval_hours": 2
+    },
+    {
+      "id": "copilot-changelog",
+      "name": "GitHub Copilot 更新",
+      "kind": "html",
+      "url": "https://github.blog/changelog/label/copilot/",
+      "enabled": true,
+      "role": "official",
+      "expect": [
+        "Copilot"
+      ],
+      "link_pattern": "github.blog/changelog/\\d{4}-",
+      "min_chars": 220,
+      "interval_hours": 2
+    },
+    {
+      "id": "grok-bot",
+      "name": "Grok Bot 产品与权益",
+      "kind": "html",
+      "url": "https://x.ai/bot",
+      "enabled": true,
+      "role": "official",
+      "expect": [
+        "Bot"
+      ],
+      "link_pattern": "x.ai/(blog|changelog)/",
+      "min_chars": 220,
+      "interval_hours": 2
+    },
+    {
+      "id": "x-openai",
+      "name": "OpenAI",
+      "kind": "x",
+      "url": "https://x.com/OpenAI",
+      "enabled": true,
+      "role": "official",
+      "handle": "OpenAI",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-openai"
+      ]
+    },
+    {
+      "id": "x-openaidevs",
+      "name": "OpenAIDevs",
+      "kind": "x",
+      "url": "https://x.com/OpenAIDevs",
+      "enabled": true,
+      "role": "official",
+      "handle": "OpenAIDevs",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-openaidevs"
+      ]
+    },
+    {
+      "id": "x-chatgpt",
+      "name": "ChatGPT",
+      "kind": "x",
+      "url": "https://x.com/ChatGPT",
+      "enabled": true,
+      "role": "official",
+      "handle": "ChatGPT",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-chatgpt"
+      ]
+    },
+    {
+      "id": "x-thsottiaux",
+      "name": "thsottiaux",
+      "kind": "x",
+      "url": "https://x.com/thsottiaux",
+      "enabled": true,
+      "role": "first_party_person",
+      "handle": "thsottiaux",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-thsottiaux"
+      ]
+    },
+    {
+      "id": "x-anthropicai",
+      "name": "AnthropicAI",
+      "kind": "x",
+      "url": "https://x.com/AnthropicAI",
+      "enabled": true,
+      "role": "official",
+      "handle": "AnthropicAI",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-anthropicai"
+      ]
+    },
+    {
+      "id": "x-claudeai",
+      "name": "claudeai",
+      "kind": "x",
+      "url": "https://x.com/claudeai",
+      "enabled": true,
+      "role": "official",
+      "handle": "claudeai",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-claudeai"
+      ]
+    },
+    {
+      "id": "x-claudedevs",
+      "name": "ClaudeDevs",
+      "kind": "x",
+      "url": "https://x.com/ClaudeDevs",
+      "enabled": true,
+      "role": "official",
+      "handle": "ClaudeDevs",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-claudedevs"
+      ]
+    },
+    {
+      "id": "x-nateparrott",
+      "name": "nateparrott",
+      "kind": "x",
+      "url": "https://x.com/nateparrott",
+      "enabled": true,
+      "role": "first_party_person",
+      "handle": "nateparrott",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-nateparrott"
+      ]
+    },
+    {
+      "id": "x-grok",
+      "name": "grok",
+      "kind": "x",
+      "url": "https://x.com/grok",
+      "enabled": true,
+      "role": "official",
+      "handle": "grok",
+      "max_pages": 3,
+      "roots_only": true,
+      "interval_hours": 2
+    },
+    {
+      "id": "x-bot",
+      "name": "bot",
+      "kind": "x",
+      "url": "https://x.com/bot",
+      "enabled": true,
+      "role": "official",
+      "handle": "bot",
+      "max_pages": 3,
+      "roots_only": true,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-bot"
+      ]
+    },
+    {
+      "id": "x-spacexai",
+      "name": "SpaceXSI",
+      "kind": "x",
+      "url": "https://x.com/SpaceXSI",
+      "enabled": true,
+      "role": "official",
+      "handle": "SpaceXSI",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-spacexai"
+      ],
+      "aliases": [
+        "SpaceXAI"
+      ],
+      "identity_note": "Official x.ai site links to @SpaceXSI; public post author ID matches the historical @SpaceXAI mapping."
+    },
+    {
+      "id": "x-alibaba_qwen",
+      "name": "Alibaba_Qwen",
+      "kind": "x",
+      "url": "https://x.com/Alibaba_Qwen",
+      "enabled": true,
+      "role": "official",
+      "handle": "Alibaba_Qwen",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2
+    },
+    {
+      "id": "x-stepfun_ai",
+      "name": "StepFun_ai",
+      "kind": "x",
+      "url": "https://x.com/StepFun_ai",
+      "enabled": true,
+      "role": "official",
+      "handle": "StepFun_ai",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-stepfun_ai"
+      ]
+    },
+    {
+      "id": "x-bytedanceseed",
+      "name": "ByteDanceSeed",
+      "kind": "x",
+      "url": "https://x.com/ByteDanceSeed",
+      "enabled": true,
+      "role": "official",
+      "handle": "ByteDanceSeed",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2
+    },
+    {
+      "id": "x-tencenthunyuan",
+      "name": "TencentHunyuan",
+      "kind": "x",
+      "url": "https://x.com/TencentHunyuan",
+      "enabled": true,
+      "role": "official",
+      "handle": "TencentHunyuan",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2
+    },
+    {
+      "id": "x-microsoftai",
+      "name": "MicrosoftAI",
+      "kind": "x",
+      "url": "https://x.com/MicrosoftAI",
+      "enabled": true,
+      "role": "official",
+      "handle": "MicrosoftAI",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2
+    },
+    {
+      "id": "x-satyanadella",
+      "name": "satyanadella",
+      "kind": "x",
+      "url": "https://x.com/satyanadella",
+      "enabled": true,
+      "role": "first_party_person",
+      "handle": "satyanadella",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2,
+      "library_source_ids": [
+        "x-satyanadella"
+      ]
+    },
+    {
+      "id": "x-githubcopilot",
+      "name": "GitHubCopilot",
+      "kind": "x",
+      "url": "https://x.com/GitHubCopilot",
+      "enabled": true,
+      "role": "official",
+      "handle": "GitHubCopilot",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2
+    },
+    {
+      "id": "x-replit",
+      "name": "Replit",
+      "kind": "x",
+      "url": "https://x.com/Replit",
+      "enabled": true,
+      "role": "official",
+      "handle": "Replit",
+      "max_pages": 3,
+      "roots_only": false,
+      "interval_hours": 2
+    },
+    {
+      "id": "qwen-image-repo",
+      "name": "Qwen Image 官方代码变更",
+      "kind": "github",
+      "url": "https://github.com/QwenLM/Qwen-Image-2.1",
+      "enabled": true,
+      "role": "official",
+      "repository": "QwenLM/Qwen-Image-2.1",
+      "interval_hours": 2
+    },
+    {
+      "id": "youtu-repo",
+      "name": "腾讯优图 Parsing 代码变更",
+      "kind": "github",
+      "url": "https://github.com/TencentCloudADP/youtu-parsing",
+      "enabled": true,
+      "role": "official",
+      "repository": "TencentCloudADP/youtu-parsing",
+      "interval_hours": 2
+    },
+    {
+      "id": "qwen-models",
+      "name": "Qwen 新模型与模型卡修订",
+      "kind": "hf",
+      "url": "https://huggingface.co/Qwen",
+      "enabled": true,
+      "role": "official",
+      "author": "Qwen",
+      "interval_hours": 2,
+      "library_source_ids": [
+        "hf-qwen"
+      ]
+    },
+    {
+      "id": "tencent-youtu-models",
+      "name": "腾讯优图新模型与模型卡修订",
+      "kind": "hf",
+      "url": "https://huggingface.co/tencent",
+      "enabled": true,
+      "role": "official",
+      "author": "tencent",
+      "filter": "youtu",
+      "interval_hours": 2,
+      "library_source_ids": [
+        "hf-tencent"
+      ]
+    },
+    {
+      "id": "ithome-discovery",
+      "name": "IT之家补漏",
+      "kind": "rss",
+      "url": "https://www.ithome.com/rss/",
+      "enabled": true,
+      "role": "secondary_discovery",
+      "interval_hours": 1,
+      "library_source_ids": [
+        "web-www-ithome-com"
+      ]
+    },
+    {
+      "id": "qbit-discovery",
+      "name": "量子位补漏",
+      "kind": "rss",
+      "url": "https://www.qbitai.com/feed",
+      "enabled": true,
+      "role": "secondary_discovery",
+      "interval_hours": 2
+    },
+    {
+      "id": "aibase-discovery",
+      "name": "AIBase 国内应用补漏",
+      "kind": "html",
+      "url": "https://www.aibase.com/zh/news",
+      "enabled": true,
+      "role": "secondary_discovery",
+      "expect": [
+        "资讯",
+        "AI"
+      ],
+      "link_pattern": "(aibase.com/(zh/)?news/[^/?#]+|news.aibase.com/[^?#]+)",
+      "min_chars": 500,
+      "interval_hours": 2
+    },
+    {
+      "id": "juya-discovery",
+      "name": "橘鸦 AI 早报 · 新日报与来源发现",
+      "url": "https://daily.juya.uk/rss.xml",
+      "kind": "rss",
+      "role": "secondary_discovery",
+      "interval_hours": 1,
+      "enabled": true
+    },
+    {
+      "id": "x-aleph__alpha",
+      "name": "@Aleph__Alpha · Aleph Alpha",
+      "url": "https://x.com/Aleph__Alpha",
+      "kind": "x",
+      "handle": "Aleph__Alpha",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-aleph__alpha",
+      "library_source_ids": [
+        "x-aleph__alpha"
+      ]
+    },
+    {
+      "id": "x-andrewcurran_",
+      "name": "@AndrewCurran_ · Andrew Curran",
+      "url": "https://x.com/AndrewCurran_",
+      "kind": "x",
+      "handle": "AndrewCurran_",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-andrewcurran_",
+      "library_source_ids": [
+        "x-andrewcurran_"
+      ]
+    },
+    {
+      "id": "x-androiddev",
+      "name": "@AndroidDev · Android Developers",
+      "url": "https://x.com/AndroidDev",
+      "kind": "x",
+      "handle": "AndroidDev",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-androiddev",
+      "library_source_ids": [
+        "x-androiddev"
+      ]
+    },
+    {
+      "id": "x-antlingagi",
+      "name": "@AntLingAGI · Ant Ling",
+      "url": "https://x.com/AntLingAGI",
+      "kind": "x",
+      "handle": "AntLingAGI",
+      "role": "unknown",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-antlingagi",
+      "library_source_ids": [
+        "x-antlingagi"
+      ]
+    },
+    {
+      "id": "x-aravsrinivas",
+      "name": "@AravSrinivas · Aravind Srinivas",
+      "url": "https://x.com/AravSrinivas",
+      "kind": "x",
+      "handle": "AravSrinivas",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-aravsrinivas",
+      "library_source_ids": [
+        "x-aravsrinivas"
+      ]
+    },
+    {
+      "id": "x-artificialanlys",
+      "name": "@ArtificialAnlys · Artificial Analysis",
+      "url": "https://x.com/ArtificialAnlys",
+      "kind": "x",
+      "handle": "ArtificialAnlys",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-artificialanlys",
+      "library_source_ids": [
+        "x-artificialanlys"
+      ]
+    },
+    {
+      "id": "x-chrisuniverse",
+      "name": "@ChrisUniverse · ChrisUniverse 🗽",
+      "url": "https://x.com/ChrisUniverse",
+      "kind": "x",
+      "handle": "ChrisUniverse",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-chrisuniverse",
+      "library_source_ids": [
+        "x-chrisuniverse"
+      ]
+    },
+    {
+      "id": "x-commandcodeai",
+      "name": "@CommandCodeAI · Command Code",
+      "url": "https://x.com/CommandCodeAI",
+      "kind": "x",
+      "handle": "CommandCodeAI",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-commandcodeai",
+      "library_source_ids": [
+        "x-commandcodeai"
+      ]
+    },
+    {
+      "id": "x-cueagents",
+      "name": "@CueAgents · Cue Agents",
+      "url": "https://x.com/CueAgents",
+      "kind": "x",
+      "handle": "CueAgents",
+      "role": "unknown",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-cueagents",
+      "library_source_ids": [
+        "x-cueagents"
+      ]
+    },
+    {
+      "id": "x-darioamodei",
+      "name": "@DarioAmodei · Dario Amodei",
+      "url": "https://x.com/DarioAmodei",
+      "kind": "x",
+      "handle": "DarioAmodei",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-darioamodei",
+      "library_source_ids": [
+        "x-darioamodei"
+      ]
+    },
+    {
+      "id": "x-deepseekharness",
+      "name": "@DeepSeekHarness · DeepSeek Harness",
+      "url": "https://x.com/DeepSeekHarness",
+      "kind": "x",
+      "handle": "DeepSeekHarness",
+      "role": "unknown",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-deepseekharness",
+      "library_source_ids": [
+        "x-deepseekharness"
+      ]
+    },
+    {
+      "id": "x-elevenlabs",
+      "name": "@ElevenLabs",
+      "url": "https://x.com/ElevenLabs",
+      "kind": "x",
+      "handle": "ElevenLabs",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-elevenlabs",
+      "library_source_ids": [
+        "x-elevenlabs"
+      ]
+    },
+    {
+      "id": "x-epochairesearch",
+      "name": "@EpochAIResearch · Epoch AI",
+      "url": "https://x.com/EpochAIResearch",
+      "kind": "x",
+      "handle": "EpochAIResearch",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-epochairesearch",
+      "library_source_ids": [
+        "x-epochairesearch"
+      ]
+    },
+    {
+      "id": "x-exaailabs",
+      "name": "@ExaAILabs · Exa",
+      "url": "https://x.com/ExaAILabs",
+      "kind": "x",
+      "handle": "ExaAILabs",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-exaailabs",
+      "library_source_ids": [
+        "x-exaailabs"
+      ]
+    },
+    {
+      "id": "x-fishaudio",
+      "name": "@FishAudio · Fish Audio",
+      "url": "https://x.com/FishAudio",
+      "kind": "x",
+      "handle": "FishAudio",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-fishaudio",
+      "library_source_ids": [
+        "x-fishaudio"
+      ]
+    },
+    {
+      "id": "x-geminiapp",
+      "name": "@GeminiApp · Google Gemini",
+      "url": "https://x.com/GeminiApp",
+      "kind": "x",
+      "handle": "GeminiApp",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-geminiapp",
+      "library_source_ids": [
+        "x-geminiapp"
+      ]
+    },
+    {
+      "id": "x-gemini_notebook",
+      "name": "@Gemini_Notebook · Gemini Notebook",
+      "url": "https://x.com/Gemini_Notebook",
+      "kind": "x",
+      "handle": "Gemini_Notebook",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-gemini_notebook",
+      "library_source_ids": [
+        "x-gemini_notebook"
+      ]
+    },
+    {
+      "id": "x-google",
+      "name": "@Google",
+      "url": "https://x.com/Google",
+      "kind": "x",
+      "handle": "Google",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-google",
+      "library_source_ids": [
+        "x-google"
+      ]
+    },
+    {
+      "id": "x-googleaistudio",
+      "name": "@GoogleAIStudio · Google AI Studio",
+      "url": "https://x.com/GoogleAIStudio",
+      "kind": "x",
+      "handle": "GoogleAIStudio",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-googleaistudio"
+    },
+    {
+      "id": "x-googledeepmind",
+      "name": "@GoogleDeepMind · Google DeepMind",
+      "url": "https://x.com/GoogleDeepMind",
+      "kind": "x",
+      "handle": "GoogleDeepMind",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-googledeepmind",
+      "library_source_ids": [
+        "x-googledeepmind"
+      ]
+    },
+    {
+      "id": "x-googlelabs",
+      "name": "@GoogleLabs · Google Labs",
+      "url": "https://x.com/GoogleLabs",
+      "kind": "x",
+      "handle": "GoogleLabs",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-googlelabs",
+      "library_source_ids": [
+        "x-googlelabs"
+      ]
+    },
+    {
+      "id": "x-grokinsider",
+      "name": "@GrokInsider · Puck",
+      "url": "https://x.com/GrokInsider",
+      "kind": "x",
+      "handle": "GrokInsider",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-grokinsider",
+      "library_source_ids": [
+        "x-grokinsider"
+      ]
+    },
+    {
+      "id": "x-heygen",
+      "name": "@HeyGen",
+      "url": "https://x.com/HeyGen",
+      "kind": "x",
+      "handle": "HeyGen",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-heygen",
+      "library_source_ids": [
+        "x-heygen"
+      ]
+    },
+    {
+      "id": "x-jacksonkernion",
+      "name": "@JacksonKernion · Jackson Kernion",
+      "url": "https://x.com/JacksonKernion",
+      "kind": "x",
+      "handle": "JacksonKernion",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-jacksonkernion",
+      "library_source_ids": [
+        "x-jacksonkernion"
+      ]
+    },
+    {
+      "id": "x-jakeaboggs",
+      "name": "@JakeABoggs · Jake Boggs",
+      "url": "https://x.com/JakeABoggs",
+      "kind": "x",
+      "handle": "JakeABoggs",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-jakeaboggs",
+      "library_source_ids": [
+        "x-jakeaboggs"
+      ]
+    },
+    {
+      "id": "x-jameszmsun",
+      "name": "@JamesZmSun · James Sun",
+      "url": "https://x.com/JamesZmSun",
+      "kind": "x",
+      "handle": "JamesZmSun",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-jameszmsun",
+      "library_source_ids": [
+        "x-jameszmsun"
+      ]
+    },
+    {
+      "id": "x-jessicalessin",
+      "name": "@Jessicalessin · Jessica Lessin",
+      "url": "https://x.com/Jessicalessin",
+      "kind": "x",
+      "handle": "Jessicalessin",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-jessicalessin",
+      "library_source_ids": [
+        "x-jessicalessin"
+      ]
+    },
+    {
+      "id": "x-justinbleuel",
+      "name": "@JustinBleuel · Justin",
+      "url": "https://x.com/JustinBleuel",
+      "kind": "x",
+      "handle": "JustinBleuel",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-justinbleuel",
+      "library_source_ids": [
+        "x-justinbleuel"
+      ]
+    },
+    {
+      "id": "x-kimi_moonshot",
+      "name": "@Kimi_Moonshot · Kimi.ai",
+      "url": "https://x.com/Kimi_Moonshot",
+      "kind": "x",
+      "handle": "Kimi_Moonshot",
+      "role": "unknown",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-kimi_moonshot",
+      "library_source_ids": [
+        "x-kimi_moonshot"
+      ]
+    },
+    {
+      "id": "x-meituan_longcat",
+      "name": "@Meituan_LongCat · Meituan LongCat",
+      "url": "https://x.com/Meituan_LongCat",
+      "kind": "x",
+      "handle": "Meituan_LongCat",
+      "role": "unknown",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-meituan_longcat",
+      "library_source_ids": [
+        "x-meituan_longcat"
+      ]
+    },
+    {
+      "id": "x-micahcarroll",
+      "name": "@MicahCarroll · Micah Carroll",
+      "url": "https://x.com/MicahCarroll",
+      "kind": "x",
+      "handle": "MicahCarroll",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-micahcarroll",
+      "library_source_ids": [
+        "x-micahcarroll"
+      ]
+    },
+    {
+      "id": "x-minimax_ai",
+      "name": "@MiniMax_AI · MiniMax (official)",
+      "url": "https://x.com/MiniMax_AI",
+      "kind": "x",
+      "handle": "MiniMax_AI",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-minimax_ai",
+      "library_source_ids": [
+        "x-minimax_ai"
+      ]
+    },
+    {
+      "id": "x-mishalaskin",
+      "name": "@MishaLaskin · Misha Laskin",
+      "url": "https://x.com/MishaLaskin",
+      "kind": "x",
+      "handle": "MishaLaskin",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-mishalaskin",
+      "library_source_ids": [
+        "x-mishalaskin"
+      ]
+    },
+    {
+      "id": "x-muse",
+      "name": "@Muse",
+      "url": "https://x.com/Muse",
+      "kind": "x",
+      "handle": "Muse",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-muse",
+      "library_source_ids": [
+        "x-muse"
+      ]
+    },
+    {
+      "id": "x-nag1ovo",
+      "name": "@Nag1ovo · Jesse Zhang",
+      "url": "https://x.com/Nag1ovo",
+      "kind": "x",
+      "handle": "Nag1ovo",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-nag1ovo",
+      "library_source_ids": [
+        "x-nag1ovo"
+      ]
+    },
+    {
+      "id": "x-nousresearch",
+      "name": "@NousResearch · Nous Research",
+      "url": "https://x.com/NousResearch",
+      "kind": "x",
+      "handle": "NousResearch",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-nousresearch",
+      "library_source_ids": [
+        "x-nousresearch"
+      ]
+    },
+    {
+      "id": "x-openainewsroom",
+      "name": "@OpenAINewsroom · OpenAI Newsroom",
+      "url": "https://x.com/OpenAINewsroom",
+      "kind": "x",
+      "handle": "OpenAINewsroom",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-openainewsroom",
+      "library_source_ids": [
+        "x-openainewsroom"
+      ]
+    },
+    {
+      "id": "x-openbmb",
+      "name": "@OpenBMB",
+      "url": "https://x.com/OpenBMB",
+      "kind": "x",
+      "handle": "OpenBMB",
+      "role": "unknown",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-openbmb",
+      "library_source_ids": [
+        "x-openbmb"
+      ]
+    },
+    {
+      "id": "x-openrouter",
+      "name": "@OpenRouter",
+      "url": "https://x.com/OpenRouter",
+      "kind": "x",
+      "handle": "OpenRouter",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-openrouter",
+      "library_source_ids": [
+        "x-openrouter"
+      ]
+    },
+    {
+      "id": "x-pixverse",
+      "name": "@PixVerse",
+      "url": "https://x.com/PixVerse",
+      "kind": "x",
+      "handle": "PixVerse",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-pixverse",
+      "library_source_ids": [
+        "x-pixverse"
+      ]
+    },
+    {
+      "id": "x-qwendevs",
+      "name": "@QwenDevs · Qwen Developers",
+      "url": "https://x.com/QwenDevs",
+      "kind": "x",
+      "handle": "QwenDevs",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-qwendevs",
+      "library_source_ids": [
+        "x-qwendevs"
+      ]
+    },
+    {
+      "id": "x-robertjbye",
+      "name": "@RobertJBye · Robert Bye",
+      "url": "https://x.com/RobertJBye",
+      "kind": "x",
+      "handle": "RobertJBye",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-robertjbye",
+      "library_source_ids": [
+        "x-robertjbye"
+      ]
+    },
+    {
+      "id": "x-semianalysis_",
+      "name": "@SemiAnalysis_ · SemiAnalysis",
+      "url": "https://x.com/SemiAnalysis_",
+      "kind": "x",
+      "handle": "SemiAnalysis_",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-semianalysis_",
+      "library_source_ids": [
+        "x-semianalysis_"
+      ]
+    },
+    {
+      "id": "x-therohanvarma",
+      "name": "@TheRohanVarma · Rohan Varma",
+      "url": "https://x.com/TheRohanVarma",
+      "kind": "x",
+      "handle": "TheRohanVarma",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-therohanvarma",
+      "library_source_ids": [
+        "x-therohanvarma"
+      ]
+    },
+    {
+      "id": "x-underdogai",
+      "name": "@UnderdogAI · Underdog AI",
+      "url": "https://x.com/UnderdogAI",
+      "kind": "x",
+      "handle": "UnderdogAI",
+      "role": "unknown",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-underdogai",
+      "library_source_ids": [
+        "x-underdogai"
+      ]
+    },
+    {
+      "id": "x-valsai",
+      "name": "@ValsAI · Vals AI",
+      "url": "https://x.com/ValsAI",
+      "kind": "x",
+      "handle": "ValsAI",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-valsai",
+      "library_source_ids": [
+        "x-valsai"
+      ]
+    },
+    {
+      "id": "x-viduai_official",
+      "name": "@ViduAI_official · Vidu AI",
+      "url": "https://x.com/ViduAI_official",
+      "kind": "x",
+      "handle": "ViduAI_official",
+      "role": "unknown",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-viduai_official",
+      "library_source_ids": [
+        "x-viduai_official"
+      ]
+    },
+    {
+      "id": "x-zixuanli_",
+      "name": "@ZixuanLi_ · Zixuan Li",
+      "url": "https://x.com/ZixuanLi_",
+      "kind": "x",
+      "handle": "ZixuanLi_",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-zixuanli_",
+      "library_source_ids": [
+        "x-zixuanli_"
+      ]
+    },
+    {
+      "id": "x-_luofuli",
+      "name": "@_LuoFuli · Fuli Luo",
+      "url": "https://x.com/_LuoFuli",
+      "kind": "x",
+      "handle": "_LuoFuli",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-_luofuli",
+      "library_source_ids": [
+        "x-_luofuli"
+      ]
+    },
+    {
+      "id": "x-_inception_ai",
+      "name": "@_inception_ai · Inception",
+      "url": "https://x.com/_inception_ai",
+      "kind": "x",
+      "handle": "_inception_ai",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-_inception_ai",
+      "library_source_ids": [
+        "x-_inception_ai"
+      ]
+    },
+    {
+      "id": "x-_mohansolo",
+      "name": "@_mohansolo · Varun Mohan",
+      "url": "https://x.com/_mohansolo",
+      "kind": "x",
+      "handle": "_mohansolo",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-_mohansolo",
+      "library_source_ids": [
+        "x-_mohansolo"
+      ]
+    },
+    {
+      "id": "x-ajambrosino",
+      "name": "@ajambrosino · Andrew Ambrosino",
+      "url": "https://x.com/ajambrosino",
+      "kind": "x",
+      "handle": "ajambrosino",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-ajambrosino",
+      "library_source_ids": [
+        "x-ajambrosino"
+      ]
+    },
+    {
+      "id": "x-alexsobel",
+      "name": "@alexsobel · Alex Sobel MP for Leeds Central and Headingley",
+      "url": "https://x.com/alexsobel",
+      "kind": "x",
+      "handle": "alexsobel",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-alexsobel",
+      "library_source_ids": [
+        "x-alexsobel"
+      ]
+    },
+    {
+      "id": "x-antigravity",
+      "name": "@antigravity · Google Antigravity",
+      "url": "https://x.com/antigravity",
+      "kind": "x",
+      "handle": "antigravity",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-antigravity",
+      "library_source_ids": [
+        "x-antigravity"
+      ]
+    },
+    {
+      "id": "x-arena",
+      "name": "@arena · Arena.ai",
+      "url": "https://x.com/arena",
+      "kind": "x",
+      "handle": "arena",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-arena",
+      "library_source_ids": [
+        "x-arena"
+      ]
+    },
+    {
+      "id": "x-athyuttamre",
+      "name": "@athyuttamre · Atty Eleti",
+      "url": "https://x.com/athyuttamre",
+      "kind": "x",
+      "handle": "athyuttamre",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-athyuttamre",
+      "library_source_ids": [
+        "x-athyuttamre"
+      ]
+    },
+    {
+      "id": "x-bcherny",
+      "name": "@bcherny · Boris Cherny",
+      "url": "https://x.com/bcherny",
+      "kind": "x",
+      "handle": "bcherny",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-bcherny",
+      "library_source_ids": [
+        "x-bcherny"
+      ]
+    },
+    {
+      "id": "x-btibor91",
+      "name": "@btibor91 · Tibor Blaho",
+      "url": "https://x.com/btibor91",
+      "kind": "x",
+      "handle": "btibor91",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-btibor91",
+      "library_source_ids": [
+        "x-btibor91"
+      ]
+    },
+    {
+      "id": "x-charliermarsh",
+      "name": "@charliermarsh · Charlie Marsh",
+      "url": "https://x.com/charliermarsh",
+      "kind": "x",
+      "handle": "charliermarsh",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-charliermarsh",
+      "library_source_ids": [
+        "x-charliermarsh"
+      ]
+    },
+    {
+      "id": "x-cline",
+      "name": "@cline",
+      "url": "https://x.com/cline",
+      "kind": "x",
+      "handle": "cline",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-cline",
+      "library_source_ids": [
+        "x-cline"
+      ]
+    },
+    {
+      "id": "x-cognition",
+      "name": "@cognition",
+      "url": "https://x.com/cognition",
+      "kind": "x",
+      "handle": "cognition",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-cognition"
+    },
+    {
+      "id": "x-cohere",
+      "name": "@cohere",
+      "url": "https://x.com/cohere",
+      "kind": "x",
+      "handle": "cohere",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-cohere",
+      "library_source_ids": [
+        "x-cohere"
+      ]
+    },
+    {
+      "id": "x-cursor_ai",
+      "name": "@cursor_ai · Cursor",
+      "url": "https://x.com/cursor_ai",
+      "kind": "x",
+      "handle": "cursor_ai",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-cursor_ai",
+      "library_source_ids": [
+        "x-cursor_ai"
+      ]
+    },
+    {
+      "id": "x-danielhanchen",
+      "name": "@danielhanchen · Daniel Han",
+      "url": "https://x.com/danielhanchen",
+      "kind": "x",
+      "handle": "danielhanchen",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-danielhanchen",
+      "library_source_ids": [
+        "x-danielhanchen"
+      ]
+    },
+    {
+      "id": "x-dfeinition",
+      "name": "@dfeinition · Dan Fein",
+      "url": "https://x.com/dfeinition",
+      "kind": "x",
+      "handle": "dfeinition",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-dfeinition",
+      "library_source_ids": [
+        "x-dfeinition"
+      ]
+    },
+    {
+      "id": "x-elonmusk",
+      "name": "@elonmusk · Elon Musk",
+      "url": "https://x.com/elonmusk",
+      "kind": "x",
+      "handle": "elonmusk",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-elonmusk",
+      "library_source_ids": [
+        "x-elonmusk"
+      ]
+    },
+    {
+      "id": "x-embirico",
+      "name": "@embirico · Alexander Embiricos",
+      "url": "https://x.com/embirico",
+      "kind": "x",
+      "handle": "embirico",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-embirico",
+      "library_source_ids": [
+        "x-embirico"
+      ]
+    },
+    {
+      "id": "x-gdb",
+      "name": "@gdb · Greg Brockman",
+      "url": "https://x.com/gdb",
+      "kind": "x",
+      "handle": "gdb",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-gdb",
+      "library_source_ids": [
+        "x-gdb"
+      ]
+    },
+    {
+      "id": "x-geoffreyhinton",
+      "name": "@geoffreyhinton · Geoffrey Hinton",
+      "url": "https://x.com/geoffreyhinton",
+      "kind": "x",
+      "handle": "geoffreyhinton",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-geoffreyhinton",
+      "library_source_ids": [
+        "x-geoffreyhinton"
+      ]
+    },
+    {
+      "id": "x-github",
+      "name": "@github",
+      "url": "https://x.com/github",
+      "kind": "x",
+      "handle": "github",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-github",
+      "library_source_ids": [
+        "x-github"
+      ]
+    },
+    {
+      "id": "x-god_of_ai7",
+      "name": "@god_of_ai7 · しょー/AIの神",
+      "url": "https://x.com/god_of_ai7",
+      "kind": "x",
+      "handle": "god_of_ai7",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-god_of_ai7",
+      "library_source_ids": [
+        "x-god_of_ai7"
+      ]
+    },
+    {
+      "id": "x-ideogram_ai",
+      "name": "@ideogram_ai · Ideogram",
+      "url": "https://x.com/ideogram_ai",
+      "kind": "x",
+      "handle": "ideogram_ai",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-ideogram_ai",
+      "library_source_ids": [
+        "x-ideogram_ai"
+      ]
+    },
+    {
+      "id": "x-imagine",
+      "name": "@imagine · Grok Imagine",
+      "url": "https://x.com/imagine",
+      "kind": "x",
+      "handle": "imagine",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-imagine",
+      "library_source_ids": [
+        "x-imagine"
+      ]
+    },
+    {
+      "id": "x-j_asminewang",
+      "name": "@j_asminewang · Jasmine Wang",
+      "url": "https://x.com/j_asminewang",
+      "kind": "x",
+      "handle": "j_asminewang",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-j_asminewang",
+      "library_source_ids": [
+        "x-j_asminewang"
+      ]
+    },
+    {
+      "id": "x-jxnlco",
+      "name": "@jxnlco · jason",
+      "url": "https://x.com/jxnlco",
+      "kind": "x",
+      "handle": "jxnlco",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-jxnlco",
+      "library_source_ids": [
+        "x-jxnlco"
+      ]
+    },
+    {
+      "id": "x-karpathy",
+      "name": "@karpathy · Andrej Karpathy",
+      "url": "https://x.com/karpathy",
+      "kind": "x",
+      "handle": "karpathy",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-karpathy",
+      "library_source_ids": [
+        "x-karpathy"
+      ]
+    },
+    {
+      "id": "x-larsencc",
+      "name": "@larsencc · Larsen Cundric",
+      "url": "https://x.com/larsencc",
+      "kind": "x",
+      "handle": "larsencc",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-larsencc",
+      "library_source_ids": [
+        "x-larsencc"
+      ]
+    },
+    {
+      "id": "x-leerob",
+      "name": "@leerob · Lee Robinson",
+      "url": "https://x.com/leerob",
+      "kind": "x",
+      "handle": "leerob",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-leerob"
+    },
+    {
+      "id": "x-liquidai",
+      "name": "@liquidai · Liquid AI",
+      "url": "https://x.com/liquidai",
+      "kind": "x",
+      "handle": "liquidai",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-liquidai",
+      "library_source_ids": [
+        "x-liquidai"
+      ]
+    },
+    {
+      "id": "x-louiedooey",
+      "name": "@louiedooey · Louisa",
+      "url": "https://x.com/louiedooey",
+      "kind": "x",
+      "handle": "louiedooey",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-louiedooey",
+      "library_source_ids": [
+        "x-louiedooey"
+      ]
+    },
+    {
+      "id": "x-lydiahallie",
+      "name": "@lydiahallie · Lydia Hallie ✨",
+      "url": "https://x.com/lydiahallie",
+      "kind": "x",
+      "handle": "lydiahallie",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-lydiahallie",
+      "library_source_ids": [
+        "x-lydiahallie"
+      ]
+    },
+    {
+      "id": "x-mark_k",
+      "name": "@mark_k · Mark Kretschmann",
+      "url": "https://x.com/mark_k",
+      "kind": "x",
+      "handle": "mark_k",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-mark_k",
+      "library_source_ids": [
+        "x-mark_k"
+      ]
+    },
+    {
+      "id": "x-matansf",
+      "name": "@matanSF · Matan Grinberg",
+      "url": "https://x.com/matanSF",
+      "kind": "x",
+      "handle": "matanSF",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-matansf",
+      "library_source_ids": [
+        "x-matansf"
+      ]
+    },
+    {
+      "id": "x-mitchellh",
+      "name": "@mitchellh · Mitchell Hashimoto",
+      "url": "https://x.com/mitchellh",
+      "kind": "x",
+      "handle": "mitchellh",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-mitchellh",
+      "library_source_ids": [
+        "x-mitchellh"
+      ]
+    },
+    {
+      "id": "x-mxstbr",
+      "name": "@mxstbr · Max Stoiber",
+      "url": "https://x.com/mxstbr",
+      "kind": "x",
+      "handle": "mxstbr",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-mxstbr",
+      "library_source_ids": [
+        "x-mxstbr"
+      ]
+    },
+    {
+      "id": "x-natfriedman",
+      "name": "@natfriedman · Nat Friedman",
+      "url": "https://x.com/natfriedman",
+      "kind": "x",
+      "handle": "natfriedman",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-natfriedman",
+      "library_source_ids": [
+        "x-natfriedman"
+      ]
+    },
+    {
+      "id": "x-nebiusai",
+      "name": "@nebiusai · Nebius",
+      "url": "https://x.com/nebiusai",
+      "kind": "x",
+      "handle": "nebiusai",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-nebiusai"
+    },
+    {
+      "id": "x-odysseyml",
+      "name": "@odysseyml · Odyssey",
+      "url": "https://x.com/odysseyml",
+      "kind": "x",
+      "handle": "odysseyml",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-odysseyml",
+      "library_source_ids": [
+        "x-odysseyml"
+      ]
+    },
+    {
+      "id": "x-opencode",
+      "name": "@opencode",
+      "url": "https://x.com/opencode",
+      "kind": "x",
+      "handle": "opencode",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-opencode",
+      "library_source_ids": [
+        "x-opencode"
+      ]
+    },
+    {
+      "id": "x-paulfchristiano",
+      "name": "@paulfchristiano · Paul Christiano",
+      "url": "https://x.com/paulfchristiano",
+      "kind": "x",
+      "handle": "paulfchristiano",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-paulfchristiano"
+    },
+    {
+      "id": "x-perplexity_ai",
+      "name": "@perplexity_ai · Perplexity",
+      "url": "https://x.com/perplexity_ai",
+      "kind": "x",
+      "handle": "perplexity_ai",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-perplexity_ai",
+      "library_source_ids": [
+        "x-perplexity_ai"
+      ]
+    },
+    {
+      "id": "x-perplexitydevs",
+      "name": "@perplexitydevs · Perplexity Developers",
+      "url": "https://x.com/perplexitydevs",
+      "kind": "x",
+      "handle": "perplexitydevs",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-perplexitydevs",
+      "library_source_ids": [
+        "x-perplexitydevs"
+      ]
+    },
+    {
+      "id": "x-poteto",
+      "name": "@poteto · lauren",
+      "url": "https://x.com/poteto",
+      "kind": "x",
+      "handle": "poteto",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-poteto",
+      "library_source_ids": [
+        "x-poteto"
+      ]
+    },
+    {
+      "id": "x-pushmeet",
+      "name": "@pushmeet · Pushmeet Kohli",
+      "url": "https://x.com/pushmeet",
+      "kind": "x",
+      "handle": "pushmeet",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-pushmeet",
+      "library_source_ids": [
+        "x-pushmeet"
+      ]
+    },
+    {
+      "id": "x-qoder_ai_ide",
+      "name": "@qoder_ai_ide · Qoder",
+      "url": "https://x.com/qoder_ai_ide",
+      "kind": "x",
+      "handle": "qoder_ai_ide",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-qoder_ai_ide",
+      "library_source_ids": [
+        "x-qoder_ai_ide"
+      ]
+    },
+    {
+      "id": "x-rakyll",
+      "name": "@rakyll · Jaana Dogan ヤナ ドガン",
+      "url": "https://x.com/rakyll",
+      "kind": "x",
+      "handle": "rakyll",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-rakyll",
+      "library_source_ids": [
+        "x-rakyll"
+      ]
+    },
+    {
+      "id": "x-reach_vb",
+      "name": "@reach_vb · Vaibhav (VB) Srivastav",
+      "url": "https://x.com/reach_vb",
+      "kind": "x",
+      "handle": "reach_vb",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-reach_vb",
+      "library_source_ids": [
+        "x-reach_vb"
+      ]
+    },
+    {
+      "id": "x-real_kai42",
+      "name": "@real_kai42 · Kai",
+      "url": "https://x.com/real_kai42",
+      "kind": "x",
+      "handle": "real_kai42",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-real_kai42",
+      "library_source_ids": [
+        "x-real_kai42"
+      ]
+    },
+    {
+      "id": "x-reflection_ai",
+      "name": "@reflection_ai · Reflection",
+      "url": "https://x.com/reflection_ai",
+      "kind": "x",
+      "handle": "reflection_ai",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-reflection_ai",
+      "library_source_ids": [
+        "x-reflection_ai"
+      ]
+    },
+    {
+      "id": "x-sama",
+      "name": "@sama · Sam Altman",
+      "url": "https://x.com/sama",
+      "kind": "x",
+      "handle": "sama",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-sama",
+      "library_source_ids": [
+        "x-sama"
+      ]
+    },
+    {
+      "id": "x-sarahzorah",
+      "name": "@sarahzorah · Sarah Wolf",
+      "url": "https://x.com/sarahzorah",
+      "kind": "x",
+      "handle": "sarahzorah",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-sarahzorah",
+      "library_source_ids": [
+        "x-sarahzorah"
+      ]
+    },
+    {
+      "id": "x-steipete",
+      "name": "@steipete · Peter Steinberger 🦞",
+      "url": "https://x.com/steipete",
+      "kind": "x",
+      "handle": "steipete",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-steipete",
+      "library_source_ids": [
+        "x-steipete"
+      ]
+    },
+    {
+      "id": "x-stitchbygoogle",
+      "name": "@stitchbygoogle · Stitch by Google",
+      "url": "https://x.com/stitchbygoogle",
+      "kind": "x",
+      "handle": "stitchbygoogle",
+      "role": "unknown",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-stitchbygoogle",
+      "library_source_ids": [
+        "x-stitchbygoogle"
+      ]
+    },
+    {
+      "id": "x-sundarpichai",
+      "name": "@sundarpichai · Sundar Pichai",
+      "url": "https://x.com/sundarpichai",
+      "kind": "x",
+      "handle": "sundarpichai",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-sundarpichai",
+      "library_source_ids": [
+        "x-sundarpichai"
+      ]
+    },
+    {
+      "id": "x-synthwavedd",
+      "name": "@synthwavedd · leo 🐾",
+      "url": "https://x.com/synthwavedd",
+      "kind": "x",
+      "handle": "synthwavedd",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-synthwavedd",
+      "library_source_ids": [
+        "x-synthwavedd"
+      ]
+    },
+    {
+      "id": "x-tavus",
+      "name": "@tavus",
+      "url": "https://x.com/tavus",
+      "kind": "x",
+      "handle": "tavus",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-tavus",
+      "library_source_ids": [
+        "x-tavus"
+      ]
+    },
+    {
+      "id": "x-testingcatalog",
+      "name": "@testingcatalog · 🚨 AI News | TestingCatalog",
+      "url": "https://x.com/testingcatalog",
+      "kind": "x",
+      "handle": "testingcatalog",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-testingcatalog",
+      "library_source_ids": [
+        "x-testingcatalog"
+      ]
+    },
+    {
+      "id": "x-theinformation",
+      "name": "@theinformation · The Information",
+      "url": "https://x.com/theinformation",
+      "kind": "x",
+      "handle": "theinformation",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-theinformation",
+      "library_source_ids": [
+        "x-theinformation"
+      ]
+    },
+    {
+      "id": "x-tianyi",
+      "name": "@tianyi · Tianyi Cui",
+      "url": "https://x.com/tianyi",
+      "kind": "x",
+      "handle": "tianyi",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-tianyi",
+      "library_source_ids": [
+        "x-tianyi"
+      ]
+    },
+    {
+      "id": "x-tomekkorbak",
+      "name": "@tomekkorbak · Tomek Korbak",
+      "url": "https://x.com/tomekkorbak",
+      "kind": "x",
+      "handle": "tomekkorbak",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-tomekkorbak",
+      "library_source_ids": [
+        "x-tomekkorbak"
+      ]
+    },
+    {
+      "id": "x-trq212",
+      "name": "@trq212 · Thariq",
+      "url": "https://x.com/trq212",
+      "kind": "x",
+      "handle": "trq212",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-trq212",
+      "library_source_ids": [
+        "x-trq212"
+      ]
+    },
+    {
+      "id": "x-trycua",
+      "name": "@trycua · Cua",
+      "url": "https://x.com/trycua",
+      "kind": "x",
+      "handle": "trycua",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-trycua",
+      "library_source_ids": [
+        "x-trycua"
+      ]
+    },
+    {
+      "id": "x-typesafeai",
+      "name": "@typesafeai · TypeSafe AI",
+      "url": "https://x.com/typesafeai",
+      "kind": "x",
+      "handle": "typesafeai",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-typesafeai",
+      "library_source_ids": [
+        "x-typesafeai"
+      ]
+    },
+    {
+      "id": "x-unionalphaai",
+      "name": "@unionalphaai · Union Alpha",
+      "url": "https://x.com/unionalphaai",
+      "kind": "x",
+      "handle": "unionalphaai",
+      "role": "unknown",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-unionalphaai",
+      "library_source_ids": [
+        "x-unionalphaai"
+      ]
+    },
+    {
+      "id": "x-vercel",
+      "name": "@vercel",
+      "url": "https://x.com/vercel",
+      "kind": "x",
+      "handle": "vercel",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-vercel",
+      "library_source_ids": [
+        "x-vercel"
+      ]
+    },
+    {
+      "id": "x-vercel_dev",
+      "name": "@vercel_dev · Vercel Developers",
+      "url": "https://x.com/vercel_dev",
+      "kind": "x",
+      "handle": "vercel_dev",
+      "role": "official",
+      "enabled": true,
+      "interval_hours": 2,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-vercel_dev",
+      "library_source_ids": [
+        "x-vercel_dev"
+      ]
+    },
+    {
+      "id": "x-woofknight",
+      "name": "@woofknight · Papa Woof und Krampus und Bleaken",
+      "url": "https://x.com/woofknight",
+      "kind": "x",
+      "handle": "woofknight",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 4,
+      "max_pages": 3,
+      "library_source_id": "x-woofknight",
+      "library_source_ids": [
+        "x-woofknight"
+      ]
+    },
+    {
+      "id": "lib-f6aa679babd7a4",
+      "name": "Anthropic — Newsroom",
+      "url": "https://www.anthropic.com/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-anthropic-com-4"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.anthropic\\.com"
+    },
+    {
+      "id": "lib-c52708aad62c2c",
+      "name": "Claude by Anthropic — Articles",
+      "url": "https://claude.com/resources/articles",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "claude-com-11"
+      ],
+      "min_chars": 180,
+      "link_pattern": "claude\\.com"
+    },
+    {
+      "id": "lib-3c3c668643750b",
+      "name": "Google Blog — Company News",
+      "url": "https://blog.google/company-news/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "blog-google-8"
+      ],
+      "min_chars": 180,
+      "link_pattern": "blog\\.google"
+    },
+    {
+      "id": "lib-c501f8582163fc",
+      "name": "claude.dev — Community Blog",
+      "url": "https://claude.dev/rss.xml",
+      "kind": "rss",
+      "role": "community",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "claude-dev-22"
+      ]
+    },
+    {
+      "id": "lib-1ae9334c9dd74e",
+      "name": "Google Blog — Models & Research",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "blog-google-9"
+      ],
+      "min_chars": 180,
+      "link_pattern": "blog\\.google"
+    },
+    {
+      "id": "lib-4317c649bc1b9c",
+      "name": "arXiv · AI / 机器学习 / 视觉",
+      "url": "https://rss.arxiv.org/rss/cs.AI",
+      "kind": "rss",
+      "role": "research",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "arxiv-ai"
+      ]
+    },
+    {
+      "id": "lib-768548bd027005",
+      "name": "The White House — News",
+      "url": "https://www.whitehouse.gov/news/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-whitehouse-gov-37"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.whitehouse\\.gov"
+    },
+    {
+      "id": "lib-7f259f01ef3aa6",
+      "name": "ElevenLabs — Blog",
+      "url": "https://elevenlabs.io/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "elevenlabs-io-38"
+      ],
+      "min_chars": 180,
+      "link_pattern": "elevenlabs\\.io"
+    },
+    {
+      "id": "lib-81c2a7067782f8",
+      "name": "perplexity-ai · Hugging Face",
+      "url": "https://huggingface.co/perplexity-ai",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-perplexity-ai"
+      ],
+      "author": "perplexity-ai",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-9546f312862feb",
+      "name": "anthropics · GitHub 仓库目录",
+      "url": "https://github.com/anthropics?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-anthropics"
+      ],
+      "owner": "anthropics"
+    },
+    {
+      "id": "lib-feb3b72c7f4e77",
+      "name": "Google Developers Blog — Developer Blog",
+      "url": "https://developers.googleblog.com/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "developers-googleblog-com-40"
+      ],
+      "min_chars": 180,
+      "link_pattern": "developers\\.googleblog\\.com"
+    },
+    {
+      "id": "lib-f84187f7c52ef9",
+      "name": "TechCrunch — AI",
+      "url": "https://techcrunch.com/feed/",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "techcrunch.com"
+      ]
+    },
+    {
+      "id": "lib-40e60d3cb89bc6",
+      "name": "The Decoder — Artificial Intelligence",
+      "url": "https://the-decoder.com/feed/",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "the-decoder.com"
+      ]
+    },
+    {
+      "id": "lib-101d8ce4b44573",
+      "name": "xAI — News",
+      "url": "https://x.ai/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "x-ai-23"
+      ],
+      "min_chars": 180,
+      "link_pattern": "x\\.ai"
+    },
+    {
+      "id": "lib-749f1223edee5b",
+      "name": "deepseek-ai · GitHub 仓库目录",
+      "url": "https://github.com/deepseek-ai?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-deepseek-ai"
+      ],
+      "owner": "deepseek-ai"
+    },
+    {
+      "id": "lib-9eeb19be5b27af",
+      "name": "OpenAI Alignment — Misalignment Reports",
+      "url": "https://alignment.openai.com/misalignment-reports",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "alignment-openai-com-33"
+      ],
+      "min_chars": 180,
+      "link_pattern": "alignment\\.openai\\.com"
+    },
+    {
+      "id": "lib-743f99d1c1c01d",
+      "name": "Artificial Analysis — Evaluations",
+      "url": "https://artificialanalysis.ai/evaluations",
+      "kind": "html",
+      "role": "reference",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "artificialanalysis-ai-27"
+      ],
+      "min_chars": 180,
+      "link_pattern": "artificialanalysis\\.ai"
+    },
+    {
+      "id": "lib-2b7d4f5dbc2c57",
+      "name": "Artificial Intelligence",
+      "url": "https://news.bloomberglaw.com/artificial-intelligence/",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "news.bloomberglaw.com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "news\\.bloomberglaw\\.com"
+    },
+    {
+      "id": "lib-49e8e6b0ef21fd",
+      "name": "Cloudflare Blog — Product News",
+      "url": "https://blog.cloudflare.com/tag/product-news/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "blog-cloudflare-com-43"
+      ],
+      "min_chars": 180,
+      "link_pattern": "blog\\.cloudflare\\.com"
+    },
+    {
+      "id": "lib-d0936aaf28b563",
+      "name": "Kimi Code 官方文档与变更记录",
+      "url": "https://www.kimi.com/code/docs/kimi-code-desktop/changelog.html",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "web-kimi-code-docs"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.kimi\\.com"
+    },
+    {
+      "id": "lib-b43b768348fab6",
+      "name": "Epoch AI — Publications",
+      "url": "https://epoch.ai/publications",
+      "kind": "html",
+      "role": "reference",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "epoch-ai-44"
+      ],
+      "min_chars": 180,
+      "link_pattern": "epoch\\.ai"
+    },
+    {
+      "id": "lib-d8b7c1c3683053",
+      "name": "Mistral AI — News",
+      "url": "https://mistral.ai/news/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "mistral-ai-46"
+      ],
+      "min_chars": 180,
+      "link_pattern": "mistral\\.ai"
+    },
+    {
+      "id": "lib-49e8d0577a5e1f",
+      "name": "OpenAI Developers — API Changelog",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "developers-openai-com-15"
+      ],
+      "min_chars": 180,
+      "link_pattern": "developers\\.openai\\.com"
+    },
+    {
+      "id": "lib-a439595f9d702a",
+      "name": "TypeSafe AI — Blog",
+      "url": "https://typesafe.ai/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "typesafe-ai-73"
+      ],
+      "min_chars": 180,
+      "link_pattern": "typesafe\\.ai"
+    },
+    {
+      "id": "lib-0b16acf0338afd",
+      "name": "MiniMax 模型发布日志",
+      "url": "https://platform.minimax.cn/docs/release-notes/models",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "web-platform-minimax-cn"
+      ],
+      "min_chars": 180,
+      "link_pattern": "platform\\.minimax\\.cn"
+    },
+    {
+      "id": "lib-2b372a37cfd720",
+      "name": "Baseten — Blog",
+      "url": "https://www.baseten.co/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-baseten-co-63"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.baseten\\.co"
+    },
+    {
+      "id": "lib-3d68ad8e1324eb",
+      "name": "Claude Code — Claude Code Changelog",
+      "url": "https://code.claude.com/docs/en/changelog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "code-claude-com-78"
+      ],
+      "min_chars": 180,
+      "link_pattern": "code\\.claude\\.com"
+    },
+    {
+      "id": "lib-9e51f08fce44a9",
+      "name": "Cognition — Blog",
+      "url": "https://cognition.com/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "cognition-com-71"
+      ],
+      "min_chars": 180,
+      "link_pattern": "cognition\\.com"
+    },
+    {
+      "id": "lib-c6b8a33e7fa162",
+      "name": "Cohere — Blog",
+      "url": "https://cohere.com/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "cohere-com-82"
+      ],
+      "min_chars": 180,
+      "link_pattern": "cohere\\.com"
+    },
+    {
+      "id": "lib-9ad7c274f2d562",
+      "name": "GitHub — Changelog",
+      "url": "https://github.blog/changelog/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "github-blog-54"
+      ],
+      "min_chars": 180,
+      "link_pattern": "github\\.blog"
+    },
+    {
+      "id": "lib-d8df474352137e",
+      "name": "Google Blog — Products & Platforms",
+      "url": "https://blog.google/products-and-platforms/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "blog-google-10"
+      ],
+      "min_chars": 180,
+      "link_pattern": "blog\\.google"
+    },
+    {
+      "id": "lib-f1b371c49ccfe6",
+      "name": "JetBrains AI Blog — AI News",
+      "url": "https://blog.jetbrains.com/ai/category/news/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "blog-jetbrains-com-80"
+      ],
+      "min_chars": 180,
+      "link_pattern": "blog\\.jetbrains\\.com"
+    },
+    {
+      "id": "lib-219951b2c406ee",
+      "name": "NVIDIA — Blog",
+      "url": "https://blogs.nvidia.com/feed/",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "blogs-nvidia-com-59"
+      ]
+    },
+    {
+      "id": "lib-315c5b6fc912a4",
+      "name": "OpenRouter — Announcements",
+      "url": "https://openrouter.ai/blog/announcements",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "openrouter-ai-30"
+      ],
+      "min_chars": 180,
+      "link_pattern": "openrouter\\.ai"
+    },
+    {
+      "id": "lib-2b3dfacc14a853",
+      "name": "Vercel — AI Gateway Model Catalog",
+      "url": "https://vercel.com/ai-gateway/models",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "vercel-com-42"
+      ],
+      "min_chars": 180,
+      "link_pattern": "vercel\\.com"
+    },
+    {
+      "id": "lib-beb7a067787456",
+      "name": "Vercel — Changelog",
+      "url": "https://vercel.com/changelog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "vercel-com-41"
+      ],
+      "min_chars": 180,
+      "link_pattern": "vercel\\.com"
+    },
+    {
+      "id": "lib-e35ea0b2f30e53",
+      "name": "Bolt — Blog",
+      "url": "https://bolt.new/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "bolt-new-61"
+      ],
+      "min_chars": 180,
+      "link_pattern": "bolt\\.new"
+    },
+    {
+      "id": "lib-22bfce3172fd5a",
+      "name": "Google Cloud — AI & Machine Learning Blog",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "cloud-google-com-70"
+      ],
+      "min_chars": 180,
+      "link_pattern": "cloud\\.google\\.com"
+    },
+    {
+      "id": "lib-8789b2010d0ea9",
+      "name": "Google DeepMind Institute — Essays",
+      "url": "https://institute.deepmind.com/essays",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "institute-deepmind-com-62"
+      ],
+      "min_chars": 180,
+      "link_pattern": "institute\\.deepmind\\.com"
+    },
+    {
+      "id": "lib-d9e1cadbab88d6",
+      "name": "Google DeepMind — Blog",
+      "url": "https://deepmind.google/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "deepmind-google-35"
+      ],
+      "min_chars": 180,
+      "link_pattern": "deepmind\\.google"
+    },
+    {
+      "id": "lib-c97c2b93bf709a",
+      "name": "Harness — Blog",
+      "url": "https://www.harness.io/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-harness-io-57"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.harness\\.io"
+    },
+    {
+      "id": "lib-506e709b08afbc",
+      "name": "Microsoft AI — News",
+      "url": "https://microsoft.ai/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "microsoft-ai-69"
+      ],
+      "min_chars": 180,
+      "link_pattern": "microsoft\\.ai"
+    },
+    {
+      "id": "lib-907f4ca4a6ea2d",
+      "name": "Microsoft Windows — Developer Blog",
+      "url": "https://blogs.windows.com/windowsdeveloper/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "blogs-windows-com-50"
+      ],
+      "min_chars": 180,
+      "link_pattern": "blogs\\.windows\\.com"
+    },
+    {
+      "id": "lib-2bb7b1968eebf1",
+      "name": "Qoder CN 系列更新日志",
+      "url": "https://docs.qoder.cn/product-overview/qoder-cn-update-log",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "web-docs-qoder-cn"
+      ],
+      "min_chars": 180,
+      "link_pattern": "docs\\.qoder\\.cn"
+    },
+    {
+      "id": "lib-2cff4686da883f",
+      "name": "Reka — News",
+      "url": "https://reka.ai/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "reka-ai-60"
+      ],
+      "min_chars": 180,
+      "link_pattern": "reka\\.ai"
+    },
+    {
+      "id": "lib-8e502b418236ee",
+      "name": "Aleph Alpha — Blog",
+      "url": "https://aleph-alpha.com/en/blog/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "aleph-alpha-com-115"
+      ],
+      "min_chars": 180,
+      "link_pattern": "aleph\\-alpha\\.com"
+    },
+    {
+      "id": "lib-70260359e1bac8",
+      "name": "Amazon — Amazon News",
+      "url": "https://www.aboutamazon.com/amazon-news-today",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-aboutamazon-com-103"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.aboutamazon\\.com"
+    },
+    {
+      "id": "lib-0b21c6d4481c8e",
+      "name": "Apple Developer — Developer News",
+      "url": "https://developer.apple.com/news/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "developer-apple-com-106"
+      ],
+      "min_chars": 180,
+      "link_pattern": "developer\\.apple\\.com"
+    },
+    {
+      "id": "lib-7e621a3a0d505d",
+      "name": "Apple Newsroom",
+      "url": "https://www.apple.com/newsroom/rss-feed.rss",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www.apple.com"
+      ]
+    },
+    {
+      "id": "lib-3d197f310dc994",
+      "name": "Augment Code — Blog",
+      "url": "https://www.augmentcode.com/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-augmentcode-com-85"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.augmentcode\\.com"
+    },
+    {
+      "id": "lib-05d774803cee0d",
+      "name": "Biohub — News & Blog",
+      "url": "https://biohub.org/feed/",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "biohub.org"
+      ]
+    },
+    {
+      "id": "lib-7e3a0b76fdd6a1",
+      "name": "Black Forest Labs Docs — Release Notes",
+      "url": "https://docs.bfl.ai/release-notes",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "docs-bfl-ai-110"
+      ],
+      "min_chars": 180,
+      "link_pattern": "docs\\.bfl\\.ai"
+    },
+    {
+      "id": "lib-50ee68ef4dec4f",
+      "name": "Sakana AI — Blog & Updates",
+      "url": "https://sakana.ai/feed.xml",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "sakana.ai"
+      ]
+    },
+    {
+      "id": "lib-964956a23c01a2",
+      "name": "Tailscale — Blog",
+      "url": "https://tailscale.com/blog/index.xml",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "tailscale.com"
+      ]
+    },
+    {
+      "id": "lib-c1111f7c5b3cef",
+      "name": "Cline",
+      "url": "https://cline.bot/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "cline.bot"
+      ],
+      "min_chars": 180,
+      "link_pattern": "cline\\.bot"
+    },
+    {
+      "id": "lib-0fdf0c66bd3946",
+      "name": "CrowdStrike",
+      "url": "https://www.crowdstrike.com/en-us/blog/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www.crowdstrike.com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.crowdstrike\\.com"
+    },
+    {
+      "id": "lib-9c0885bdb370f6",
+      "name": "Cursor — Blog",
+      "url": "https://cursor.com/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "cursor-com-75"
+      ],
+      "min_chars": 180,
+      "link_pattern": "cursor\\.com"
+    },
+    {
+      "id": "lib-518f06a9c7713a",
+      "name": "DeepSeek 新闻",
+      "url": "https://www.deepseek.com/news/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "web-www-deepseek-com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.deepseek\\.com"
+    },
+    {
+      "id": "lib-40cc74befa4c73",
+      "name": "Deno — Blog",
+      "url": "https://deno.com/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "deno-com-118"
+      ],
+      "min_chars": 180,
+      "link_pattern": "deno\\.com"
+    },
+    {
+      "id": "lib-71e294be8c80b1",
+      "name": "Factory — News",
+      "url": "https://factory.com/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "factory-com-102"
+      ],
+      "min_chars": 180,
+      "link_pattern": "factory\\.com"
+    },
+    {
+      "id": "lib-64b811560a52e3",
+      "name": "Fireworks AI",
+      "url": "https://fireworks.ai/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "fireworks.ai"
+      ],
+      "min_chars": 180,
+      "link_pattern": "fireworks\\.ai"
+    },
+    {
+      "id": "lib-a6f4a48a6de9c1",
+      "name": "GitHub — Engineering Blog",
+      "url": "https://github.blog/engineering/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "github-blog-55"
+      ],
+      "min_chars": 180,
+      "link_pattern": "github\\.blog"
+    },
+    {
+      "id": "lib-23211828fc1c85",
+      "name": "Goodfire",
+      "url": "https://www.goodfire.com/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www.goodfire.com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.goodfire\\.com"
+    },
+    {
+      "id": "lib-a24fd97eb3d007",
+      "name": "Google AI for Developers — Gemini API Release Notes",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "ai-google-dev-52"
+      ],
+      "min_chars": 180,
+      "link_pattern": "ai\\.google\\.dev"
+    },
+    {
+      "id": "lib-fc313e5b71cba1",
+      "name": "Google Cloud Press — Latest News",
+      "url": "https://www.googlecloudpresscorner.com/latest-news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-googlecloudpresscorner-com-88"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.googlecloudpresscorner\\.com"
+    },
+    {
+      "id": "lib-e3781158b853ca",
+      "name": "Google Gemini — Latest News",
+      "url": "https://gemini.google/latest-news/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "gemini-google-98"
+      ],
+      "min_chars": 180,
+      "link_pattern": "gemini\\.google"
+    },
+    {
+      "id": "lib-cdfa64e9c7cd4e",
+      "name": "Google Research",
+      "url": "https://research.google/blog/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "research.google"
+      ],
+      "min_chars": 180,
+      "link_pattern": "research\\.google"
+    },
+    {
+      "id": "lib-3a04d3ba575889",
+      "name": "H — Newsroom",
+      "url": "https://hcompany.ai/newsroom",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hcompany-ai-86"
+      ],
+      "min_chars": 180,
+      "link_pattern": "hcompany\\.ai"
+    },
+    {
+      "id": "lib-220304ce667880",
+      "name": "Hacktron AI — Blog",
+      "url": "https://www.hacktron.ai/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-hacktron-ai-104"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.hacktron\\.ai"
+    },
+    {
+      "id": "lib-b1b4cb91f68d8f",
+      "name": "Inception Labs",
+      "url": "https://www.inceptionlabs.ai/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www.inceptionlabs.ai"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.inceptionlabs\\.ai"
+    },
+    {
+      "id": "lib-fcd6c05b3d267e",
+      "name": "Jina AI",
+      "url": "https://jina.ai/news/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "jina.ai"
+      ],
+      "min_chars": 180,
+      "link_pattern": "jina\\.ai"
+    },
+    {
+      "id": "lib-03cb600d820868",
+      "name": "Kimi Research & Tech Blog",
+      "url": "https://www.kimi.ai/blog/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "web-www-kimi-ai"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.kimi\\.ai"
+    },
+    {
+      "id": "lib-ab277b6ed8c5ed",
+      "name": "Kimi 资讯",
+      "url": "https://www.kimi.com/news/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "override-kimi-news"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.kimi\\.com"
+    },
+    {
+      "id": "lib-cdf4fac3031602",
+      "name": "LM Studio — Changelog",
+      "url": "https://lmstudio.ai/changelog/lmstudio",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "lmstudio-ai-108"
+      ],
+      "min_chars": 180,
+      "link_pattern": "lmstudio\\.ai"
+    },
+    {
+      "id": "lib-ef96c0994c2850",
+      "name": "LongCat 更新日志",
+      "url": "https://longcat.chat/platform/docs/zh/change-log",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "web-longcat-chat"
+      ],
+      "min_chars": 180,
+      "link_pattern": "longcat\\.chat"
+    },
+    {
+      "id": "lib-867297f7506fc9",
+      "name": "Manus",
+      "url": "https://manus.im/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "manus.im"
+      ],
+      "min_chars": 180,
+      "link_pattern": "manus\\.im"
+    },
+    {
+      "id": "lib-a96b1504f12bff",
+      "name": "Meta — Newsroom",
+      "url": "https://about.fb.com/feed/",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "about.fb.com"
+      ]
+    },
+    {
+      "id": "lib-bfe2a5b293e1ed",
+      "name": "Microsoft Windows — Experience Blog",
+      "url": "https://blogs.windows.com/windowsexperience/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "blogs-windows-com-51"
+      ],
+      "min_chars": 180,
+      "link_pattern": "blogs\\.windows\\.com"
+    },
+    {
+      "id": "lib-2141402da5e836",
+      "name": "Mozilla Blog — News",
+      "url": "https://blog.mozilla.org/en/feed/",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "blog-mozilla-org-121"
+      ]
+    },
+    {
+      "id": "lib-8ba5697bf26d2a",
+      "name": "Nous Research — Hermes Leaderboard",
+      "url": "https://portal.nousresearch.com/bench",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "portal-nousresearch-com-90"
+      ],
+      "min_chars": 180,
+      "link_pattern": "portal\\.nousresearch\\.com"
+    },
+    {
+      "id": "lib-58bc9f9d2d4218",
+      "name": "Novo Nordisk — Press Releases",
+      "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials.html",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-novonordisk-com-123"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.novonordisk\\.com"
+    },
+    {
+      "id": "lib-815b5a0a7fe5d2",
+      "name": "NVIDIA Developer — Blog",
+      "url": "https://developer.nvidia.com/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "developer-nvidia-com-113"
+      ],
+      "min_chars": 180,
+      "link_pattern": "developer\\.nvidia\\.com"
+    },
+    {
+      "id": "lib-3da9ce18ac891d",
+      "name": "NVIDIA — Newsroom",
+      "url": "https://nvidianews.nvidia.com/rss.xml",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "nvidianews.nvidia.com"
+      ]
+    },
+    {
+      "id": "lib-a6160476598750",
+      "name": "OpenAI Alignment — Research & Releases",
+      "url": "https://alignment.openai.com/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "alignment-openai-com-34"
+      ],
+      "min_chars": 180,
+      "link_pattern": "alignment\\.openai\\.com"
+    },
+    {
+      "id": "lib-550749f2f0329a",
+      "name": "OpenAI Developers — Developer Blog",
+      "url": "https://developers.openai.com/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "developers-openai-com-16"
+      ],
+      "min_chars": 180,
+      "link_pattern": "developers\\.openai\\.com"
+    },
+    {
+      "id": "lib-2cd05e45807e89",
+      "name": "PrismML — News",
+      "url": "https://prismml.com/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "prismml-com-87"
+      ],
+      "min_chars": 180,
+      "link_pattern": "prismml\\.com"
+    },
+    {
+      "id": "lib-ebaf993fa3259f",
+      "name": "QClaw 新闻资讯",
+      "url": "https://qclaw.qq.com/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "web-qclaw-qq-com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "qclaw\\.qq\\.com"
+    },
+    {
+      "id": "lib-39e255cf14bae2",
+      "name": "Qwen 官方模型发布者与图像模型仓库",
+      "url": "https://github.com/QwenLM",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "override-qwen-image21-publisher"
+      ],
+      "min_chars": 180,
+      "link_pattern": "github\\.com"
+    },
+    {
+      "id": "lib-eee3ff56b39724",
+      "name": "Red Hat — Blog",
+      "url": "https://www.redhat.com/en/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-redhat-com-100"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.redhat\\.com"
+    },
+    {
+      "id": "lib-c4ed4f69a18f86",
+      "name": "Reflection AI",
+      "url": "https://reflection.ai/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "reflection.ai"
+      ],
+      "min_chars": 180,
+      "link_pattern": "reflection\\.ai"
+    },
+    {
+      "id": "lib-f94f7488691ffd",
+      "name": "Sierra — Blog",
+      "url": "https://sierra.ai/rss.xml",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "sierra.ai"
+      ]
+    },
+    {
+      "id": "lib-70707895896ef1",
+      "name": "SiliconFlow 更新公告",
+      "url": "https://api-docs.siliconflow.cn/docs/release-notes/overview",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "web-api-docs-siliconflow-cn"
+      ],
+      "min_chars": 180,
+      "link_pattern": "api\\-docs\\.siliconflow\\.cn"
+    },
+    {
+      "id": "lib-2c462a1a3117d2",
+      "name": "SoftBank Group",
+      "url": "https://group.softbank/en/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "group.softbank"
+      ],
+      "min_chars": 180,
+      "link_pattern": "group\\.softbank"
+    },
+    {
+      "id": "lib-2c3f0035ae09a8",
+      "name": "Suno",
+      "url": "https://suno.com/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "suno.com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "suno\\.com"
+    },
+    {
+      "id": "lib-e1642f107e605d",
+      "name": "Tavus — Research",
+      "url": "https://www.tavus.io/research",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-tavus-io-101"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.tavus\\.io"
+    },
+    {
+      "id": "lib-5ef67380b655f6",
+      "name": "Microsoft — Official Blog",
+      "url": "https://blogs.microsoft.com/feed/",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "blogs.microsoft.com"
+      ]
+    },
+    {
+      "id": "lib-04deca756652dd",
+      "name": "UK AI Security Institute",
+      "url": "https://www.aisi.gov.uk/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www.aisi.gov.uk"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.aisi\\.gov\\.uk"
+    },
+    {
+      "id": "lib-3cced45f5f5d20",
+      "name": "Unity — Blog",
+      "url": "https://unity.com/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "unity-com-89"
+      ],
+      "min_chars": 180,
+      "link_pattern": "unity\\.com"
+    },
+    {
+      "id": "lib-8fb079dc6797dd",
+      "name": "WorkBuddy 更新日志",
+      "url": "https://www.workbuddy.cn/docs/workbuddy/Changelog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "web-www-workbuddy-cn"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.workbuddy\\.cn"
+    },
+    {
+      "id": "lib-77703794d20c12",
+      "name": "Workspace Updates Blog",
+      "url": "https://workspaceupdates.googleblog.com/search/label/Gmail",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "workspaceupdates.googleblog.com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "workspaceupdates\\.googleblog\\.com"
+    },
+    {
+      "id": "lib-069f925fabb017",
+      "name": "Zed — Blog",
+      "url": "https://zed.dev/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "zed-dev-116"
+      ],
+      "min_chars": 180,
+      "link_pattern": "zed\\.dev"
+    },
+    {
+      "id": "lib-1f4ccc86d884c9",
+      "name": "腾讯混元官方模型/研究发布者",
+      "url": "https://github.com/Tencent-Hunyuan",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "override-hy-tencent-hunyuan-image35"
+      ],
+      "min_chars": 180,
+      "link_pattern": "github\\.com"
+    },
+    {
+      "id": "lib-76ec4a02554d9e",
+      "name": "阶跃 StepAudio 3 模型家族入口",
+      "url": "https://static.stepfun.com/blog/stepaudio3/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "override-stepaudio3"
+      ],
+      "min_chars": 180,
+      "link_pattern": "static\\.stepfun\\.com"
+    },
+    {
+      "id": "lib-ecb87e989736f0",
+      "name": "Earendil — Posts",
+      "url": "https://earendil.com/posts",
+      "kind": "html",
+      "role": "personal",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "earendil-com-56"
+      ],
+      "min_chars": 180,
+      "link_pattern": "earendil\\.com"
+    },
+    {
+      "id": "lib-d70ffa5c759628",
+      "name": "JetBrains · Hugging Face",
+      "url": "https://huggingface.co/JetBrains",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-jetbrains"
+      ],
+      "author": "JetBrains",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-5e8ad580afd99b",
+      "name": "Business Insider — Technology & News",
+      "url": "https://feeds.businessinsider.com/custom/all",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 1,
+      "enabled": true,
+      "library_source_ids": [
+        "www.businessinsider.com"
+      ],
+      "feed_params": {
+        "limit": 100
+      },
+      "coverage_note": "已验证发行方支持limit=100，扩展RSS窗口并改为1小时检查，避免20篇全站RSS在12小时间隔内截断。"
+    },
+    {
+      "id": "lib-14f21b23db2af8",
+      "name": "inclusionAI · GitHub 仓库目录",
+      "url": "https://github.com/inclusionAI?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-inclusionai"
+      ],
+      "owner": "inclusionAI"
+    },
+    {
+      "id": "lib-671d1fda39fc1c",
+      "name": "internlm · Hugging Face",
+      "url": "https://huggingface.co/internlm",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-internlm"
+      ],
+      "author": "internlm",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-0f4fc9bc01eb78",
+      "name": "MiniMax-AI · GitHub 仓库目录",
+      "url": "https://github.com/MiniMax-AI?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-minimax-ai"
+      ],
+      "owner": "MiniMax-AI"
+    },
+    {
+      "id": "lib-529228ee003261",
+      "name": "openai · GitHub 仓库目录",
+      "url": "https://github.com/openai?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-openai"
+      ],
+      "owner": "openai"
+    },
+    {
+      "id": "lib-b3d3480734d063",
+      "name": "OpenRouter — Model Catalog",
+      "url": "https://openrouter.ai/models",
+      "kind": "html",
+      "role": "reference",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "openrouter-ai-32"
+      ],
+      "min_chars": 180,
+      "link_pattern": "openrouter\\.ai"
+    },
+    {
+      "id": "lib-1c4af79978cbd5",
+      "name": "trycua · GitHub 仓库目录",
+      "url": "https://github.com/trycua?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-trycua"
+      ],
+      "owner": "trycua"
+    },
+    {
+      "id": "lib-ef0cbb9f771d03",
+      "name": "XiaomiMiMo · Hugging Face",
+      "url": "https://huggingface.co/XiaomiMiMo",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-xiaomimimo"
+      ],
+      "author": "XiaomiMiMo",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-8e3691bc2b3c9c",
+      "name": "智东西快讯",
+      "url": "https://zhidx.com/p/category/zhidongxi/topnews",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "web-zhidx-com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "zhidx\\.com"
+    },
+    {
+      "id": "lib-6fbeb5f2224b43",
+      "name": "HuggingFaceBio · Hugging Face",
+      "url": "https://huggingface.co/HuggingFaceBio",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-huggingfacebio"
+      ],
+      "author": "HuggingFaceBio",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-bf88e552928065",
+      "name": "Arena — Blog",
+      "url": "https://arena.ai/blog",
+      "kind": "html",
+      "role": "reference",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "arena-ai-48"
+      ],
+      "min_chars": 180,
+      "link_pattern": "arena\\.ai"
+    },
+    {
+      "id": "lib-774789f746c5c6",
+      "name": "Cloudflare · Hugging Face官方模型发布者",
+      "url": "https://huggingface.co/Cloudflare",
+      "kind": "hf",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-cloudflare"
+      ],
+      "author": "Cloudflare",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-76691903cabefc",
+      "name": "LiquidAI · Hugging Face",
+      "url": "https://huggingface.co/LiquidAI",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-liquidai"
+      ],
+      "author": "LiquidAI",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-823d0e110811f1",
+      "name": "netease-youdao · Hugging Face",
+      "url": "https://huggingface.co/netease-youdao",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-netease-youdao"
+      ],
+      "author": "netease-youdao",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-33b65f9e9c613e",
+      "name": "nvidia · Hugging Face",
+      "url": "https://huggingface.co/nvidia",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-nvidia"
+      ],
+      "author": "nvidia",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-1743684b22c7d1",
+      "name": "prism-ml · Hugging Face",
+      "url": "https://huggingface.co/prism-ml",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-prism-ml"
+      ],
+      "author": "prism-ml",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-aabc39de809789",
+      "name": "QwenLM · GitHub 仓库目录",
+      "url": "https://github.com/QwenLM?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-qwenlm"
+      ],
+      "owner": "QwenLM"
+    },
+    {
+      "id": "lib-2518154236ff6f",
+      "name": "a16z — News & Content",
+      "url": "https://a16z.com/news-content/",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "a16z-com-105"
+      ],
+      "min_chars": 180,
+      "link_pattern": "a16z\\.com"
+    },
+    {
+      "id": "lib-85df7b263fdc02",
+      "name": "Aleph-Alpha · Hugging Face",
+      "url": "https://huggingface.co/Aleph-Alpha",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-aleph-alpha"
+      ],
+      "author": "Aleph-Alpha",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-c1d04d9379a5fa",
+      "name": "alibaba · GitHub 仓库目录",
+      "url": "https://github.com/alibaba?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-alibaba"
+      ],
+      "owner": "alibaba"
+    },
+    {
+      "id": "lib-1d3b816b05eacc",
+      "name": "alibaba-damo-academy · GitHub 仓库目录",
+      "url": "https://github.com/alibaba-damo-academy?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-alibaba-damo-academy"
+      ],
+      "owner": "alibaba-damo-academy"
+    },
+    {
+      "id": "lib-3c4ba6eaee84a6",
+      "name": "amazon · Hugging Face",
+      "url": "https://huggingface.co/amazon",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-amazon"
+      ],
+      "author": "amazon",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-f1a01fbf34b0e3",
+      "name": "Arena — Leaderboard",
+      "url": "https://arena.ai/leaderboard",
+      "kind": "html",
+      "role": "reference",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "arena-ai-49"
+      ],
+      "min_chars": 180,
+      "link_pattern": "arena\\.ai"
+    },
+    {
+      "id": "lib-485de56402c668",
+      "name": "Artificial Analysis — Leaderboard",
+      "url": "https://artificialanalysis.ai/text-to-speech/leaderboard",
+      "kind": "html",
+      "role": "reference",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "artificialanalysis-ai-29"
+      ],
+      "min_chars": 180,
+      "link_pattern": "artificialanalysis\\.ai"
+    },
+    {
+      "id": "lib-ca4de0894ddcdc",
+      "name": "Artificial Analysis — Models",
+      "url": "https://artificialanalysis.ai/models",
+      "kind": "html",
+      "role": "reference",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "artificialanalysis-ai-28"
+      ],
+      "min_chars": 180,
+      "link_pattern": "artificialanalysis\\.ai"
+    },
+    {
+      "id": "lib-14d1203e166576",
+      "name": "ArtificialAnalysis · GitHub 仓库目录",
+      "url": "https://github.com/ArtificialAnalysis?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-artificialanalysis"
+      ],
+      "owner": "ArtificialAnalysis"
+    },
+    {
+      "id": "lib-70fab835b70db9",
+      "name": "atria-asi · GitHub 仓库目录",
+      "url": "https://github.com/atria-asi?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-atria-asi"
+      ],
+      "owner": "atria-asi"
+    },
+    {
+      "id": "lib-40d1b0fba3988a",
+      "name": "bilibili · GitHub 仓库目录",
+      "url": "https://github.com/bilibili?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-bilibili"
+      ],
+      "owner": "bilibili"
+    },
+    {
+      "id": "lib-96ff39c887645a",
+      "name": "black-forest-labs · Hugging Face",
+      "url": "https://huggingface.co/black-forest-labs",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-black-forest-labs"
+      ],
+      "author": "black-forest-labs",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-d1e4c2f5774045",
+      "name": "ccch1mneyyy · GitHub 仓库目录",
+      "url": "https://github.com/ccch1mneyyy?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-ccch1mneyyy"
+      ],
+      "owner": "ccch1mneyyy"
+    },
+    {
+      "id": "lib-c023b05538b27c",
+      "name": "CohereLabs · Hugging Face",
+      "url": "https://huggingface.co/CohereLabs",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-coherelabs"
+      ],
+      "author": "CohereLabs",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-66db1ef994acdf",
+      "name": "ConwayResearch · Hugging Face",
+      "url": "https://huggingface.co/ConwayResearch",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-conwayresearch"
+      ],
+      "author": "ConwayResearch",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-3701eadf50fb1b",
+      "name": "cua-ai · Hugging Face",
+      "url": "https://huggingface.co/cua-ai",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-cua-ai"
+      ],
+      "author": "cua-ai",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-c5a979f1361bab",
+      "name": "deepseek-ai · Hugging Face",
+      "url": "https://huggingface.co/deepseek-ai",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-deepseek-ai"
+      ],
+      "author": "deepseek-ai",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-735c1b9e37a032",
+      "name": "desert-ant-labs · Hugging Face",
+      "url": "https://huggingface.co/desert-ant-labs",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-desert-ant-labs"
+      ],
+      "author": "desert-ant-labs",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-7ec72d8360db21",
+      "name": "earendil-works · GitHub 仓库目录",
+      "url": "https://github.com/earendil-works?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-earendil-works"
+      ],
+      "owner": "earendil-works"
+    },
+    {
+      "id": "lib-31e2fbc70aa728",
+      "name": "Ease3 · Hugging Face",
+      "url": "https://huggingface.co/Ease3",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-ease3"
+      ],
+      "author": "Ease3",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-3fcc979c853a7f",
+      "name": "empiriolabsai · Hugging Face",
+      "url": "https://huggingface.co/empiriolabsai",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-empiriolabsai"
+      ],
+      "author": "empiriolabsai",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-24086a0d02298d",
+      "name": "Epoch AI — Benchmarks",
+      "url": "https://epoch.ai/benchmarks",
+      "kind": "html",
+      "role": "reference",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "epoch-ai-45"
+      ],
+      "min_chars": 180,
+      "link_pattern": "epoch\\.ai"
+    },
+    {
+      "id": "lib-ff51209896af92",
+      "name": "facebookincubator · GitHub 仓库目录",
+      "url": "https://github.com/facebookincubator?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-facebookincubator"
+      ],
+      "owner": "facebookincubator"
+    },
+    {
+      "id": "lib-c8e259d6ec88b5",
+      "name": "FrancisRing · Hugging Face",
+      "url": "https://huggingface.co/FrancisRing",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-francisring"
+      ],
+      "author": "FrancisRing",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-94f4ef9a90a089",
+      "name": "ggml-org · GitHub 仓库目录",
+      "url": "https://github.com/ggml-org?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-ggml-org"
+      ],
+      "owner": "ggml-org"
+    },
+    {
+      "id": "lib-68598e188b3b68",
+      "name": "ggml-org · Hugging Face",
+      "url": "https://huggingface.co/ggml-org",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-ggml-org"
+      ],
+      "author": "ggml-org",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-2069863d38d988",
+      "name": "GitHubSecurityLab · GitHub 仓库目录",
+      "url": "https://github.com/GitHubSecurityLab?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-githubsecuritylab"
+      ],
+      "owner": "GitHubSecurityLab"
+    },
+    {
+      "id": "lib-3fa7865a8169f4",
+      "name": "google · GitHub 仓库目录",
+      "url": "https://github.com/google?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-google"
+      ],
+      "owner": "google"
+    },
+    {
+      "id": "lib-be9b162efba1ae",
+      "name": "google · Hugging Face",
+      "url": "https://huggingface.co/google",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-google"
+      ],
+      "author": "google",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-ecf8ab74c0287e",
+      "name": "google-ai-edge · GitHub 仓库目录",
+      "url": "https://github.com/google-ai-edge?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-google-ai-edge"
+      ],
+      "owner": "google-ai-edge"
+    },
+    {
+      "id": "lib-f80359f535c91e",
+      "name": "google-antigravity · GitHub 仓库目录",
+      "url": "https://github.com/google-antigravity?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-google-antigravity"
+      ],
+      "owner": "google-antigravity"
+    },
+    {
+      "id": "lib-3d96a63f5d8955",
+      "name": "Hcompany · Hugging Face",
+      "url": "https://huggingface.co/Hcompany",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-hcompany"
+      ],
+      "author": "Hcompany",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-070ba002333954",
+      "name": "illuin-tech · GitHub 仓库目录",
+      "url": "https://github.com/illuin-tech?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-illuin-tech"
+      ],
+      "owner": "illuin-tech"
+    },
+    {
+      "id": "lib-605b90b318286b",
+      "name": "inclusionAI · Hugging Face",
+      "url": "https://huggingface.co/inclusionAI",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-inclusionai"
+      ],
+      "author": "inclusionAI",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-6f013e52110625",
+      "name": "IndexTeam · Hugging Face",
+      "url": "https://huggingface.co/IndexTeam",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-indexteam"
+      ],
+      "author": "IndexTeam",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-3f2247e0645775",
+      "name": "InternLM · GitHub 仓库目录",
+      "url": "https://github.com/InternLM?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-internlm"
+      ],
+      "owner": "InternLM"
+    },
+    {
+      "id": "lib-8def814c6018a0",
+      "name": "IQuestLab · GitHub 仓库目录",
+      "url": "https://github.com/IQuestLab?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-iquestlab"
+      ],
+      "owner": "IQuestLab"
+    },
+    {
+      "id": "lib-138c073e6466a7",
+      "name": "jinaai · Hugging Face",
+      "url": "https://huggingface.co/jinaai",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-jinaai"
+      ],
+      "author": "jinaai",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-92686c4979c099",
+      "name": "Tom's Hardware — News",
+      "url": "https://www.tomshardware.com/feeds.xml",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "www.tomshardware.com"
+      ]
+    },
+    {
+      "id": "lib-0eddf494805a6a",
+      "name": "lightonai · Hugging Face",
+      "url": "https://huggingface.co/lightonai",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-lightonai"
+      ],
+      "author": "lightonai",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-f85fef4c3b4253",
+      "name": "Logics-MLLM · Hugging Face",
+      "url": "https://huggingface.co/Logics-MLLM",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-logics-mllm"
+      ],
+      "author": "Logics-MLLM",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-760b84419ea74f",
+      "name": "microsoft · GitHub 仓库目录",
+      "url": "https://github.com/microsoft?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-microsoft"
+      ],
+      "owner": "microsoft"
+    },
+    {
+      "id": "lib-f000d7d549d492",
+      "name": "mistralai · Hugging Face",
+      "url": "https://huggingface.co/mistralai",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-mistralai"
+      ],
+      "author": "mistralai",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-ff20f05e90f3fb",
+      "name": "NaiveAI · Hugging Face",
+      "url": "https://huggingface.co/NaiveAI",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-naiveai"
+      ],
+      "author": "NaiveAI",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-ebc081ce56a8bc",
+      "name": "naiveai-labs · GitHub 仓库目录",
+      "url": "https://github.com/naiveai-labs?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-naiveai-labs"
+      ],
+      "owner": "naiveai-labs"
+    },
+    {
+      "id": "lib-d592eddffea988",
+      "name": "Nature — Journal & Research News",
+      "url": "https://www.nature.com/nature.rss",
+      "kind": "rss",
+      "role": "reference",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "www.nature.com"
+      ]
+    },
+    {
+      "id": "lib-26df7245b0035c",
+      "name": "arXiv — News Blog",
+      "url": "https://blog.arxiv.org/feed/",
+      "kind": "rss",
+      "role": "reference",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "blog.arxiv.org"
+      ]
+    },
+    {
+      "id": "lib-6c540c17826d85",
+      "name": "Nous Research — Blog",
+      "url": "https://nousresearch.com/blog",
+      "kind": "html",
+      "role": "unknown",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "nousresearch.com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "nousresearch\\.com"
+    },
+    {
+      "id": "lib-d4798c269a5452",
+      "name": "Omarchy 新闻",
+      "url": "https://zh.omarchy.org/news/rss.xml",
+      "kind": "rss",
+      "role": "community",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "web-zh-omarchy-org"
+      ]
+    },
+    {
+      "id": "lib-dea4986b08cd88",
+      "name": "radar-generalist · Hugging Face",
+      "url": "https://huggingface.co/radar-generalist",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-radar-generalist"
+      ],
+      "author": "radar-generalist",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-1eb2a46e4ea2eb",
+      "name": "SeerRay-Lab · GitHub 仓库目录",
+      "url": "https://github.com/SeerRay-Lab?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-seerray-lab"
+      ],
+      "owner": "SeerRay-Lab"
+    },
+    {
+      "id": "lib-103daf9e1218a7",
+      "name": "SeerRay-Lab · Hugging Face",
+      "url": "https://huggingface.co/SeerRay-Lab",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-seerray-lab"
+      ],
+      "author": "SeerRay-Lab",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-ab2910a0cfedad",
+      "name": "stepfun-ai · GitHub 仓库目录",
+      "url": "https://github.com/stepfun-ai?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-stepfun-ai"
+      ],
+      "owner": "stepfun-ai"
+    },
+    {
+      "id": "lib-fa0790d1bc8805",
+      "name": "Tencent-Hunyuan · GitHub 仓库目录",
+      "url": "https://github.com/Tencent-Hunyuan?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-tencent-hunyuan"
+      ],
+      "owner": "Tencent-Hunyuan"
+    },
+    {
+      "id": "lib-9742579d2d93ff",
+      "name": "TencentCloudADP · GitHub 仓库目录",
+      "url": "https://github.com/TencentCloudADP?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-tencentcloudadp"
+      ],
+      "owner": "TencentCloudADP"
+    },
+    {
+      "id": "lib-42de1de46d8751",
+      "name": "The Kyunghyang Shinmun — English News",
+      "url": "https://www.khan.co.kr/rss/rssdata/english_news.xml",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "www.khan.co.kr"
+      ]
+    },
+    {
+      "id": "lib-631cf17456246a",
+      "name": "tile-ai · GitHub 仓库目录",
+      "url": "https://github.com/tile-ai?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-tile-ai"
+      ],
+      "owner": "tile-ai"
+    },
+    {
+      "id": "lib-670f83f385a27b",
+      "name": "WINK News - Southwest Florida",
+      "url": "https://www.winknews.com/search/?f=rss&t=article&c=news&l=50&s=start_time&sd=desc",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "www.winknews.com"
+      ]
+    },
+    {
+      "id": "lib-bb89d39b81ff2e",
+      "name": "xiaomi-research · GitHub 仓库目录",
+      "url": "https://github.com/xiaomi-research?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-xiaomi-research"
+      ],
+      "owner": "xiaomi-research"
+    },
+    {
+      "id": "lib-09345ec9f22e71",
+      "name": "XingChen-AGI · GitHub 仓库目录",
+      "url": "https://github.com/XingChen-AGI?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-xingchen-agi"
+      ],
+      "owner": "XingChen-AGI"
+    },
+    {
+      "id": "lib-7a71c405e97182",
+      "name": "XingChen-AGI · Hugging Face",
+      "url": "https://huggingface.co/XingChen-AGI",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-xingchen-agi"
+      ],
+      "author": "XingChen-AGI",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-c57cd6fbd504de",
+      "name": "zai-org · GitHub 仓库目录",
+      "url": "https://github.com/zai-org?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "gh-zai-org"
+      ],
+      "owner": "zai-org"
+    },
+    {
+      "id": "lib-cca6b84ed31bc9",
+      "name": "zai-org · Hugging Face",
+      "url": "https://huggingface.co/zai-org",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-zai-org"
+      ],
+      "author": "zai-org",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-3375237dd06b99",
+      "name": "日本経済新聞",
+      "url": "https://www.nikkei.com/news/category/technology/",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "www.nikkei.com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.nikkei\\.com"
+    },
+    {
+      "id": "lib-2b9706b0164e29",
+      "name": "Claude Help Center — Documentation · 文档新增与修订",
+      "url": "https://support.claude.com/sitemap.xml",
+      "kind": "sitemap",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "support-claude-com-20"
+      ],
+      "max_bytes": 12000000,
+      "url_pattern": "/en/articles/"
+    },
+    {
+      "id": "lib-df6ecc97602f57",
+      "name": "Claude Help Center — Documentation",
+      "url": "https://support.claude.com/en",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "support-claude-com-20"
+      ],
+      "min_chars": 180,
+      "link_pattern": "support\\.claude\\.com"
+    },
+    {
+      "id": "lib-c4045c923c5044",
+      "name": "Claude Academy",
+      "url": "https://academy.claude.com/tutorials",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "academy.claude.com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "academy\\.claude\\.com"
+    },
+    {
+      "id": "lib-c24bd735e8a410",
+      "name": "HeyGen",
+      "url": "https://www.heygen.com/research",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www.heygen.com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.heygen\\.com"
+    },
+    {
+      "id": "lib-5f691bc1dc7e48",
+      "name": "HeyGen Developers",
+      "url": "https://developers.heygen.com/docs",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "developers.heygen.com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "developers\\.heygen\\.com"
+    },
+    {
+      "id": "lib-d844075da16b93",
+      "name": "Mistral AI Documentation",
+      "url": "https://docs.mistral.ai/models",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "docs.mistral.ai"
+      ],
+      "min_chars": 180,
+      "link_pattern": "docs\\.mistral\\.ai"
+    },
+    {
+      "id": "lib-e095c86dd08231",
+      "name": "Ollama Blog",
+      "url": "https://ollama.com/blog/rss.xml",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "ollama.com"
+      ]
+    },
+    {
+      "id": "lib-3aad23ec44e8ba",
+      "name": "OpenCode",
+      "url": "https://opencode.ai/docs",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "opencode.ai"
+      ],
+      "min_chars": 180,
+      "link_pattern": "opencode\\.ai"
+    },
+    {
+      "id": "lib-8d81192c7f8a79",
+      "name": "Unsloth Documentation",
+      "url": "https://unsloth.ai/docs",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "unsloth.ai"
+      ],
+      "min_chars": 180,
+      "link_pattern": "unsloth\\.ai"
+    },
+    {
+      "id": "lib-f68aa4a14ee838",
+      "name": "World Labs",
+      "url": "https://www.worldlabs.ai/blog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www.worldlabs.ai"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.worldlabs\\.ai"
+    },
+    {
+      "id": "lib-fa45f8e0370718",
+      "name": "Ferstar Blog",
+      "url": "https://blog.ferstar.org/en/index.xml",
+      "kind": "rss",
+      "role": "personal",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "blog.ferstar.org"
+      ]
+    },
+    {
+      "id": "lib-e07487de082d66",
+      "name": "Amp — News & Chronicle",
+      "url": "https://ampcode.com/news.rss",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "ampcode.com"
+      ]
+    },
+    {
+      "id": "lib-928cf2da78b08a",
+      "name": "a16z — News & Newsletter",
+      "url": "https://www.a16z.news/feed",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "www.a16z.news"
+      ]
+    },
+    {
+      "id": "lib-00ea9df528da8d",
+      "name": "Delta — Blog",
+      "url": "https://delta.dev/blog.rss",
+      "kind": "rss",
+      "role": "unknown",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "delta.dev"
+      ]
+    },
+    {
+      "id": "lib-9bc0ae6a352b42",
+      "name": "Desert Ant Labs — Blog",
+      "url": "https://desertant.com/blog/rss.xml",
+      "kind": "rss",
+      "role": "unknown",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "desertant.com"
+      ]
+    },
+    {
+      "id": "lib-64b519bb5e5f54",
+      "name": "Mitchell Hashimoto — Writing",
+      "url": "https://mitchellh.com/feed.xml",
+      "kind": "rss",
+      "role": "personal",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "mitchellh.com"
+      ]
+    },
+    {
+      "id": "lib-560b5778d25efd",
+      "name": "OpenClaw — Blog",
+      "url": "https://openclaw.ai/rss.xml",
+      "kind": "rss",
+      "role": "unknown",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "openclaw.ai"
+      ]
+    },
+    {
+      "id": "lib-075825d17d9834",
+      "name": "SemiAnalysis — Newsletter Archive",
+      "url": "https://newsletter.semianalysis.com/feed",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "newsletter.semianalysis.com"
+      ]
+    },
+    {
+      "id": "lib-3296554c649392",
+      "name": "Terence Tao — What’s New",
+      "url": "https://terrytao.wordpress.com/feed/",
+      "kind": "rss",
+      "role": "personal",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "terrytao.wordpress.com"
+      ]
+    },
+    {
+      "id": "lib-0a90f3edb29a71",
+      "name": "Wikimedia Diff — Movement News",
+      "url": "https://diff.wikimedia.org/feed/",
+      "kind": "rss",
+      "role": "community",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "diff.wikimedia.org"
+      ]
+    },
+    {
+      "id": "lib-e85eeacd17cd20",
+      "name": "AP News — Artificial Intelligence",
+      "url": "https://apnews.com/hub/artificial-intelligence",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "media-parent-apnews-com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "apnews\\.com"
+    },
+    {
+      "id": "lib-de79cc5a2c3b54",
+      "name": "CNBC — Technology News",
+      "url": "https://www.cnbc.com/technology/",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "media-parent-www-cnbc-com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.cnbc\\.com"
+    },
+    {
+      "id": "lib-1988e3ffa75517",
+      "name": "Fortune — Tech",
+      "url": "https://fortune.com/section/tech/",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "media-parent-fortune-com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "fortune\\.com"
+    },
+    {
+      "id": "lib-74b3b5aa69700d",
+      "name": "Nieman Journalism Lab — October 2026 Archive",
+      "url": "https://www.niemanlab.org/2026/10/",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": false,
+      "library_source_ids": [
+        "media-parent-www-niemanlab-org"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.niemanlab\\.org",
+      "disabled_reason": "固定月份归档已被持续更新首页替代；保留历史回执，不继续监测旧月份。"
+    },
+    {
+      "id": "lib-1ba8348b30efae",
+      "name": "Semafor — Technology",
+      "url": "https://www.semafor.com/vertical/tech",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "media-parent-www-semafor-com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.semafor\\.com"
+    },
+    {
+      "id": "lib-fa6f5c4dfa758f",
+      "name": "South China Morning Post — Big Tech",
+      "url": "https://www.scmp.com/rss/320663/feed",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "media-parent-www-scmp-com"
+      ]
+    },
+    {
+      "id": "lib-cf37e5d3cb4e29",
+      "name": "The Atlantic — Artificial Intelligence",
+      "url": "https://www.theatlantic.com/projects/artificial-intelligence/",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "media-parent-www-theatlantic-com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.theatlantic\\.com"
+    },
+    {
+      "id": "lib-41ebb75ce2aec5",
+      "name": "The Business Times — Startups & Tech / Technology",
+      "url": "https://www.businesstimes.com.sg/startups-tech/technology",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "media-parent-www-businesstimes-com-sg"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.businesstimes\\.com\\.sg"
+    },
+    {
+      "id": "lib-24532eca06e4af",
+      "name": "The National Law Review — Artificial Intelligence & the Law News",
+      "url": "https://natlawreview.com/practice-groups/artificial-intelligence/Feed?_wrapper_format=html",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "media-parent-natlawreview-com"
+      ]
+    },
+    {
+      "id": "lib-858f29c80dead1",
+      "name": "The Washington Post — Artificial Intelligence",
+      "url": "https://www.washingtonpost.com/technology/innovations/",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "media-parent-www-washingtonpost-com"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.washingtonpost\\.com"
+    },
+    {
+      "id": "lib-4f102aa26bd5c1",
+      "name": "Nieman Lab · 新闻与 AI 报道",
+      "url": "https://www.niemanlab.org/",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "media-parent-www-niemanlab-org"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.niemanlab\\.org"
+    },
+    {
+      "id": "hb-e683855a8ee518",
+      "name": "Tencent 官方仓库发布目录",
+      "url": "https://github.com/Tencent?tab=repositories",
+      "kind": "github_org",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-e683855a8ee518"
+      ],
+      "discovered_from_heartbeat_at": "2026-10-10T08:18:38.828821+00:00",
+      "owner": "Tencent"
+    },
+    {
+      "id": "hb-33f210cbbdc715",
+      "name": "Marvell 官方新闻与投资者公告",
+      "url": "https://investor.marvell.com/news-events/press-releases/rss",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-33f210cbbdc715"
+      ],
+      "discovered_from_heartbeat_at": "2026-10-10T08:18:38.828821+00:00"
+    },
+    {
+      "id": "lib-00eaf917ab1113",
+      "name": "OpenAI 模型与工具价目表",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-openai-pricing"
+      ],
+      "min_chars": 180,
+      "link_pattern": "developers\\.openai\\.com"
+    },
+    {
+      "id": "lib-895bb1b259f842",
+      "name": "PAP / Poppy 协议文档目录",
+      "url": "https://personalagentprotocol.org/docs/overview",
+      "kind": "html",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-poppy-docs"
+      ],
+      "min_chars": 180,
+      "link_pattern": "personalagentprotocol\\.org"
+    },
+    {
+      "id": "lib-e58de84351d8b7",
+      "name": "Miltton 新闻稿目录（Cision分发）",
+      "url": "https://news.cision.com/miltton/",
+      "kind": "html",
+      "role": "organization",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-miltton-cision"
+      ],
+      "min_chars": 180,
+      "link_pattern": "news\\.cision\\.com"
+    },
+    {
+      "id": "lib-3d411c47e1e656",
+      "name": "长鑫存储企业动态",
+      "url": "https://www.cxmt.com/news.html",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-cxmt-news"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.cxmt\\.com"
+    },
+    {
+      "id": "lib-2eb7b31ffaf926",
+      "name": "Nikon Small World 官方赛事新闻",
+      "url": "https://www.nikonsmallworld.com/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-nikon-smallworld-news"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.nikonsmallworld\\.com"
+    },
+    {
+      "id": "lib-e7b6c69977d5e5",
+      "name": "onsemi 新闻与技术动态",
+      "url": "https://www.onsemi.com/company/newsroom/news-and-insights",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-onsemi-news"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.onsemi\\.com"
+    },
+    {
+      "id": "hb-x-elevencreative",
+      "name": "@ElevenCreative · ElevenLabs 创作产品",
+      "url": "https://x.com/ElevenCreative",
+      "kind": "x",
+      "handle": "ElevenCreative",
+      "role": "official",
+      "interval_hours": 2,
+      "bootstrap_hours": 48,
+      "roots_only": false,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-elevencreative-x"
+      ]
+    },
+    {
+      "id": "lib-04ffbf1e02c257",
+      "name": "Nous Portal · 模型目录与平台价格",
+      "url": "https://portal.nousresearch.com/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-nous-model-catalog"
+      ],
+      "min_chars": 2000,
+      "link_pattern": "portal\\.nousresearch\\.com",
+      "expect": [
+        "per 1M",
+        "/1M"
+      ],
+      "collection_scope": "Nous Portal公开多模型目录；平台价格/上架变化不是各模型发布方通用定价"
+    },
+    {
+      "id": "lib-18beea801ab874",
+      "name": "OpenAI · ChatGPT与Codex更新日志",
+      "url": "https://learn.chatgpt.com/docs/changelog",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 2,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-openai-product-changelog"
+      ],
+      "min_chars": 2000,
+      "link_pattern": "learn\\.chatgpt\\.com",
+      "expect": [
+        "Latest updates to ChatGPT and Codex"
+      ]
+    },
+    {
+      "id": "hb-x-spacexsi",
+      "name": "@SpaceXSI · Grok发布方官方账号",
+      "url": "https://x.com/SpaceXSI",
+      "kind": "x",
+      "role": "official",
+      "interval_hours": 2,
+      "enabled": false,
+      "max_pages": 3,
+      "library_source_ids": [
+        "hb-spacexsi-x",
+        "x-spacexai"
+      ],
+      "handle": "SpaceXSI",
+      "disabled_reason": "Duplicate account identity merged into canonical source x-spacexai; retain this ID and its historical state for audit.",
+      "merged_into": "x-spacexai"
+    },
+    {
+      "id": "manual-wsj-ai-index",
+      "name": "The Wall Street Journal — AI目录（自动读取受限）",
+      "url": "https://www.wsj.com/tech/ai",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": false,
+      "library_source_ids": [
+        "www.wsj.com"
+      ],
+      "disabled_reason": "HTML401; available public directory via web tool; RSS candidate stale2025",
+      "collection_scope": "manual-only reference; no successful automated baseline"
+    },
+    {
+      "id": "manual-openai-transparency",
+      "name": "OpenAI · Trust & Transparency报告目录",
+      "url": "https://openai.com/trust-and-transparency/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 12,
+      "enabled": false,
+      "library_source_ids": [
+        "openai-trust-transparency-reports"
+      ],
+      "disabled_reason": "HTML403; official directory link confirmed via web tool",
+      "collection_scope": "manual-only reference; no successful automated baseline"
+    },
+    {
+      "id": "lib-5fb5d93d1b5b9b",
+      "name": "Financial Times — Technology与公开RSS",
+      "url": "https://www.ft.com/technology?format=rss",
+      "kind": "rss",
+      "role": "media",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www.ft.com"
+      ]
+    },
+    {
+      "id": "lib-ccf29e6a0308d4",
+      "name": "Qoder全球版 · 更新日志与产品公告目录",
+      "url": "https://docs.qoder.com/zh/release-notes/qoder",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "docs-qoder-com-global"
+      ],
+      "min_chars": 180,
+      "link_pattern": "docs\\.qoder\\.com"
+    },
+    {
+      "id": "lib-4eaef2386b7b5a",
+      "name": "StepFun国际平台 · 多模型价格与配额目录",
+      "url": "https://platform.stepfun.ai/docs/en/guides/pricing/details",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-stepfun-international-pricing"
+      ],
+      "min_chars": 800,
+      "link_pattern": "platform\\.stepfun\\.ai",
+      "expect": [
+        "Pricing",
+        "Rate Limits"
+      ]
+    },
+    {
+      "id": "manual-droi-company-releases",
+      "name": "上海卓易科技 · 公司新闻稿目录（GlobeNewswire）",
+      "url": "https://www.globenewswire.com/en/search/organization/Shanghai%2520Droi%2520Technology%2520Co%C2%A7%CE%B4%2520Ltd",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 12,
+      "enabled": false,
+      "library_source_ids": [
+        "hb-droi-company-releases"
+      ],
+      "disabled_reason": "HTML403; actual two-release publisher directory readable via web tool",
+      "collection_scope": "manual-only reference; no successful automated baseline"
+    },
+    {
+      "id": "lib-ca3d8b6b5884b6",
+      "name": "Cursor · 官方仓库目录",
+      "url": "https://github.com/cursor?tab=repositories",
+      "kind": "github_org",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-cursor-official-repositories"
+      ],
+      "owner": "cursor"
+    },
+    {
+      "id": "lib-bab0e18b280215",
+      "name": "OpenAI API · 停用与迁移时间表",
+      "url": "https://developers.openai.com/api/docs/deprecations",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-openai-api-deprecations"
+      ],
+      "min_chars": 800,
+      "link_pattern": "/api/docs/",
+      "expect_keywords": [
+        "Deprecations",
+        "gpt-4o-2024-05-13"
+      ]
+    },
+    {
+      "id": "lib-6f7d67dbefbf6f",
+      "name": "小鹏XPENG · 全球官网新闻目录",
+      "url": "https://www.xpeng.com/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-xpeng-global-news"
+      ],
+      "min_chars": 800,
+      "link_pattern": "/news/",
+      "expect_keywords": [
+        "XPENG"
+      ],
+      "collection_scope": "首页正文含多篇日期/标题，点击卡片路由不全自动提取；首读1个正文项不是1篇新闻。"
+    },
+    {
+      "id": "lib-c8a253b60aa66c",
+      "name": "Variety澳新版 · 影视行业与AI人物动态",
+      "url": "https://au.variety.com/v/tv/",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "hb-variety-anz-tv"
+      ],
+      "min_chars": 800,
+      "link_pattern": "/\\d{4}/(?:tv|film|tech)/",
+      "expect_keywords": [
+        "Latest News",
+        "Variety"
+      ],
+      "collection_scope": "TV栏目首屏，检测文章链接和正文变化；已核RSS未含凯奇原文，未使用为该栏目全覆盖。"
+    },
+    {
+      "id": "lib-59c831941b9219",
+      "name": "LINUX DO — 人工智能标签",
+      "url": "https://linux.do/tag/444-tag/444",
+      "kind": "html",
+      "role": "community",
+      "interval_hours": 12,
+      "enabled": false,
+      "library_source_ids": [
+        "pending-5dd1a9b3afdf"
+      ],
+      "min_chars": 180,
+      "link_pattern": "linux\\.do",
+      "manual_watch_only": true,
+      "note": "目录验证与采集方法分开；保留403回执，当前网页工具可读，常规HTTP不启用。"
+    },
+    {
+      "id": "x-ziwenxu_",
+      "name": "Ziwen (@ziwenxu_)",
+      "url": "https://x.com/ziwenxu_",
+      "kind": "x",
+      "handle": "ziwenxu_",
+      "role": "personal",
+      "enabled": true,
+      "interval_hours": 12,
+      "bootstrap_hours": 12,
+      "max_pages": 3,
+      "library_source_ids": [
+        "pending-ef9641e135f0"
+      ]
+    },
+    {
+      "id": "lib-639d0a3dd28c16",
+      "name": "xAI Docs — The X Subscription",
+      "url": "https://docs.x.ai/x-subscription/overview",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "docs-xai-subscription"
+      ],
+      "min_chars": 180,
+      "link_pattern": "docs\\.x\\.ai"
+    },
+    {
+      "id": "lib-010437c8df5d00",
+      "name": "Meta AI Research",
+      "url": "https://research.meta.ai/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "meta-ai-research"
+      ],
+      "min_chars": 180,
+      "link_pattern": "research\\.meta\\.ai"
+    },
+    {
+      "id": "lib-bd893efa9c1fbd",
+      "name": "Cisco Blogs — Executive Platform",
+      "url": "https://blogs.cisco.com/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "cisco-blogs-news"
+      ],
+      "min_chars": 180,
+      "link_pattern": "blogs\\.cisco\\.com"
+    },
+    {
+      "id": "lib-7b74bf714eaf58",
+      "name": "Microsoft Azure Blog",
+      "url": "https://azure.microsoft.com/en-us/blog/",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "azure-microsoft-blog"
+      ],
+      "min_chars": 180,
+      "link_pattern": "azure\\.microsoft\\.com"
+    },
+    {
+      "id": "lib-ae41209e6e8171",
+      "name": "OpenBMB — Hugging Face Models",
+      "url": "https://huggingface.co/openbmb",
+      "kind": "hf",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "hf-openbmb-models"
+      ],
+      "author": "openbmb",
+      "collection_scope": "模型列表；新 Space / Collection 仍依靠目录和日报查漏"
+    },
+    {
+      "id": "lib-6b266a23023b4c",
+      "name": "Artificial Analysis — Articles",
+      "url": "https://artificialanalysis.ai/articles",
+      "kind": "html",
+      "role": "research",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "artificialanalysis-articles"
+      ],
+      "min_chars": 180,
+      "link_pattern": "artificialanalysis\\.ai"
+    },
+    {
+      "id": "lib-792b1b7d96774c",
+      "name": "arXiv — Cryptography and Security (cs.CR)",
+      "url": "https://rss.arxiv.org/rss/cs.CR",
+      "kind": "rss",
+      "role": "research",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "arxiv-cs-cr-recent"
+      ]
+    },
+    {
+      "id": "lib-ff10e47e85d5be",
+      "name": "arXiv — Machine Learning (cs.LG)",
+      "url": "https://rss.arxiv.org/rss/cs.LG",
+      "kind": "rss",
+      "role": "research",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "arxiv-cs-lg-recent"
+      ]
+    },
+    {
+      "id": "lib-42e89d70a2b36e",
+      "name": "OpenBMB — GitHub Repositories",
+      "url": "https://github.com/OpenBMB?tab=repositories",
+      "kind": "github_org",
+      "role": "project",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "github-openbmb-repositories"
+      ],
+      "owner": "OpenBMB"
+    },
+    {
+      "id": "lib-d2cbbe9b6d655c",
+      "name": "Phoronix — News Archive",
+      "url": "https://www.phoronix.com/news",
+      "kind": "html",
+      "role": "media",
+      "interval_hours": 12,
+      "enabled": true,
+      "library_source_ids": [
+        "phoronix-ai-news"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.phoronix\\.com"
+    },
+    {
+      "id": "lib-2819bcfd731a30",
+      "name": "Odyssey — Writing",
+      "url": "https://odyssey.systems/writing",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "odyssey-systems-74"
+      ],
+      "min_chars": 180,
+      "link_pattern": "odyssey\\.systems"
+    },
+    {
+      "id": "lib-5bcc54be9694a5",
+      "name": "Android Developers — Product News",
+      "url": "https://developer.android.com/static/blog/atom.xml",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "developer.android.com"
+      ]
+    },
+    {
+      "id": "lib-6ff151d43dd263",
+      "name": "Liquid AI — News and Updates / Models",
+      "url": "https://www.liquid.ai/news/models",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "www-liquid-ai-111"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.liquid\\.ai"
+    },
+    {
+      "id": "lib-65ab3fca76ad98",
+      "name": "Transluce — News",
+      "url": "https://transluce.org/news",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "transluce.org"
+      ],
+      "min_chars": 180,
+      "link_pattern": "transluce\\.org"
+    },
+    {
+      "id": "lib-c3a0df676525df",
+      "name": "United States Department of Justice — Press Releases",
+      "url": "https://www.justice.gov/news/press-releases",
+      "kind": "html",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": false,
+      "library_source_ids": [
+        "pending-4b8d572d8863"
+      ],
+      "min_chars": 180,
+      "link_pattern": "www\\.justice\\.gov",
+      "disabled_reason": "Directory page did not expose multiple release records during 2026-10-14 manual verification; keep pending."
+    },
+    {
+      "id": "lib-2b3f5d3856366f",
+      "name": "DeepSeek Status 历史事件 RSS",
+      "url": "https://status.deepseek.com/history.rss",
+      "kind": "rss",
+      "role": "official",
+      "interval_hours": 6,
+      "enabled": true,
+      "library_source_ids": [
+        "pending-0d2df041bfbc"
+      ]
+    }
+  ],
+  "known_gaps": [
+    {
+      "owner": "StepFun",
+      "missing": "10/9 权益变更的官方原始通知",
+      "next_entry": "https://platform.stepfun.com/step-plan",
+      "fallback": "https://linux.do/t/topic/3000890",
+      "status": "待原始公告；不将社区转载认定为官方确认"
+    },
+    {
+      "owner": "豆包",
+      "missing": "生活缴费灰度、豆包工作画布的官方公众号原文和可订阅更新入口",
+      "next_entry": "https://www.doubao.com/",
+      "fallback": "https://www.aibase.com/zh/news",
+      "status": "媒体补漏已配置；应用/公众号原始通知仍需人工或可用浏览器会话核对"
+    }
+  ],
+  "policy": {
+    "first_published": "标记最早找到的官方记录；无法证明全网最早时不写绝对首发",
+    "source_identity": "官方社区域名不等于每个用户帖子都是官方发布",
+    "freshness": "published_at、modified_at、observed_at、effective_at分开；未来日期和无时区条目不自动归入今日新闻",
+    "failures": "抓取失败/分页未结束不推进成功水位；重复消息去重；RSS列表覆盖不足单列缺口",
+    "evidence": "监测结果为待核线索；保留原链接和本地响应；需要读原文确认日期、范围，再截图归档",
+    "automation_scope": "持续发现与本地归档；不自动登录陌生站点、付款或发布外部平台"
+  },
+  "catalog_policy": "日报、媒体、社区与个人只提供发现线索，发布前回查官方正文。新来源先登记原文与长期入口，再按验证状态接入。",
+  "coverage_note": "已验证目录与账号按各自周期读取。普通产品主页、受限目录、公众号历史列表未伪装成已启用采集；日报 RSS 继续查漏新出处。"
+}

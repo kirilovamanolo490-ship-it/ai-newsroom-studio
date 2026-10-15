@@ -1,0 +1,96 @@
+[
+  {
+    "id": "hb-e683855a8ee518",
+    "name": "Tencent 官方仓库发布目录",
+    "kind": "github",
+    "category": "后续新发现",
+    "role": "official",
+    "entry_url": "https://github.com/Tencent?tab=repositories",
+    "index_kind": "repository",
+    "recommended": true,
+    "verification": "verified_index",
+    "http_status": 200,
+    "title": "Tencent 官方仓库发布目录",
+    "index_samples": [
+      {
+        "title": "Tencent/teamai-cli",
+        "url": "https://github.com/Tencent/teamai-cli"
+      },
+      {
+        "title": "Tencent/WeKnora",
+        "url": "https://github.com/Tencent/WeKnora"
+      },
+      {
+        "title": "Tencent/WeChatReading",
+        "url": "https://github.com/Tencent/WeChatReading"
+      },
+      {
+        "title": "Tencent/YOLO-Master",
+        "url": "https://github.com/Tencent/YOLO-Master"
+      },
+      {
+        "title": "Tencent/omi",
+        "url": "https://github.com/Tencent/omi"
+      }
+    ],
+    "feed_urls": [],
+    "reason": "本次从媒体线索回溯到官方持续发布目录，已读取多条内容并确认实际可用采集入口。",
+    "origin_hosts": [
+      "github.com"
+    ],
+    "covered_urls": [
+      "https://github.com/Tencent/teamai-cli"
+    ],
+    "discovery_origin": "heartbeat candidate review; not a Juya issue citation",
+    "checked_at": "2026-10-10T08:18:38.828821+00:00",
+    "evidence_file": "research/source-watch/verification-2026-10-10-1603/tencent-org.json"
+  },
+  {
+    "id": "hb-33f210cbbdc715",
+    "name": "Marvell 官方新闻与投资者公告",
+    "kind": "web",
+    "category": "后续新发现",
+    "role": "official",
+    "entry_url": "https://investor.marvell.com/news-events/press-releases",
+    "index_kind": "news_index",
+    "recommended": true,
+    "verification": "verified_index",
+    "http_status": 200,
+    "title": "Marvell 官方新闻与投资者公告",
+    "index_samples": [
+      {
+        "title": "Marvell to Showcase Open AI Infrastructure Solutions at OCP Global Summit 2026",
+        "url": "https://investor.marvell.com/news-events/press-releases/detail/1036/marvell-to-showcase-open-ai-infrastructure-solutions-at-ocp-global-summit-2026"
+      },
+      {
+        "title": "Marvell Technology, Inc. Declares Quarterly Dividend Payment",
+        "url": "https://investor.marvell.com/news-events/press-releases/detail/1035/marvell-technology-inc-declares-quarterly-dividend-payment"
+      },
+      {
+        "title": "Marvell to Showcase Industry-First 2nm Optical Technology Demos for AI Data Center Infrastructure at ECOC 2026",
+        "url": "https://investor.marvell.com/news-events/press-releases/detail/1034/marvell-to-showcase-industry-first-2nm-optical-technology-demos-for-ai-data-center-infrastructure-at-ecoc-2026"
+      },
+      {
+        "title": "Microsoft, Marvell and Utimaco to Deliver Industry-first Secure, Cloud-scale Payments Solution",
+        "url": "https://investor.marvell.com/news-events/press-releases/detail/1033/microsoft-marvell-and-utimaco-to-deliver-industry-first-secure-cloud-scale-payments-solution"
+      },
+      {
+        "title": "Marvell to Showcase End-to-End AI Data Center Connectivity Portfolio at AI Infra Summit 2026",
+        "url": "https://investor.marvell.com/news-events/press-releases/detail/1032/marvell-to-showcase-end-to-end-ai-data-center-connectivity-portfolio-at-ai-infra-summit-2026"
+      }
+    ],
+    "feed_urls": [
+      "https://investor.marvell.com/news-events/press-releases/rss"
+    ],
+    "reason": "本次从媒体线索回溯到官方持续发布目录，已读取多条内容并确认实际可用采集入口。",
+    "origin_hosts": [
+      "investor.marvell.com"
+    ],
+    "covered_urls": [
+      "https://investor.marvell.com/news-events/press-releases/detail/1029/marvell-technology-inc-announces-conference-call-to-review-second-quarter-of-fiscal-year-2027-financial-results-announces-investor-day-on-october-6-2026"
+    ],
+    "discovery_origin": "heartbeat candidate review; not a Juya issue citation",
+    "checked_at": "2026-10-10T08:18:38.828821+00:00",
+    "evidence_file": "research/source-watch/verification-2026-10-10-1603/marvell-directory.json"
+  }
+]

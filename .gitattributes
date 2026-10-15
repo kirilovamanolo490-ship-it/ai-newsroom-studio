@@ -1,0 +1,11 @@
+*.mp4 binary
+*.wav binary
+*.png binary
+*.jpg binary
+*.webp binary
+*.py text eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+# Keep source assets and upstream patch context byte-identical.
+*.svg -whitespace
+*.patch -whitespace

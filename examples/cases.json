@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "date": "2026-10-14",
+      "edition": "morning",
+      "title": "2026-10-14 AI早报",
+      "directory": "2026-10-14-morning",
+      "files": {
+        "video": "video.mp4",
+        "cover": "cover.png",
+        "subtitles": "subtitles.srt",
+        "reviewed_data": "reviewed-data.json"
+      },
+      "original_sources": {
+        "video": "research/evidence/2026-10-14/morning/ai-daily-2026-10-14-morning-v8.mp4",
+        "cover": "research/evidence/2026-10-14/morning/cover-2026-10-14-morning-v8.png",
+        "subtitles": "research/evidence/2026-10-14/morning/subtitles.srt",
+        "report": "research/evidence/2026-10-14/morning/report.json"
+      },
+      "sha256": {
+        "video": "824b9776c9b4831cb2e3e29f0a2d42d501cbc50d98cfacdf11f8ecf86725be37",
+        "cover": "2bdec0d062850d2e04e8c07684663524bcac4287fe9e81fef114dab0c8b755d4",
+        "subtitles": "f64b63a4881e81476252d7a0b3ef8983164c8e0418f80285dd8837d38b9275c9"
+      },
+      "duration_seconds": 216.085,
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "original_report_fingerprint": "69002e106f9fde895a467302a462952e4dfbe0f926981fdbfcf010febebe6461",
+      "saved_validation_status": "verified",
+      "full_playback_completed": true,
+      "story_count": 10,
+      "provenance": [
+        {
+          "story_title": "Gemini 4 Argon全球开放，并进入主流编码工具",
+          "source_url": "https://deepmind.google/blog/introducing-gemini-4-argon/"
+        },
+        {
+          "story_title": "Liquid AI 发布 LFM2.5-24B-A2B，面向本地多步智能体",
+          "source_url": "https://x.com/liquidai/status/2110055807194931348"
+        },
+        {
+          "story_title": "Apple发布HomeView与新一代家庭产品；各产品上市日期不同",
+          "source_url": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/"
+        },
+        {
+          "story_title": "Tibo称ChatGPT与Codex桌面端优化状态落盘，预期减少60%存储量",
+          "source_url": "https://x.com/thsottiaux/status/2110151780478927344"
+        },
+        {
+          "story_title": "Replit双更新：跨项目后台修改，项目内生成视频素材",
+          "source_url": "https://x.com/Replit/status/2110113354899660944"
+        },
+        {
+          "story_title": "Anthropic 披露 Scion：为智能体编码重做内部代码管理",
+          "source_url": "https://x.com/AnthropicAI/status/2110047081414987957"
+        },
+        {
+          "story_title": "Fish Audio 发布 Drama 3：用自然语言控制语音情绪，开放模型权重",
+          "source_url": "https://www.prnewswire.com/news-releases/fish-audio-launches-drama-3-direct-ai-voices-in-plain-language-control-every-word-and-shift-emotion-mid-sentence-302906620.html"
+        },
+        {
+          "story_title": "Recast替换视频角色，明确单镜头15秒与多镜头30秒限制",
+          "source_url": "https://x.com/ElevenCreative/status/2110128567975903318"
+        },
+        {
+          "story_title": "Vals发布多模态代码修复评测，Opus 5.5得分70.2%",
+          "source_url": "https://x.com/ValsAI/status/2110113232501567805"
+        },
+        {
+          "story_title": "OpenAI称办公室发现隐藏录音设备，已交由FBI调查",
+          "source_url": "https://x.com/OpenAINewsroom/status/2110095403198849132"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "edition": "evening",
+      "title": "2026-10-13 AI晚报",
+      "directory": "2026-10-13-evening",
+      "files": {
+        "video": "video.mp4",
+        "cover": "cover.png",
+        "subtitles": "subtitles.srt",
+        "reviewed_data": "reviewed-data.json"
+      },
+      "original_sources": {
+        "video": "research/evidence/2026-10-13/evening/ai-daily-2026-10-13-evening-v7.mp4",
+        "cover": "research/evidence/2026-10-13/evening/cover-2026-10-13-evening-v7.png",
+        "subtitles": "research/evidence/2026-10-13/evening/subtitles.srt",
+        "report": "research/evidence/2026-10-13/evening/report.json"
+      },
+      "sha256": {
+        "video": "bce96b3a971b11e03c34b0abae70a8cfc4d2d6ed654eff737b87bcf7559cb66f",
+        "cover": "9475a7c519bbbb08d9bc1e1fcff07c2a0a947421b5f36b422302febddc8e229c",
+        "subtitles": "21435d91729df1887a4ac4123573a9c174898bb9c2beb3810f4d5e62e2736313"
+      },
+      "duration_seconds": 189.739,
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "original_report_fingerprint": "6fa2778128a5d63fadbd8885c9240b2b6dc19ded156cd902dfea3ac14a1c2424",
+      "saved_validation_status": "verified",
+      "full_playback_completed": true,
+      "story_count": 8,
+      "provenance": [
+        {
+          "story_title": "Character.AI 启动法院监督出售",
+          "source_url": "https://blog.character.ai/an-update-on-character-ai/"
+        },
+        {
+          "story_title": "Natura-1：从人类经验学习操作",
+          "source_url": "https://x.com/naturewill/status/2109858475333570565"
+        },
+        {
+          "story_title": "MiniCPM-V 4.7：Mac本地运行",
+          "source_url": "https://x.com/OpenBMB/status/2109898597236129868"
+        },
+        {
+          "story_title": "dots 手机任务更新与语音入口说明",
+          "source_url": "https://x.com/reach_vb/status/2109872508853756077"
+        },
+        {
+          "story_title": "额度重置完成，更多用量仍待公布",
+          "source_url": "https://x.com/thsottiaux/status/2109873287853707513"
+        },
+        {
+          "story_title": "企业邮件与 Slack 数据交易",
+          "source_url": "https://www.businessinsider.com/ai-training-employee-data-emails-slack-dms-2026-10"
+        },
+        {
+          "story_title": "TCL X5 用自然语言优化网络",
+          "source_url": "https://www.prnewswire.com/news-releases/tcl-showcases-5g-ai-cpe-x5-at-network-x-2026-bringing-comprehensive-ai-powered-optimization-to-home-broadband-302902425.html"
+        },
+        {
+          "story_title": "Memory Transfer：个人记忆迁移工具",
+          "source_url": "https://x.com/BrianRoemmele/status/2109853221808435364"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "edition": "briefing-0400",
+      "title": "2026-10-15 AI此刻简报",
+      "directory": "2026-10-15-briefing-0400",
+      "files": {
+        "video": "video.mp4",
+        "cover": "cover.png",
+        "subtitles": "subtitles.srt",
+        "reviewed_data": "reviewed-data.json"
+      },
+      "original_sources": {
+        "video": "research/evidence/2026-10-15/briefing-0400/ai-daily-2026-10-15-briefing-0400-v8.mp4",
+        "cover": "research/evidence/2026-10-15/briefing-0400/cover-2026-10-15-briefing-0400-v8.png",
+        "subtitles": "research/evidence/2026-10-15/briefing-0400/subtitles.srt",
+        "report": "research/evidence/2026-10-15/briefing-0400/report.json"
+      },
+      "sha256": {
+        "video": "90df7d1ce24750189494cd96df43521ee459480381cc6aa91b9ec856c5234f71",
+        "cover": "3f15cda0698cdccc08ac491ee58e84d47f913a6a487c164e33ee7a289a301d4e",
+        "subtitles": "e4db895df6939e83cf5bceb0d6dc200a44610650d6feaf835117a79ea7bfabfa"
+      },
+      "duration_seconds": 82.304,
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "original_report_fingerprint": "0ecd2af47fde84021a1d7022b60933abafc41421adaa1520629841ac1e36f626",
+      "saved_validation_status": "verified",
+      "full_playback_completed": true,
+      "story_count": 3,
+      "provenance": [
+        {
+          "story_title": "Claude Code桌面端更新，多会话并行和侧聊更方便",
+          "source_url": "https://x.com/ClaudeDevs/status/2110445844675838148"
+        },
+        {
+          "story_title": "Google展示Argon岛屿沙盒，笔刷模拟地形与水",
+          "source_url": "https://x.com/Google/status/2110446630948180353"
+        },
+        {
+          "story_title": "Epoch发布SpireClimb评测，AI仍落后顶尖人类玩家",
+          "source_url": "https://x.com/EpochAIResearch/status/2110460410646413359"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-14",
+  "edition": "morning",
+  "title": "2026-10-14 AI早报",
+  "story_count": 10,
+  "stories": [
+    {
+      "id": "gemini-argon",
+      "title": "Gemini 4 Argon全球开放，并进入主流编码工具",
+      "summary": "Google将Gemini 4 Argon从有限预览扩展到全球推出；Gemini应用与搜索AI Mode面向Pro、Ultra订阅者，开发者使用付费API。GitHub Copilot、Cursor、OpenCode和Command Code也公布了接入。",
+      "source": "Google DeepMind",
+      "source_url": "https://deepmind.google/blog/introducing-gemini-4-argon/",
+      "section": "模型与设备"
+    },
+    {
+      "id": "liquid-local",
+      "title": "Liquid AI 发布 LFM2.5-24B-A2B，面向本地多步智能体",
+      "summary": "Liquid AI发布24B总参数、每token激活2B参数的推理模型LFM2.5-24B-A2B，并开放基础版与后训练权重。上下文从上一代32,768扩展到131,072 token。",
+      "source": "Liquid AI",
+      "source_url": "https://x.com/liquidai/status/2110055807194931348",
+      "section": "模型与设备"
+    },
+    {
+      "id": "apple-home",
+      "title": "Apple发布HomeView与新一代家庭产品；各产品上市日期不同",
+      "summary": "Apple同日公布HomeView、Apple TV 4K、HomePod mini 2与Apple Home Collection。HomeView和新Apple TV计划11月13日开售；HomePod mini 2提前到10月30日上市，Siri AI之后续免费更新提供。",
+      "source": "Apple",
+      "source_url": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/",
+      "section": "模型与设备"
+    },
+    {
+      "id": "disk-state",
+      "title": "Tibo称ChatGPT与Codex桌面端优化状态落盘，预期减少60%存储量",
+      "summary": "Tibo在个人账号表示，ChatGPT与Codex桌面应用已推出状态落盘优化，预期将这部分磁盘存储量减少60%，回应高用量用户空间不足的反馈。",
+      "source": "Tibo (@thsottiaux)",
+      "source_url": "https://x.com/thsottiaux/status/2110151780478927344",
+      "section": "开发工具"
+    },
+    {
+      "id": "replit-projects",
+      "title": "Replit双更新：跨项目后台修改，项目内生成视频素材",
+      "summary": "Replit新聊天可以找到已有项目并在后台编辑，同一聊天还能修改多个项目。另一个更新将Runway图像和视频生成接入项目工作流。",
+      "source": "Replit",
+      "source_url": "https://x.com/Replit/status/2110113354899660944",
+      "section": "开发工具"
+    },
+    {
+      "id": "scion",
+      "title": "Anthropic 披露 Scion：为智能体编码重做内部代码管理",
+      "summary": "Anthropic表示，内部每日合并代码变更从5月约2,500次升到9月超过30,000次，促使其开发Scion，并在五个月内把大型单体仓库迁出Git。",
+      "source": "Anthropic",
+      "source_url": "https://x.com/AnthropicAI/status/2110047081414987957",
+      "section": "开发工具"
+    },
+    {
+      "id": "fish-drama3",
+      "title": "Fish Audio 发布 Drama 3：用自然语言控制语音情绪，开放模型权重",
+      "summary": "Fish Audio发布Drama 3语音模型，支持自然语言控制、句中情绪及说话方式调整，并开放权重。官方称网页、手机应用与API同步可用。",
+      "source": "Fish Audio",
+      "source_url": "https://www.prnewswire.com/news-releases/fish-audio-launches-drama-3-direct-ai-voices-in-plain-language-control-every-word-and-shift-emotion-mid-sentence-302906620.html",
+      "section": "音视频创作"
+    },
+    {
+      "id": "recast-spec",
+      "title": "Recast替换视频角色，明确单镜头15秒与多镜头30秒限制",
+      "summary": "ElevenCreative介绍Recast角色替换：上传原视频与新角色参考照生成，并宣称保留原来的动作、光线、构图和音频。后续规格帖明确单镜头最长15秒，多镜头最长30秒。",
+      "source": "ElevenCreative / ElevenLabs",
+      "source_url": "https://x.com/ElevenCreative/status/2110128567975903318",
+      "section": "音视频创作"
+    },
+    {
+      "id": "vals-visual",
+      "title": "Vals发布多模态代码修复评测，Opus 5.5得分70.2%",
+      "summary": "Vals AI上线SWE-bench Multimodal评测，要求模型结合截图修复真实JavaScript项目问题。其发布时结果中，Claude Opus 5.5以70.2%居首，Gemini 4 Argon为56.0%。",
+      "source": "Vals AI",
+      "source_url": "https://x.com/ValsAI/status/2110113232501567805",
+      "section": "评测与安全"
+    },
+    {
+      "id": "openai-office",
+      "title": "OpenAI称办公室发现隐藏录音设备，已交由FBI调查",
+      "summary": "OpenAI新闻室称，公司在办公室发现隐藏录音设备，借助自家模型追查来源后，认定由一名员工放置。公司称已移交FBI，相关员工被解雇。",
+      "source": "OpenAI Newsroom",
+      "source_url": "https://x.com/OpenAINewsroom/status/2110095403198849132",
+      "section": "评测与安全"
+    }
+  ],
+  "narration_excerpt": "Google把Gemini四Argon从有限预览扩展到全球推出。Gemini应用和搜索AI模式面向Pro与Ultra订阅者，开发者使用付费API。",
+  "provenance": [
+    {
+      "story_title": "Gemini 4 Argon全球开放，并进入主流编码工具",
+      "source_url": "https://deepmind.google/blog/introducing-gemini-4-argon/"
+    },
+    {
+      "story_title": "Liquid AI 发布 LFM2.5-24B-A2B，面向本地多步智能体",
+      "source_url": "https://x.com/liquidai/status/2110055807194931348"
+    },
+    {
+      "story_title": "Apple发布HomeView与新一代家庭产品；各产品上市日期不同",
+      "source_url": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/"
+    },
+    {
+      "story_title": "Tibo称ChatGPT与Codex桌面端优化状态落盘，预期减少60%存储量",
+      "source_url": "https://x.com/thsottiaux/status/2110151780478927344"
+    },
+    {
+      "story_title": "Replit双更新：跨项目后台修改，项目内生成视频素材",
+      "source_url": "https://x.com/Replit/status/2110113354899660944"
+    },
+    {
+      "story_title": "Anthropic 披露 Scion：为智能体编码重做内部代码管理",
+      "source_url": "https://x.com/AnthropicAI/status/2110047081414987957"
+    },
+    {
+      "story_title": "Fish Audio 发布 Drama 3：用自然语言控制语音情绪，开放模型权重",
+      "source_url": "https://www.prnewswire.com/news-releases/fish-audio-launches-drama-3-direct-ai-voices-in-plain-language-control-every-word-and-shift-emotion-mid-sentence-302906620.html"
+    },
+    {
+      "story_title": "Recast替换视频角色，明确单镜头15秒与多镜头30秒限制",
+      "source_url": "https://x.com/ElevenCreative/status/2110128567975903318"
+    },
+    {
+      "story_title": "Vals发布多模态代码修复评测，Opus 5.5得分70.2%",
+      "source_url": "https://x.com/ValsAI/status/2110113232501567805"
+    },
+    {
+      "story_title": "OpenAI称办公室发现隐藏录音设备，已交由FBI调查",
+      "source_url": "https://x.com/OpenAINewsroom/status/2110095403198849132"
+    }
+  ]
+}

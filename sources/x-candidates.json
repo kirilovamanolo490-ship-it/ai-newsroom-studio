@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "migrated_on": "2026-10-08",
+  "provenance": "旧本地参考项目 github/ai-daily-briefing/README.md 的官方覆盖表；并非已核验名单。",
+  "reference_url": "https://github.com/Rion-Wu-tech/ai-daily-briefing",
+  "status": "candidate_unverified",
+  "accounts": [
+    {
+      "handle": "GoogleDeepMind",
+      "url": "https://x.com/GoogleDeepMind",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "grok",
+      "url": "https://x.com/grok",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "MicrosoftAI",
+      "url": "https://x.com/MicrosoftAI",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "NVIDIAAI",
+      "url": "https://x.com/NVIDIAAI",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "allen_ai",
+      "url": "https://x.com/allen_ai",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "AWSCloud",
+      "url": "https://x.com/AWSCloud",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "perplexity_ai",
+      "url": "https://x.com/perplexity_ai",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "IBMResearch",
+      "url": "https://x.com/IBMResearch",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "SalesforceDevs",
+      "url": "https://x.com/SalesforceDevs",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "SnowflakeDB",
+      "url": "https://x.com/SnowflakeDB",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "LiquidAI",
+      "url": "https://x.com/LiquidAI",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "NousResearch",
+      "url": "https://x.com/NousResearch",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "Cerebras",
+      "url": "https://x.com/Cerebras",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "PrimeIntellect",
+      "url": "https://x.com/PrimeIntellect",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "_inception_ai",
+      "url": "https://x.com/_inception_ai",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "StabilityAI",
+      "url": "https://x.com/StabilityAI",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "bfl_ai",
+      "url": "https://x.com/bfl_ai",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "StepFun_ai",
+      "url": "https://x.com/StepFun_ai",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "ByteDanceSeed",
+      "url": "https://x.com/ByteDanceSeed",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "01AI_Yi",
+      "url": "https://x.com/01AI_Yi",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "BaichuanAI",
+      "url": "https://x.com/BaichuanAI",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "HuaweiCloud1",
+      "url": "https://x.com/HuaweiCloud1",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "SenseTimeGroup",
+      "url": "https://x.com/SenseTimeGroup",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "Meituan_LongCat",
+      "url": "https://x.com/Meituan_LongCat",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "OpenBMB",
+      "url": "https://x.com/OpenBMB",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "BAAIBeijing",
+      "url": "https://x.com/BAAIBeijing",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "AntLingAGI",
+      "url": "https://x.com/AntLingAGI",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "Alibaba_Wan",
+      "url": "https://x.com/Alibaba_Wan",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "Skywork_ai",
+      "url": "https://x.com/Skywork_ai",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "MistralAI",
+      "url": "https://x.com/MistralAI",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "cohere",
+      "url": "https://x.com/cohere",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "GitHubCopilot",
+      "url": "https://x.com/GitHubCopilot",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "cognition_labs",
+      "url": "https://x.com/cognition_labs",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "Replit",
+      "url": "https://x.com/Replit",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "ManusAI",
+      "url": "https://x.com/ManusAI",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "runwayml",
+      "url": "https://x.com/runwayml",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "ideogram_ai",
+      "url": "https://x.com/ideogram_ai",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "LumaLabsAI",
+      "url": "https://x.com/LumaLabsAI",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "pika_labs",
+      "url": "https://x.com/pika_labs",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "AdobeFirefly",
+      "url": "https://x.com/AdobeFirefly",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "ViduAI_official",
+      "url": "https://x.com/ViduAI_official",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "ElevenLabs",
+      "url": "https://x.com/ElevenLabs",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "suno_ai_",
+      "url": "https://x.com/suno_ai_",
+      "status": "candidate_unverified"
+    },
+    {
+      "handle": "togethercompute",
+      "url": "https://x.com/togethercompute",
+      "status": "candidate_unverified"
+    }
+  ]
+}
